@@ -1,0 +1,26 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 3
+  metrics: count: path: 3
+  metrics: count: method: 3
+
+  entity: heat_stress_warning_en: {
+    path: "/opendata/heat-stress-warning-en.json": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: heat_stress_warning_sc: {
+    path: "/opendata/heat-stress-warning-sc.json": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: heat_stress_warning_tc: {
+    path: "/opendata/heat-stress-warning-tc.json": {
+      op: list: method: *GET
+    }
+  }
+
+}

@@ -1,0 +1,22 @@
+# BasicHeatStressWarningEnFlow
+
+main: kit: flow: BasicHeatStressWarningEnFlow:
+{
+  entity: "heat_stress_warning_en",
+  kind: "basic",
+  name: "BasicHeatStressWarningEnFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "heat_stress_warning_en_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicHeatStressWarningEnFlow"
+}

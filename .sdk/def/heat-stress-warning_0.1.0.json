@@ -1,0 +1,257 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Heat Stress Warning API",
+    "description": "This API provides the latest information regarding heat stress warnings at work in different languages including English, Traditional Chinese, and Simplified Chinese. Users can access datasets in various formats for download, enabling easy integration into applications or analysis processes.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Labour Department",
+      "email": "enquiry@labour.gov.hk",
+      "url": "https://data.gov.hk/en-data/dataset/hk-ld-ohs-ohs-heat-stress-at-work-warning"
+    },
+    "termsOfService": "https://data.gov.hk/en/terms-and-conditions"
+  },
+  "servers": [
+    {
+      "url": "https://data.weather.gov.hk/weatherAPI",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/opendata/heat-stress-warning-en.json": {
+      "get": {
+        "summary": "Get Heat Stress at Work Warning (English)",
+        "description": "Retrieve the latest heat stress at work warning information in English format.",
+        "operationId": "getHeatStressWarningEnglish",
+        "tags": [
+          "Heat Stress Warnings"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with heat stress warning data in English",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeatStressWarning"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/opendata/heat-stress-warning-tc.json": {
+      "get": {
+        "summary": "Get Heat Stress at Work Warning (Traditional Chinese)",
+        "description": "Retrieve the latest heat stress at work warning information in Traditional Chinese format.",
+        "operationId": "getHeatStressWarningTraditionalChinese",
+        "tags": [
+          "Heat Stress Warnings"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with heat stress warning data in Traditional Chinese",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeatStressWarning"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/opendata/heat-stress-warning-sc.json": {
+      "get": {
+        "summary": "Get Heat Stress at Work Warning (Simplified Chinese)",
+        "description": "Retrieve the latest heat stress at work warning information in Simplified Chinese format.",
+        "operationId": "getHeatStressWarningSimplifiedChinese",
+        "tags": [
+          "Heat Stress Warnings"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with heat stress warning data in Simplified Chinese",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HeatStressWarning"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HeatStressWarning": {
+        "type": "object",
+        "description": "Heat stress at work warning data",
+        "properties": {
+          "warningLevel": {
+            "type": "string",
+            "description": "Current heat stress warning level",
+            "example": "Yellow"
+          },
+          "warningMessage": {
+            "type": "string",
+            "description": "Warning message with details and recommendations",
+            "example": "Heat stress at work warning is in force. Workers should take precautionary measures."
+          },
+          "issueTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Time when the warning was issued",
+            "example": "2023-07-15T14:30:00+08:00"
+          },
+          "effectiveTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Time when the warning becomes effective",
+            "example": "2023-07-15T15:00:00+08:00"
+          },
+          "expiryTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Time when the warning expires",
+            "example": "2023-07-15T18:00:00+08:00"
+          },
+          "temperature": {
+            "type": "number",
+            "format": "float",
+            "description": "Current temperature in degrees Celsius",
+            "example": 33.5
+          },
+          "humidity": {
+            "type": "integer",
+            "description": "Relative humidity percentage",
+            "example": 85
+          },
+          "heatIndex": {
+            "type": "number",
+            "format": "float",
+            "description": "Calculated heat index value",
+            "example": 42.3
+          },
+          "recommendations": {
+            "type": "array",
+            "description": "List of recommended actions for workers",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "Drink water frequently",
+              "Take regular rest breaks in shaded areas",
+              "Wear light-colored and loose-fitting clothing"
+            ]
+          },
+          "updateTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update time of the data",
+            "example": "2023-07-15T14:25:00+08:00"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "description": "Error response",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message",
+            "example": "Resource not found"
+          },
+          "code": {
+            "type": "integer",
+            "description": "Error code",
+            "example": 404
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp of the error",
+            "example": "2023-07-15T14:30:00+08:00"
+          }
+        },
+        "required": [
+          "error",
+          "code"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Heat Stress Warnings",
+      "description": "Endpoints for retrieving heat stress at work warning information in different languages"
+    }
+  ],
+  "externalDocs": {
+    "description": "Heat Stress Warning API Documentation",
+    "url": "https://data.weather.gov.hk/weatherAPI/doc/HSWW_API_Documentation.pdf"
+  }
+}

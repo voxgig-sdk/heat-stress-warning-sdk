@@ -1,0 +1,26 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        email: "enquiry@labour.gov.hk"
+        name: "Labour Department"
+        url: "https://data.gov.hk/en-data/dataset/hk-ld-ohs-ohs-heat-stress-at-work-warning"
+      }
+      description: "This API provides the latest information regarding heat stress warnings at work in different languages including English, Traditional Chinese, and Simplified Chinese. Users can access datasets in various formats for download, enabling easy integration into applications or analysis processes."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://data.weather.gov.hk/weatherAPI"
+        }
+      ]
+      termsOfService: "https://data.gov.hk/en/terms-and-conditions"
+      title: "Heat Stress Warning API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

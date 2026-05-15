@@ -1,0 +1,83 @@
+# Entity: heat_stress_warning_sc
+
+main: kit: entity: heat_stress_warning_sc: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "effective_time"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "expiry_time"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "heat_index"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "humidity"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "issue_time"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "recommendation"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "temperature"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "update_time"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "warning_level"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "warning_message"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "heat_stress_warning_sc"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/opendata/heat-stress-warning-sc.json"
+          parts: [
+            "opendata"
+            "heat-stress-warning-sc.json"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

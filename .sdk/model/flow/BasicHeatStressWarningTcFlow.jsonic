@@ -1,0 +1,22 @@
+# BasicHeatStressWarningTcFlow
+
+main: kit: flow: BasicHeatStressWarningTcFlow:
+{
+  entity: "heat_stress_warning_tc",
+  kind: "basic",
+  name: "BasicHeatStressWarningTcFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "heat_stress_warning_tc_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicHeatStressWarningTcFlow"
+}
