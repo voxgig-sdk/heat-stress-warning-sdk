@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/heat-stress-warning-sdk/core"
+	"github.com/voxgig-sdk/heat-stress-warning-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/heat-stress-warning-sdk/go/utility/struct"
 )
 
 type HeatStressWarningScEntity struct {

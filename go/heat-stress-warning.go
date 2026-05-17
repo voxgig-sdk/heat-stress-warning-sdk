@@ -1,10 +1,10 @@
 package voxgigheatstresswarningsdk
 
 import (
-	"github.com/voxgig-sdk/heat-stress-warning-sdk/core"
-	"github.com/voxgig-sdk/heat-stress-warning-sdk/entity"
-	"github.com/voxgig-sdk/heat-stress-warning-sdk/feature"
-	_ "github.com/voxgig-sdk/heat-stress-warning-sdk/utility"
+	"github.com/voxgig-sdk/heat-stress-warning-sdk/go/core"
+	"github.com/voxgig-sdk/heat-stress-warning-sdk/go/entity"
+	"github.com/voxgig-sdk/heat-stress-warning-sdk/go/feature"
+	_ "github.com/voxgig-sdk/heat-stress-warning-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

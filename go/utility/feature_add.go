@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/heat-stress-warning-sdk/core"
+import "github.com/voxgig-sdk/heat-stress-warning-sdk/go/core"
 
 func featureAddUtil(ctx *core.Context, f core.Feature) {
 	client := ctx.Client

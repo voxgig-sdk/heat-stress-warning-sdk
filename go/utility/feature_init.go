@@ -1,9 +1,9 @@
 package utility
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/heat-stress-warning-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/heat-stress-warning-sdk/core"
+	"github.com/voxgig-sdk/heat-stress-warning-sdk/go/core"
 )
 
 func featureInitUtil(ctx *core.Context, f core.Feature) {

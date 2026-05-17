@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/heat-stress-warning-sdk"
-	"github.com/voxgig-sdk/heat-stress-warning-sdk/core"
+	sdk "github.com/voxgig-sdk/heat-stress-warning-sdk/go"
+	"github.com/voxgig-sdk/heat-stress-warning-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/heat-stress-warning-sdk/go/utility/struct"
 )
 
 func TestHeatStressWarningTcEntity(t *testing.T) {

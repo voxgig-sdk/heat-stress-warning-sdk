@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/heat-stress-warning-sdk"
-	"github.com/voxgig-sdk/heat-stress-warning-sdk/core"
+	sdk "github.com/voxgig-sdk/heat-stress-warning-sdk/go"
+	"github.com/voxgig-sdk/heat-stress-warning-sdk/go/core"
 )
 
 func TestHeatStressWarningScDirect(t *testing.T) {

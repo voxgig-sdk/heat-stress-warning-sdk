@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/heat-stress-warning-sdk/core"
+	"github.com/voxgig-sdk/heat-stress-warning-sdk/go/core"
 )
 
 type LogFeature struct {

@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/heat-stress-warning-sdk"
+	sdk "github.com/voxgig-sdk/heat-stress-warning-sdk/go"
 )
 
 func TestExists(t *testing.T) {
