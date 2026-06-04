@@ -119,7 +119,6 @@ func heat_stress_warning_scBasicSetup(extra map[string]any) *entityTestSetup {
 		"HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_SC_ENTID": idmap,
 		"HEATSTRESSWARNING_TEST_LIVE":      "FALSE",
 		"HEATSTRESSWARNING_TEST_EXPLAIN":   "FALSE",
-		"HEATSTRESSWARNING_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_SC_ENTID"])
@@ -130,7 +129,6 @@ func heat_stress_warning_scBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["HEATSTRESSWARNING_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["HEATSTRESSWARNING_APIKEY"],
 			},
 			extra,
 		})

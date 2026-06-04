@@ -26,9 +26,7 @@ loading a specific record.
 ```lua
 local sdk = require("heat-stress-warning_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("HEAT-STRESS-WARNING_APIKEY"),
-})
+local client = sdk.new({})
 ```
 
 ### 2. List heatstresswarningens
@@ -124,7 +122,6 @@ Create a `.env.local` file at the project root:
 
 ```
 HEAT-STRESS-WARNING_TEST_LIVE=TRUE
-HEAT-STRESS-WARNING_APIKEY=<your-key>
 ```
 
 Then run:
@@ -147,7 +144,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

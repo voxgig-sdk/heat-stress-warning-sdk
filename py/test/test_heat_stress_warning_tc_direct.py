@@ -61,14 +61,12 @@ def _heat_stress_warning_tc_direct_setup(mockres):
     env = runner.env_override({
         "HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_TC_ENTID": {},
         "HEATSTRESSWARNING_TEST_LIVE": "FALSE",
-        "HEATSTRESSWARNING_APIKEY": "NONE",
     })
 
     live = env.get("HEATSTRESSWARNING_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("HEATSTRESSWARNING_APIKEY"),
         }
         client = HeatStressWarningSDK(merged_opts)
         return {

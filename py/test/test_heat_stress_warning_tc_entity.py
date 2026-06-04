@@ -92,7 +92,6 @@ def _heat_stress_warning_tc_basic_setup(extra):
         "HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_TC_ENTID": idmap,
         "HEATSTRESSWARNING_TEST_LIVE": "FALSE",
         "HEATSTRESSWARNING_TEST_EXPLAIN": "FALSE",
-        "HEATSTRESSWARNING_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ def _heat_stress_warning_tc_basic_setup(extra):
     if env.get("HEATSTRESSWARNING_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("HEATSTRESSWARNING_APIKEY"),
             },
             extra or {},
         ])
