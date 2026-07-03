@@ -1,7 +1,11 @@
 package = "voxgig-sdk-heat-stress-warning"
-version = "0.0-1"
+version = "0.0.1-1"
 source = {
-  url = "git://github.com/voxgig-sdk/heat-stress-warning-sdk.git"
+  -- git+https (GitHub dropped git:// in 2022); pin the install to the release
+  -- tag pushed by `make publish`, and point at the lua/ subdir of the monorepo.
+  url = "git+https://github.com/voxgig-sdk/heat-stress-warning-sdk.git",
+  tag = "lua/v0.0.1",
+  dir = "heat-stress-warning-sdk/lua"
 }
 description = {
   summary = "HeatStressWarning SDK for Lua",

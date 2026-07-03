@@ -86,6 +86,7 @@ function heat_stress_warning_sc_basic_setup($extra)
         "HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_SC_ENTID" => $idmap,
         "HEATSTRESSWARNING_TEST_LIVE" => "FALSE",
         "HEATSTRESSWARNING_TEST_EXPLAIN" => "FALSE",
+        "HEATSTRESSWARNING_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,6 +98,7 @@ function heat_stress_warning_sc_basic_setup($extra)
     if ($env["HEATSTRESSWARNING_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["HEATSTRESSWARNING_APIKEY"],
             ],
             $extra ?? [],
         ]);

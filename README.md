@@ -1,20 +1,8 @@
 # HeatStressWarning SDK
 
-Latest Hong Kong heat stress at work warnings from the Labour Department, available in English, Traditional Chinese, and Simplified Chinese
+Heat Stress Warning API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Heat Stress Warning API
-
-The Heat Stress Warning API is a public, no-auth endpoint operated by the [Hong Kong Observatory](https://www.hko.gov.hk/) that surfaces the Heat Stress at Work Warning (HSWW) issued by the Hong Kong Labour Department. The warning is intended to help employers and outdoor workers assess heat-related risk.
-
-The API is a single endpoint, `https://data.weather.gov.hk/weatherAPI/opendata/hsww.php`, parameterised by a `lang` query string. The same warning payload is returned in three localisations:
-
-- `lang=en` — English
-- `lang=tc` — Traditional Chinese
-- `lang=sc` — Simplified Chinese
-
-The response describes the currently in-force heat stress warning (if any), so it is small and well suited to polling on a short interval. The endpoint is public, requires no API key, and has CORS enabled, so it can be called directly from server or browser code.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install heat-stress-warning-sdk
 luarocks install heat-stress-warning-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { HeatStressWarningSDK } from 'heat-stress-warning'
 
-const client = new HeatStressWarningSDK({})
+const client = new HeatStressWarningSDK({
+  apikey: process.env.HEAT-STRESS-WARNING_APIKEY,
+})
 
 // List all heatstresswarningens
 const heatstresswarningens = await client.HeatStressWarningEn().list()
+console.log(heatstresswarningens.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,9 +90,9 @@ The API exposes 3 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **HeatStressWarningEn** | Current Heat Stress at Work Warning in English, served from `GET /opendata/hsww.php?lang=en`. | `/opendata/heat-stress-warning-en.json` |
-| **HeatStressWarningSc** | Current Heat Stress at Work Warning in Simplified Chinese, served from `GET /opendata/hsww.php?lang=sc`. | `/opendata/heat-stress-warning-sc.json` |
-| **HeatStressWarningTc** | Current Heat Stress at Work Warning in Traditional Chinese, served from `GET /opendata/hsww.php?lang=tc`. | `/opendata/heat-stress-warning-tc.json` |
+| **HeatStressWarningEn** |  | `/opendata/heat-stress-warning-en.json` |
+| **HeatStressWarningSc** |  | `/opendata/heat-stress-warning-sc.json` |
+| **HeatStressWarningTc** |  | `/opendata/heat-stress-warning-tc.json` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -112,12 +102,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from heatstresswarning_sdk import HeatStressWarningSDK
 
-client = HeatStressWarningSDK({})
+client = HeatStressWarningSDK({
+    "apikey": os.environ.get("HEAT-STRESS-WARNING_APIKEY"),
+})
 
 # List all heatstresswarningens
-heatstresswarningens, err = client.HeatStressWarningEn(None).list(None, None)
+heatstresswarningens, err = client.HeatStressWarningEn().list()
+print(heatstresswarningens)
 ```
 
 ### PHP
@@ -126,10 +120,13 @@ heatstresswarningens, err = client.HeatStressWarningEn(None).list(None, None)
 <?php
 require_once 'heatstresswarning_sdk.php';
 
-$client = new HeatStressWarningSDK([]);
+$client = new HeatStressWarningSDK([
+    "apikey" => getenv("HEAT-STRESS-WARNING_APIKEY"),
+]);
 
 // List all heatstresswarningens
-[$heatstresswarningens, $err] = $client->HeatStressWarningEn(null)->list(null, null);
+[$heatstresswarningens, $err] = $client->HeatStressWarningEn()->list();
+print_r($heatstresswarningens);
 ```
 
 ### Golang
@@ -137,10 +134,13 @@ $client = new HeatStressWarningSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/heat-stress-warning-sdk/go"
 
-client := sdk.NewHeatStressWarningSDK(map[string]any{})
+client := sdk.NewHeatStressWarningSDK(map[string]any{
+    "apikey": os.Getenv("HEAT-STRESS-WARNING_APIKEY"),
+})
 
 // List all heatstresswarningens
 heatstresswarningens, err := client.HeatStressWarningEn(nil).List(nil, nil)
+fmt.Println(heatstresswarningens)
 ```
 
 ### Ruby
@@ -148,10 +148,13 @@ heatstresswarningens, err := client.HeatStressWarningEn(nil).List(nil, nil)
 ```ruby
 require_relative "HeatStressWarning_sdk"
 
-client = HeatStressWarningSDK.new({})
+client = HeatStressWarningSDK.new({
+  "apikey" => ENV["HEAT-STRESS-WARNING_APIKEY"],
+})
 
 # List all heatstresswarningens
-heatstresswarningens, err = client.HeatStressWarningEn(nil).list(nil, nil)
+heatstresswarningens, err = client.HeatStressWarningEn().list
+puts heatstresswarningens
 ```
 
 ### Lua
@@ -159,10 +162,13 @@ heatstresswarningens, err = client.HeatStressWarningEn(nil).list(nil, nil)
 ```lua
 local sdk = require("heat-stress-warning_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("HEAT-STRESS-WARNING_APIKEY"),
+})
 
 -- List all heatstresswarningens
-local heatstresswarningens, err = client:HeatStressWarningEn(nil):list(nil, nil)
+local heatstresswarningens, err = client:HeatStressWarningEn():list()
+print(heatstresswarningens)
 ```
 
 ## Unit testing in offline mode
@@ -181,25 +187,21 @@ const result = await client.HeatStressWarningEn().load({ id: 'test01' })
 ### Python
 
 ```python
-client = HeatStressWarningSDK.test(None, None)
-result, err = client.HeatStressWarningEn(None).load(
-    {"id": "test01"}, None
-)
+client = HeatStressWarningSDK.test()
+result, err = client.HeatStressWarningEn().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = HeatStressWarningSDK::test(null, null);
-[$result, $err] = $client->HeatStressWarningEn(null)->load(
-    ["id" => "test01"], null
-);
+$client = HeatStressWarningSDK::test();
+[$result, $err] = $client->HeatStressWarningEn()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.HeatStressWarningEn(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -208,19 +210,15 @@ result, err := client.HeatStressWarningEn(nil).Load(
 ### Ruby
 
 ```ruby
-client = HeatStressWarningSDK.test(nil, nil)
-result, err = client.HeatStressWarningEn(nil).load(
-  { "id" => "test01" }, nil
-)
+client = HeatStressWarningSDK.test
+result, err = client.HeatStressWarningEn().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:HeatStressWarningEn(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:HeatStressWarningEn():load({ id = "test01" })
 ```
 
 ## How it works
@@ -324,15 +322,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Heat Stress Warning API
-
-- Upstream: [https://data.weather.gov.hk/weatherAPI](https://data.weather.gov.hk/weatherAPI)
-
-- Data is published by the [Hong Kong Observatory](https://www.hko.gov.hk/) on behalf of the Hong Kong Labour Department as part of the HKO open data programme.
-- No explicit licence string is exposed by the API; the Hong Kong Observatory's data portal terms of use apply.
-- Attribution to the Hong Kong Observatory / Hong Kong Labour Department is expected when reusing the data.
-- CORS is enabled on the public endpoint, so the data can be consumed directly from browser clients.
 
 ---
 

@@ -19,29 +19,7 @@ main: {
       termsOfService: "https://data.gov.hk/en/terms-and-conditions"
       title: "Heat Stress Warning API"
       version: "1.0.0"
-      tagline: "Latest Hong Kong heat stress at work warnings from the Labour Department, available in English, Traditional Chinese, and Simplified Chinese"
-      homepage: "https://data.weather.gov.hk/weatherAPI"
-      docs_url: "https://data.weather.gov.hk/weatherAPI"
-      license_short: "Hong Kong Observatory open data; terms of use apply, see HKO data portal"
-      license_md: `- Data is published by the [Hong Kong Observatory](https://www.hko.gov.hk/) on behalf of the Hong Kong Labour Department as part of the HKO open data programme.
-- No explicit licence string is exposed by the API; the Hong Kong Observatory's data portal terms of use apply.
-- Attribution to the Hong Kong Observatory / Hong Kong Labour Department is expected when reusing the data.
-- CORS is enabled on the public endpoint, so the data can be consumed directly from browser clients.`
-      about_md: `The Heat Stress Warning API is a public, no-auth endpoint operated by the [Hong Kong Observatory](https://www.hko.gov.hk/) that surfaces the Heat Stress at Work Warning (HSWW) issued by the Hong Kong Labour Department. The warning is intended to help employers and outdoor workers assess heat-related risk.
-
-The API is a single endpoint, \`https://data.weather.gov.hk/weatherAPI/opendata/hsww.php\`, parameterised by a \`lang\` query string. The same warning payload is returned in three localisations:
-
-- \`lang=en\` — English
-- \`lang=tc\` — Traditional Chinese
-- \`lang=sc\` — Simplified Chinese
-
-The response describes the currently in-force heat stress warning (if any), so it is small and well suited to polling on a short interval. The endpoint is public, requires no API key, and has CORS enabled, so it can be called directly from server or browser code.`
-      entity_desc: {
-        heat_stress_warning_en: "Current Heat Stress at Work Warning in English, served from `GET /opendata/hsww.php?lang=en`."
-        heat_stress_warning_sc: "Current Heat Stress at Work Warning in Simplified Chinese, served from `GET /opendata/hsww.php?lang=sc`."
-        heat_stress_warning_tc: "Current Heat Stress at Work Warning in Traditional Chinese, served from `GET /opendata/hsww.php?lang=tc`."
-      }
-      auth: false
     }
   }
 }
+

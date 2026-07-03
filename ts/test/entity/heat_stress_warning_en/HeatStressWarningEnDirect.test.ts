@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID': {},
     'HEATSTRESSWARNING_TEST_LIVE': 'FALSE',
+    'HEATSTRESSWARNING_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.HEATSTRESSWARNING_TEST_LIVE
 
   if (live) {
     const client = new HeatStressWarningSDK({
+      apikey: env.HEATSTRESSWARNING_APIKEY,
     })
 
     let idmap: any = env['HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID']
