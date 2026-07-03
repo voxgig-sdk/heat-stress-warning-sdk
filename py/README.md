@@ -10,7 +10,7 @@ The Python SDK for the HeatStressWarning API — an entity-oriented client follo
 
 ## Install
 ```bash
-pip install heat-stress-warning-sdk
+pip install voxgig-sdk-heat-stress-warning
 ```
 
 Or install from source:

@@ -10,7 +10,7 @@ The PHP SDK for the HeatStressWarning API — an entity-oriented client using PH
 
 ## Install
 ```bash
-composer require voxgig/heat-stress-warning-sdk
+composer require voxgig-sdk/heat-stress-warning
 ```
 
 

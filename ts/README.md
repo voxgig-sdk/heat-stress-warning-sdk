@@ -10,7 +10,7 @@ The TypeScript SDK for the HeatStressWarning API — a type-safe, entity-oriente
 
 ## Install
 ```bash
-npm install heat-stress-warning
+npm install @voxgig-sdk/heat-stress-warning
 ```
 ## Tutorial: your first API call
 

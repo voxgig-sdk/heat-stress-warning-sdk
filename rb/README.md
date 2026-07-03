@@ -10,13 +10,13 @@ The Ruby SDK for the HeatStressWarning API — an entity-oriented client using i
 
 ## Install
 ```bash
-gem install heat-stress-warning-sdk
+gem install voxgig-sdk-heat-stress-warning
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "heat-stress-warning-sdk"
+gem "voxgig-sdk-heat-stress-warning"
 ```
 
 Then run:

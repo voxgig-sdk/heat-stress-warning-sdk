@@ -10,7 +10,7 @@ The Lua SDK for the HeatStressWarning API — an entity-oriented client using Lu
 
 ## Install
 ```bash
-luarocks install heat-stress-warning-sdk
+luarocks install voxgig-sdk-heat-stress-warning
 ```
 
 If the module is not yet published, add the source directory to

@@ -1,8 +1,17 @@
 {
   "name": "voxgig-sdk/heat-stress-warning",
-  "description": "HeatStressWarning SDK for PHP",
+  "description": "Unofficial generated PHP SDK for the Heat Stress Warning public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
+  "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "heat-stress-warning"],
+  "homepage": "https://github.com/voxgig-sdk/heat-stress-warning-sdk",
   "license": "MIT",
+  "authors": [
+    { "name": "Voxgig", "homepage": "https://voxgig.com" }
+  ],
+  "support": {
+    "issues": "https://github.com/voxgig-sdk/heat-stress-warning-sdk/issues",
+    "source": "https://github.com/voxgig-sdk/heat-stress-warning-sdk"
+  },
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.2"

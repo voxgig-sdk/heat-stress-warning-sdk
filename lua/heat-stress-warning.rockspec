@@ -8,12 +8,14 @@ source = {
   dir = "heat-stress-warning-sdk/lua"
 }
 description = {
-  summary = "HeatStressWarning SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Heat Stress Warning public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/heat-stress-warning-sdk",
+  issues_url = "https://github.com/voxgig-sdk/heat-stress-warning-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "heat-stress-warning" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {
