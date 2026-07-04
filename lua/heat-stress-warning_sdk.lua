@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:heat_stress_warning_en():list() / client:heat_stress_warning_en():load({ id = ... })
-function HeatStressWarningSDK:heat_stress_warning_en(data)
+-- Idiomatic facade: client:HeatStressWarningEn():list() / client:HeatStressWarningEn():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function HeatStressWarningSDK:HeatStressWarningEn(data)
   local EntityMod = require("entity.heat_stress_warning_en_entity")
   if data == nil then
     if self._heat_stress_warning_en == nil then
@@ -256,15 +257,10 @@ function HeatStressWarningSDK:heat_stress_warning_en(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:heat_stress_warning_en() instead.
-function HeatStressWarningSDK:HeatStressWarningEn(data)
-  local EntityMod = require("entity.heat_stress_warning_en_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:heat_stress_warning_sc():list() / client:heat_stress_warning_sc():load({ id = ... })
-function HeatStressWarningSDK:heat_stress_warning_sc(data)
+-- Idiomatic facade: client:HeatStressWarningSc():list() / client:HeatStressWarningSc():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function HeatStressWarningSDK:HeatStressWarningSc(data)
   local EntityMod = require("entity.heat_stress_warning_sc_entity")
   if data == nil then
     if self._heat_stress_warning_sc == nil then
@@ -275,15 +271,10 @@ function HeatStressWarningSDK:heat_stress_warning_sc(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:heat_stress_warning_sc() instead.
-function HeatStressWarningSDK:HeatStressWarningSc(data)
-  local EntityMod = require("entity.heat_stress_warning_sc_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:heat_stress_warning_tc():list() / client:heat_stress_warning_tc():load({ id = ... })
-function HeatStressWarningSDK:heat_stress_warning_tc(data)
+-- Idiomatic facade: client:HeatStressWarningTc():list() / client:HeatStressWarningTc():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function HeatStressWarningSDK:HeatStressWarningTc(data)
   local EntityMod = require("entity.heat_stress_warning_tc_entity")
   if data == nil then
     if self._heat_stress_warning_tc == nil then
@@ -291,12 +282,6 @@ function HeatStressWarningSDK:heat_stress_warning_tc(data)
     end
     return self._heat_stress_warning_tc
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:heat_stress_warning_tc() instead.
-function HeatStressWarningSDK:HeatStressWarningTc(data)
-  local EntityMod = require("entity.heat_stress_warning_tc_entity")
   return EntityMod.new(self, data)
 end
 

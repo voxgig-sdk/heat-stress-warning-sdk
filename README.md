@@ -26,9 +26,11 @@ import { HeatStressWarningSDK } from '@voxgig-sdk/heat-stress-warning'
 
 const client = new HeatStressWarningSDK()
 
-// List all heatstresswarningens
-const heatstresswarningens = await client.heatstresswarningen.list()
-console.log(heatstresswarningens.data)
+// List all heatstresswarningens (returns HeatStressWarningEn[])
+const heatstresswarningens = await client.HeatStressWarningEn().list()
+for (const heatstresswarningen of heatstresswarningens) {
+  console.log(heatstresswarningen)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -85,9 +87,10 @@ from heatstresswarning_sdk import HeatStressWarningSDK
 
 client = HeatStressWarningSDK()
 
-# List all heatstresswarningens
-heatstresswarningens = client.heatstresswarningen.list()
-print(heatstresswarningens)
+# List all heatstresswarningens (returns a list, raises on error)
+heatstresswarningens = client.HeatStressWarningEn().list({})
+for heatstresswarningen in heatstresswarningens:
+    print(heatstresswarningen)
 ```
 
 ### PHP
@@ -98,8 +101,8 @@ require_once 'heatstresswarning_sdk.php';
 
 $client = new HeatStressWarningSDK();
 
-// List all heatstresswarningens (throws on error)
-$heatstresswarningens = $client->heatstresswarningen()->list();
+// List all heatstresswarningens (returns an array; throws on error)
+$heatstresswarningens = $client->HeatStressWarningEn()->list();
 print_r($heatstresswarningens);
 ```
 
@@ -122,8 +125,8 @@ require_relative "HeatStressWarning_sdk"
 
 client = HeatStressWarningSDK.new
 
-# List all heatstresswarningens
-heatstresswarningens = client.heatstresswarningen.list
+# List all heatstresswarningens (returns an Array; raises on error)
+heatstresswarningens = client.HeatStressWarningEn.list
 puts heatstresswarningens
 ```
 
@@ -135,7 +138,7 @@ local sdk = require("heat-stress-warning_sdk")
 local client = sdk.new()
 
 -- List all heatstresswarningens
-local heatstresswarningens, err = client:heatstresswarningen():list()
+local heatstresswarningens, err = client:HeatStressWarningEn():list()
 print(heatstresswarningens)
 ```
 
@@ -148,22 +151,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = HeatStressWarningSDK.test()
-const result = await client.heatstresswarningen.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const heatstresswarningen = await client.HeatStressWarningEn().load({ id: 'test01' })
+// heatstresswarningen is a bare HeatStressWarningEn populated with mock data
+console.log(heatstresswarningen)
 ```
 
 ### Python
 
 ```python
 client = HeatStressWarningSDK.test()
-result = client.heatstresswarningen.load({"id": "test01"})
+heatstresswarningen = client.HeatStressWarningEn().load({"id": "test01"})
+print(heatstresswarningen)
 ```
 
 ### PHP
 
 ```php
-$client = HeatStressWarningSDK::test();
-$result = $client->heatstresswarningen()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = HeatStressWarningSDK::test([
+    "entity" => ["heatstresswarningen" => ["test01" => ["id" => "test01"]]],
+]);
+$heatstresswarningen = $client->HeatStressWarningEn()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -178,15 +186,18 @@ result, err := client.HeatStressWarningEn(nil).Load(
 ### Ruby
 
 ```ruby
-client = HeatStressWarningSDK.test
-result = client.heatstresswarningen.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = HeatStressWarningSDK.test({
+  "entity" => { "heatstresswarningen" => { "test01" => { "id" => "test01" } } },
+})
+heatstresswarningen = client.HeatStressWarningEn.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:heatstresswarningen():load({ id = "test01" })
+local result, err = client:HeatStressWarningEn():load({ id = "test01" })
 ```
 
 ## How it works
@@ -234,6 +245,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

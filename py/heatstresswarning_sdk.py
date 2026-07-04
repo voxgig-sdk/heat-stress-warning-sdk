@@ -220,57 +220,27 @@ class HeatStressWarningSDK:
         }
 
 
-    @property
-    def heat_stress_warning_en(self):
-        """Idiomatic facade: client.heat_stress_warning_en.list() / client.heat_stress_warning_en.load({"id": ...})."""
-        from entity.heat_stress_warning_en_entity import HeatStressWarningEnEntity
-        cached = getattr(self, "_heat_stress_warning_en", None)
-        if cached is None:
-            cached = HeatStressWarningEnEntity(self, None)
-            self._heat_stress_warning_en = cached
-        return cached
-
-    def HeatStressWarningEn(self, data=None):
-        # Deprecated: use client.heat_stress_warning_en instead.
+    def HeatStressWarningEn(self, data=None) -> "HeatStressWarningEnEntity":
+        """Entity factory: client.HeatStressWarningEn().list({}) / client.HeatStressWarningEn().load({"id": ...})."""
         from entity.heat_stress_warning_en_entity import HeatStressWarningEnEntity
         return HeatStressWarningEnEntity(self, data)
 
 
-    @property
-    def heat_stress_warning_sc(self):
-        """Idiomatic facade: client.heat_stress_warning_sc.list() / client.heat_stress_warning_sc.load({"id": ...})."""
-        from entity.heat_stress_warning_sc_entity import HeatStressWarningScEntity
-        cached = getattr(self, "_heat_stress_warning_sc", None)
-        if cached is None:
-            cached = HeatStressWarningScEntity(self, None)
-            self._heat_stress_warning_sc = cached
-        return cached
-
-    def HeatStressWarningSc(self, data=None):
-        # Deprecated: use client.heat_stress_warning_sc instead.
+    def HeatStressWarningSc(self, data=None) -> "HeatStressWarningScEntity":
+        """Entity factory: client.HeatStressWarningSc().list({}) / client.HeatStressWarningSc().load({"id": ...})."""
         from entity.heat_stress_warning_sc_entity import HeatStressWarningScEntity
         return HeatStressWarningScEntity(self, data)
 
 
-    @property
-    def heat_stress_warning_tc(self):
-        """Idiomatic facade: client.heat_stress_warning_tc.list() / client.heat_stress_warning_tc.load({"id": ...})."""
-        from entity.heat_stress_warning_tc_entity import HeatStressWarningTcEntity
-        cached = getattr(self, "_heat_stress_warning_tc", None)
-        if cached is None:
-            cached = HeatStressWarningTcEntity(self, None)
-            self._heat_stress_warning_tc = cached
-        return cached
-
-    def HeatStressWarningTc(self, data=None):
-        # Deprecated: use client.heat_stress_warning_tc instead.
+    def HeatStressWarningTc(self, data=None) -> "HeatStressWarningTcEntity":
+        """Entity factory: client.HeatStressWarningTc().list({}) / client.HeatStressWarningTc().load({"id": ...})."""
         from entity.heat_stress_warning_tc_entity import HeatStressWarningTcEntity
         return HeatStressWarningTcEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "HeatStressWarningSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -290,3 +260,11 @@ class HeatStressWarningSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.heat_stress_warning_en_entity import HeatStressWarningEnEntity
+    from entity.heat_stress_warning_sc_entity import HeatStressWarningScEntity
+    from entity.heat_stress_warning_tc_entity import HeatStressWarningTcEntity

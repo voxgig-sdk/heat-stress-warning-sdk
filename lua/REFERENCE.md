@@ -91,7 +91,7 @@ same parameters as `direct()`.
 ## HeatStressWarningEnEntity
 
 ```lua
-local heat_stress_warning_en = client:heat_stress_warning_en(nil)
+local heat_stress_warning_en = client:HeatStressWarningEn(nil)
 ```
 
 ### Fields
@@ -116,7 +116,7 @@ local heat_stress_warning_en = client:heat_stress_warning_en(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:heat_stress_warning_en():list()
+local results, err = client:HeatStressWarningEn():list()
 ```
 
 ### Common Methods
@@ -152,7 +152,7 @@ Return the entity name.
 ## HeatStressWarningScEntity
 
 ```lua
-local heat_stress_warning_sc = client:heat_stress_warning_sc(nil)
+local heat_stress_warning_sc = client:HeatStressWarningSc(nil)
 ```
 
 ### Fields
@@ -177,7 +177,7 @@ local heat_stress_warning_sc = client:heat_stress_warning_sc(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:heat_stress_warning_sc():list()
+local results, err = client:HeatStressWarningSc():list()
 ```
 
 ### Common Methods
@@ -213,7 +213,7 @@ Return the entity name.
 ## HeatStressWarningTcEntity
 
 ```lua
-local heat_stress_warning_tc = client:heat_stress_warning_tc(nil)
+local heat_stress_warning_tc = client:HeatStressWarningTc(nil)
 ```
 
 ### Fields
@@ -238,7 +238,7 @@ local heat_stress_warning_tc = client:heat_stress_warning_tc(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:heat_stress_warning_tc():list()
+local results, err = client:HeatStressWarningTc():list()
 ```
 
 ### Common Methods

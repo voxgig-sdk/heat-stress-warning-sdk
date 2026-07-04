@@ -94,7 +94,7 @@ same parameters as `direct()`. Raises on error.
 ## HeatStressWarningEnEntity
 
 ```ruby
-heat_stress_warning_en = client.heat_stress_warning_en
+heat_stress_warning_en = client.HeatStressWarningEn
 ```
 
 ### Fields
@@ -119,7 +119,7 @@ heat_stress_warning_en = client.heat_stress_warning_en
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.heat_stress_warning_en.list(nil)
+results = client.HeatStressWarningEn.list(nil)
 ```
 
 ### Common Methods
@@ -155,7 +155,7 @@ Return the entity name.
 ## HeatStressWarningScEntity
 
 ```ruby
-heat_stress_warning_sc = client.heat_stress_warning_sc
+heat_stress_warning_sc = client.HeatStressWarningSc
 ```
 
 ### Fields
@@ -180,7 +180,7 @@ heat_stress_warning_sc = client.heat_stress_warning_sc
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.heat_stress_warning_sc.list(nil)
+results = client.HeatStressWarningSc.list(nil)
 ```
 
 ### Common Methods
@@ -216,7 +216,7 @@ Return the entity name.
 ## HeatStressWarningTcEntity
 
 ```ruby
-heat_stress_warning_tc = client.heat_stress_warning_tc
+heat_stress_warning_tc = client.HeatStressWarningTc
 ```
 
 ### Fields
@@ -241,7 +241,7 @@ heat_stress_warning_tc = client.heat_stress_warning_tc
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.heat_stress_warning_tc.list(nil)
+results = client.HeatStressWarningTc.list(nil)
 ```
 
 ### Common Methods

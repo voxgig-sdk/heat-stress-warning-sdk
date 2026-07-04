@@ -208,39 +208,21 @@ class HeatStressWarningSDK
   end
 
 
-  # Idiomatic facade: client.heat_stress_warning_en.list / client.heat_stress_warning_en.load({ "id" => ... })
-  def heat_stress_warning_en
-    require_relative 'entity/heat_stress_warning_en_entity'
-    @heat_stress_warning_en ||= HeatStressWarningEnEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.heat_stress_warning_en instead.
+  # Canonical facade: client.HeatStressWarningEn.list / client.HeatStressWarningEn.load({ "id" => ... })
   def HeatStressWarningEn(data = nil)
     require_relative 'entity/heat_stress_warning_en_entity'
     HeatStressWarningEnEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.heat_stress_warning_sc.list / client.heat_stress_warning_sc.load({ "id" => ... })
-  def heat_stress_warning_sc
-    require_relative 'entity/heat_stress_warning_sc_entity'
-    @heat_stress_warning_sc ||= HeatStressWarningScEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.heat_stress_warning_sc instead.
+  # Canonical facade: client.HeatStressWarningSc.list / client.HeatStressWarningSc.load({ "id" => ... })
   def HeatStressWarningSc(data = nil)
     require_relative 'entity/heat_stress_warning_sc_entity'
     HeatStressWarningScEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.heat_stress_warning_tc.list / client.heat_stress_warning_tc.load({ "id" => ... })
-  def heat_stress_warning_tc
-    require_relative 'entity/heat_stress_warning_tc_entity'
-    @heat_stress_warning_tc ||= HeatStressWarningTcEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.heat_stress_warning_tc instead.
+  # Canonical facade: client.HeatStressWarningTc.list / client.HeatStressWarningTc.load({ "id" => ... })
   def HeatStressWarningTc(data = nil)
     require_relative 'entity/heat_stress_warning_tc_entity'
     HeatStressWarningTcEntity.new(self, data)

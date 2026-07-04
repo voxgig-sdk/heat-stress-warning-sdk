@@ -93,7 +93,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## HeatStressWarningEnEntity
 
 ```php
-$heat_stress_warning_en = $client->heat_stress_warning_en();
+$heat_stress_warning_en = $client->HeatStressWarningEn();
 ```
 
 ### Fields
@@ -118,7 +118,7 @@ $heat_stress_warning_en = $client->heat_stress_warning_en();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->heat_stress_warning_en()->list([]);
+$results = $client->HeatStressWarningEn()->list([]);
 ```
 
 ### Common Methods
@@ -154,7 +154,7 @@ Return the entity name.
 ## HeatStressWarningScEntity
 
 ```php
-$heat_stress_warning_sc = $client->heat_stress_warning_sc();
+$heat_stress_warning_sc = $client->HeatStressWarningSc();
 ```
 
 ### Fields
@@ -179,7 +179,7 @@ $heat_stress_warning_sc = $client->heat_stress_warning_sc();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->heat_stress_warning_sc()->list([]);
+$results = $client->HeatStressWarningSc()->list([]);
 ```
 
 ### Common Methods
@@ -215,7 +215,7 @@ Return the entity name.
 ## HeatStressWarningTcEntity
 
 ```php
-$heat_stress_warning_tc = $client->heat_stress_warning_tc();
+$heat_stress_warning_tc = $client->HeatStressWarningTc();
 ```
 
 ### Fields
@@ -240,7 +240,7 @@ $heat_stress_warning_tc = $client->heat_stress_warning_tc();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->heat_stress_warning_tc()->list([]);
+$results = $client->HeatStressWarningTc()->list([]);
 ```
 
 ### Common Methods

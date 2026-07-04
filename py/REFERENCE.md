@@ -88,7 +88,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## HeatStressWarningEnEntity
 
 ```python
-heat_stress_warning_en = client.heat_stress_warning_en
+heat_stress_warning_en = client.HeatStressWarningEn()
 ```
 
 ### Fields
@@ -113,7 +113,9 @@ heat_stress_warning_en = client.heat_stress_warning_en
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.heat_stress_warning_en.list({})
+results = client.HeatStressWarningEn().list({})
+for heat_stress_warning_en in results:
+    print(heat_stress_warning_en)
 ```
 
 ### Common Methods
@@ -148,7 +150,7 @@ Return the entity name.
 ## HeatStressWarningScEntity
 
 ```python
-heat_stress_warning_sc = client.heat_stress_warning_sc
+heat_stress_warning_sc = client.HeatStressWarningSc()
 ```
 
 ### Fields
@@ -173,7 +175,9 @@ heat_stress_warning_sc = client.heat_stress_warning_sc
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.heat_stress_warning_sc.list({})
+results = client.HeatStressWarningSc().list({})
+for heat_stress_warning_sc in results:
+    print(heat_stress_warning_sc)
 ```
 
 ### Common Methods
@@ -208,7 +212,7 @@ Return the entity name.
 ## HeatStressWarningTcEntity
 
 ```python
-heat_stress_warning_tc = client.heat_stress_warning_tc
+heat_stress_warning_tc = client.HeatStressWarningTc()
 ```
 
 ### Fields
@@ -233,7 +237,9 @@ heat_stress_warning_tc = client.heat_stress_warning_tc
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.heat_stress_warning_tc.list({})
+results = client.HeatStressWarningTc().list({})
+for heat_stress_warning_tc in results:
+    print(heat_stress_warning_tc)
 ```
 
 ### Common Methods

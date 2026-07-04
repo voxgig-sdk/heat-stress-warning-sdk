@@ -29,18 +29,16 @@ require_once 'heatstresswarning_sdk.php';
 $client = new HeatStressWarningSDK();
 ```
 
-### 2. List heatstresswarningens
+### 2. List heatstresswarningen records
 
 ```php
 try {
-    $result = $client->heatstresswarningen()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of HeatStressWarningEn records — iterate directly.
+    $heatstresswarningens = $client->HeatStressWarningEn()->list();
+    foreach ($heatstresswarningens as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = HeatStressWarningSDK::test();
+$client = HeatStressWarningSDK::test([
+    "entity" => ["heatstresswarningen" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->heatstresswarningen()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$heatstresswarningen = $client->HeatStressWarningEn()->load(["id" => "test01"]);
+print_r($heatstresswarningen);
 ```
 
 ### Use a custom fetch function
@@ -277,7 +279,7 @@ API path: `/opendata/heat-stress-warning-tc.json`
 
 ### HeatStressWarningEn
 
-Create an instance: `const heat_stress_warning_en = client.heat_stress_warning_en`
+Create an instance: `$heat_stress_warning_en = $client->HeatStressWarningEn();`
 
 #### Operations
 
@@ -302,14 +304,15 @@ Create an instance: `const heat_stress_warning_en = client.heat_stress_warning_e
 
 #### Example: List
 
-```ts
-const heat_stress_warning_ens = await client.heat_stress_warning_en.list()
+```php
+// list() returns an array of HeatStressWarningEn records (throws on error).
+$heat_stress_warning_ens = $client->HeatStressWarningEn()->list();
 ```
 
 
 ### HeatStressWarningSc
 
-Create an instance: `const heat_stress_warning_sc = client.heat_stress_warning_sc`
+Create an instance: `$heat_stress_warning_sc = $client->HeatStressWarningSc();`
 
 #### Operations
 
@@ -334,14 +337,15 @@ Create an instance: `const heat_stress_warning_sc = client.heat_stress_warning_s
 
 #### Example: List
 
-```ts
-const heat_stress_warning_scs = await client.heat_stress_warning_sc.list()
+```php
+// list() returns an array of HeatStressWarningSc records (throws on error).
+$heat_stress_warning_scs = $client->HeatStressWarningSc()->list();
 ```
 
 
 ### HeatStressWarningTc
 
-Create an instance: `const heat_stress_warning_tc = client.heat_stress_warning_tc`
+Create an instance: `$heat_stress_warning_tc = $client->HeatStressWarningTc();`
 
 #### Operations
 
@@ -366,8 +370,9 @@ Create an instance: `const heat_stress_warning_tc = client.heat_stress_warning_t
 
 #### Example: List
 
-```ts
-const heat_stress_warning_tcs = await client.heat_stress_warning_tc.list()
+```php
+// list() returns an array of HeatStressWarningTc records (throws on error).
+$heat_stress_warning_tcs = $client->HeatStressWarningTc()->list();
 ```
 
 
@@ -442,7 +447,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$heatstresswarningen = $client->heatstresswarningen();
+$heatstresswarningen = $client->HeatStressWarningEn();
 $heatstresswarningen->load(["id" => "example_id"]);
 
 // $heatstresswarningen->dataGet() now returns the loaded heatstresswarningen data

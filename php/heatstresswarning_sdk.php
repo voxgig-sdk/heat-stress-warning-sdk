@@ -233,10 +233,10 @@ class HeatStressWarningSDK
 
     private $_heat_stress_warning_en = null;
 
-    // Idiomatic facade: $client->heat_stress_warning_en()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias HeatStressWarningEn() (PHP method
-    // names are case-insensitive).
-    public function heat_stress_warning_en($data = null)
+    // Canonical facade: $client->HeatStressWarningEn()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->heat_stress_warning_en()
+    // resolves here too.
+    public function HeatStressWarningEn($data = null)
     {
         require_once __DIR__ . '/entity/heat_stress_warning_en_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class HeatStressWarningSDK
 
     private $_heat_stress_warning_sc = null;
 
-    // Idiomatic facade: $client->heat_stress_warning_sc()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias HeatStressWarningSc() (PHP method
-    // names are case-insensitive).
-    public function heat_stress_warning_sc($data = null)
+    // Canonical facade: $client->HeatStressWarningSc()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->heat_stress_warning_sc()
+    // resolves here too.
+    public function HeatStressWarningSc($data = null)
     {
         require_once __DIR__ . '/entity/heat_stress_warning_sc_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class HeatStressWarningSDK
 
     private $_heat_stress_warning_tc = null;
 
-    // Idiomatic facade: $client->heat_stress_warning_tc()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias HeatStressWarningTc() (PHP method
-    // names are case-insensitive).
-    public function heat_stress_warning_tc($data = null)
+    // Canonical facade: $client->HeatStressWarningTc()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->heat_stress_warning_tc()
+    // resolves here too.
+    public function HeatStressWarningTc($data = null)
     {
         require_once __DIR__ . '/entity/heat_stress_warning_tc_entity.php';
         if ($data === null) {

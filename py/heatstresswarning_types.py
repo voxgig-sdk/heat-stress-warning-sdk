@@ -4,93 +4,91 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class HeatStressWarningEn:
-    effective_time: Optional[str] = None
-    expiry_time: Optional[str] = None
-    heat_index: Optional[float] = None
-    humidity: Optional[int] = None
-    issue_time: Optional[str] = None
-    recommendation: Optional[list] = None
-    temperature: Optional[float] = None
-    update_time: Optional[str] = None
-    warning_level: Optional[str] = None
-    warning_message: Optional[str] = None
+class HeatStressWarningEn(TypedDict, total=False):
+    effective_time: str
+    expiry_time: str
+    heat_index: float
+    humidity: int
+    issue_time: str
+    recommendation: list
+    temperature: float
+    update_time: str
+    warning_level: str
+    warning_message: str
 
 
-@dataclass
-class HeatStressWarningEnListMatch:
-    effective_time: Optional[str] = None
-    expiry_time: Optional[str] = None
-    heat_index: Optional[float] = None
-    humidity: Optional[int] = None
-    issue_time: Optional[str] = None
-    recommendation: Optional[list] = None
-    temperature: Optional[float] = None
-    update_time: Optional[str] = None
-    warning_level: Optional[str] = None
-    warning_message: Optional[str] = None
+class HeatStressWarningEnListMatch(TypedDict, total=False):
+    effective_time: str
+    expiry_time: str
+    heat_index: float
+    humidity: int
+    issue_time: str
+    recommendation: list
+    temperature: float
+    update_time: str
+    warning_level: str
+    warning_message: str
 
 
-@dataclass
-class HeatStressWarningSc:
-    effective_time: Optional[str] = None
-    expiry_time: Optional[str] = None
-    heat_index: Optional[float] = None
-    humidity: Optional[int] = None
-    issue_time: Optional[str] = None
-    recommendation: Optional[list] = None
-    temperature: Optional[float] = None
-    update_time: Optional[str] = None
-    warning_level: Optional[str] = None
-    warning_message: Optional[str] = None
+class HeatStressWarningSc(TypedDict, total=False):
+    effective_time: str
+    expiry_time: str
+    heat_index: float
+    humidity: int
+    issue_time: str
+    recommendation: list
+    temperature: float
+    update_time: str
+    warning_level: str
+    warning_message: str
 
 
-@dataclass
-class HeatStressWarningScListMatch:
-    effective_time: Optional[str] = None
-    expiry_time: Optional[str] = None
-    heat_index: Optional[float] = None
-    humidity: Optional[int] = None
-    issue_time: Optional[str] = None
-    recommendation: Optional[list] = None
-    temperature: Optional[float] = None
-    update_time: Optional[str] = None
-    warning_level: Optional[str] = None
-    warning_message: Optional[str] = None
+class HeatStressWarningScListMatch(TypedDict, total=False):
+    effective_time: str
+    expiry_time: str
+    heat_index: float
+    humidity: int
+    issue_time: str
+    recommendation: list
+    temperature: float
+    update_time: str
+    warning_level: str
+    warning_message: str
 
 
-@dataclass
-class HeatStressWarningTc:
-    effective_time: Optional[str] = None
-    expiry_time: Optional[str] = None
-    heat_index: Optional[float] = None
-    humidity: Optional[int] = None
-    issue_time: Optional[str] = None
-    recommendation: Optional[list] = None
-    temperature: Optional[float] = None
-    update_time: Optional[str] = None
-    warning_level: Optional[str] = None
-    warning_message: Optional[str] = None
+class HeatStressWarningTc(TypedDict, total=False):
+    effective_time: str
+    expiry_time: str
+    heat_index: float
+    humidity: int
+    issue_time: str
+    recommendation: list
+    temperature: float
+    update_time: str
+    warning_level: str
+    warning_message: str
 
 
-@dataclass
-class HeatStressWarningTcListMatch:
-    effective_time: Optional[str] = None
-    expiry_time: Optional[str] = None
-    heat_index: Optional[float] = None
-    humidity: Optional[int] = None
-    issue_time: Optional[str] = None
-    recommendation: Optional[list] = None
-    temperature: Optional[float] = None
-    update_time: Optional[str] = None
-    warning_level: Optional[str] = None
-    warning_message: Optional[str] = None
-
+class HeatStressWarningTcListMatch(TypedDict, total=False):
+    effective_time: str
+    expiry_time: str
+    heat_index: float
+    humidity: int
+    issue_time: str
+    recommendation: list
+    temperature: float
+    update_time: str
+    warning_level: str
+    warning_message: str

@@ -133,7 +133,7 @@ Alias for `HeatStressWarningSDK.test()`.
 ## HeatStressWarningEnEntity
 
 ```ts
-const heat_stress_warning_en = client.heat_stress_warning_en
+const heat_stress_warning_en = client.HeatStressWarningEn()
 ```
 
 ### Fields
@@ -158,7 +158,7 @@ const heat_stress_warning_en = client.heat_stress_warning_en
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.heat_stress_warning_en.list()
+const results = await client.HeatStressWarningEn().list()
 ```
 
 ### Common Methods
@@ -192,7 +192,7 @@ Return a copy of the entity options.
 ## HeatStressWarningScEntity
 
 ```ts
-const heat_stress_warning_sc = client.heat_stress_warning_sc
+const heat_stress_warning_sc = client.HeatStressWarningSc()
 ```
 
 ### Fields
@@ -217,7 +217,7 @@ const heat_stress_warning_sc = client.heat_stress_warning_sc
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.heat_stress_warning_sc.list()
+const results = await client.HeatStressWarningSc().list()
 ```
 
 ### Common Methods
@@ -251,7 +251,7 @@ Return a copy of the entity options.
 ## HeatStressWarningTcEntity
 
 ```ts
-const heat_stress_warning_tc = client.heat_stress_warning_tc
+const heat_stress_warning_tc = client.HeatStressWarningTc()
 ```
 
 ### Fields
@@ -276,7 +276,7 @@ const heat_stress_warning_tc = client.heat_stress_warning_tc
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.heat_stress_warning_tc.list()
+const results = await client.HeatStressWarningTc().list()
 ```
 
 ### Common Methods

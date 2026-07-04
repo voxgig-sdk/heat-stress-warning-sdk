@@ -31,14 +31,16 @@ from heatstresswarning_sdk import HeatStressWarningSDK
 client = HeatStressWarningSDK()
 ```
 
-### 2. List heatstresswarningens
+### 2. List heatstresswarningen records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.heatstresswarningen.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    heatstresswarningens = client.HeatStressWarningEn().list({})
+    for heatstresswarningen in heatstresswarningens:
+        print(heatstresswarningen)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = HeatStressWarningSDK.test()
 
-result = client.heatstresswarningen.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+heatstresswarningen = client.HeatStressWarningEn().load({"id": "test01"})
+# heatstresswarningen contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -269,7 +272,7 @@ API path: `/opendata/heat-stress-warning-tc.json`
 
 ### HeatStressWarningEn
 
-Create an instance: `const heat_stress_warning_en = client.heat_stress_warning_en`
+Create an instance: `heat_stress_warning_en = client.HeatStressWarningEn()`
 
 #### Operations
 
@@ -294,14 +297,14 @@ Create an instance: `const heat_stress_warning_en = client.heat_stress_warning_e
 
 #### Example: List
 
-```ts
-const heat_stress_warning_ens = await client.heat_stress_warning_en.list()
+```python
+heat_stress_warning_ens = client.HeatStressWarningEn().list({})
 ```
 
 
 ### HeatStressWarningSc
 
-Create an instance: `const heat_stress_warning_sc = client.heat_stress_warning_sc`
+Create an instance: `heat_stress_warning_sc = client.HeatStressWarningSc()`
 
 #### Operations
 
@@ -326,14 +329,14 @@ Create an instance: `const heat_stress_warning_sc = client.heat_stress_warning_s
 
 #### Example: List
 
-```ts
-const heat_stress_warning_scs = await client.heat_stress_warning_sc.list()
+```python
+heat_stress_warning_scs = client.HeatStressWarningSc().list({})
 ```
 
 
 ### HeatStressWarningTc
 
-Create an instance: `const heat_stress_warning_tc = client.heat_stress_warning_tc`
+Create an instance: `heat_stress_warning_tc = client.HeatStressWarningTc()`
 
 #### Operations
 
@@ -358,8 +361,8 @@ Create an instance: `const heat_stress_warning_tc = client.heat_stress_warning_t
 
 #### Example: List
 
-```ts
-const heat_stress_warning_tcs = await client.heat_stress_warning_tc.list()
+```python
+heat_stress_warning_tcs = client.HeatStressWarningTc().list({})
 ```
 
 
@@ -433,7 +436,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-heatstresswarningen = client.heatstresswarningen
+heatstresswarningen = client.HeatStressWarningEn()
 heatstresswarningen.load({"id": "example_id"})
 
 # heatstresswarningen.data_get() now returns the loaded heatstresswarningen data

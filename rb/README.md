@@ -28,16 +28,14 @@ require_relative "HeatStressWarning_sdk"
 client = HeatStressWarningSDK.new
 ```
 
-### 2. List heatstresswarningens
+### 2. List heatstresswarningen records
 
 ```ruby
 begin
-  result = client.heatstresswarningen.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of HeatStressWarningEn records — iterate directly.
+  heatstresswarningens = client.HeatStressWarningEn.list
+  heatstresswarningens.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = HeatStressWarningSDK.test
+client = HeatStressWarningSDK.test({
+  "entity" => { "heatstresswarningen" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.heatstresswarningen.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+heatstresswarningen = client.HeatStressWarningEn.load({ "id" => "test01" })
+puts heatstresswarningen
 ```
 
 ### Use a custom fetch function
@@ -272,7 +274,7 @@ API path: `/opendata/heat-stress-warning-tc.json`
 
 ### HeatStressWarningEn
 
-Create an instance: `const heat_stress_warning_en = client.heat_stress_warning_en`
+Create an instance: `heat_stress_warning_en = client.HeatStressWarningEn`
 
 #### Operations
 
@@ -297,14 +299,15 @@ Create an instance: `const heat_stress_warning_en = client.heat_stress_warning_e
 
 #### Example: List
 
-```ts
-const heat_stress_warning_ens = await client.heat_stress_warning_en.list()
+```ruby
+# list returns an Array of HeatStressWarningEn records (raises on error).
+heat_stress_warning_ens = client.HeatStressWarningEn.list
 ```
 
 
 ### HeatStressWarningSc
 
-Create an instance: `const heat_stress_warning_sc = client.heat_stress_warning_sc`
+Create an instance: `heat_stress_warning_sc = client.HeatStressWarningSc`
 
 #### Operations
 
@@ -329,14 +332,15 @@ Create an instance: `const heat_stress_warning_sc = client.heat_stress_warning_s
 
 #### Example: List
 
-```ts
-const heat_stress_warning_scs = await client.heat_stress_warning_sc.list()
+```ruby
+# list returns an Array of HeatStressWarningSc records (raises on error).
+heat_stress_warning_scs = client.HeatStressWarningSc.list
 ```
 
 
 ### HeatStressWarningTc
 
-Create an instance: `const heat_stress_warning_tc = client.heat_stress_warning_tc`
+Create an instance: `heat_stress_warning_tc = client.HeatStressWarningTc`
 
 #### Operations
 
@@ -361,8 +365,9 @@ Create an instance: `const heat_stress_warning_tc = client.heat_stress_warning_t
 
 #### Example: List
 
-```ts
-const heat_stress_warning_tcs = await client.heat_stress_warning_tc.list()
+```ruby
+# list returns an Array of HeatStressWarningTc records (raises on error).
+heat_stress_warning_tcs = client.HeatStressWarningTc.list
 ```
 
 
@@ -437,7 +442,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-heatstresswarningen = client.heatstresswarningen
+heatstresswarningen = client.HeatStressWarningEn
 heatstresswarningen.load({ "id" => "example_id" })
 
 # heatstresswarningen.data_get now returns the loaded heatstresswarningen data

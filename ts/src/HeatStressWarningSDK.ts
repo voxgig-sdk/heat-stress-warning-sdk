@@ -206,42 +206,21 @@ class HeatStressWarningSDK {
 
 
 
-  _heat_stress_warning_en?: HeatStressWarningEnEntity
-
-  // Idiomatic facade: `client.heat_stress_warning_en.list()` / `client.heat_stress_warning_en.load({ id })`.
-  get heat_stress_warning_en(): HeatStressWarningEnEntity {
-    return (this._heat_stress_warning_en ??= new HeatStressWarningEnEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.heat_stress_warning_en` instead. */
+  // Entity access: `client.HeatStressWarningEn().list()` / `client.HeatStressWarningEn().load({ id })`.
   HeatStressWarningEn(data?: any) {
     const self = this
     return new HeatStressWarningEnEntity(self,data)
   }
 
 
-  _heat_stress_warning_sc?: HeatStressWarningScEntity
-
-  // Idiomatic facade: `client.heat_stress_warning_sc.list()` / `client.heat_stress_warning_sc.load({ id })`.
-  get heat_stress_warning_sc(): HeatStressWarningScEntity {
-    return (this._heat_stress_warning_sc ??= new HeatStressWarningScEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.heat_stress_warning_sc` instead. */
+  // Entity access: `client.HeatStressWarningSc().list()` / `client.HeatStressWarningSc().load({ id })`.
   HeatStressWarningSc(data?: any) {
     const self = this
     return new HeatStressWarningScEntity(self,data)
   }
 
 
-  _heat_stress_warning_tc?: HeatStressWarningTcEntity
-
-  // Idiomatic facade: `client.heat_stress_warning_tc.list()` / `client.heat_stress_warning_tc.load({ id })`.
-  get heat_stress_warning_tc(): HeatStressWarningTcEntity {
-    return (this._heat_stress_warning_tc ??= new HeatStressWarningTcEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.heat_stress_warning_tc` instead. */
+  // Entity access: `client.HeatStressWarningTc().list()` / `client.HeatStressWarningTc().load({ id })`.
   HeatStressWarningTc(data?: any) {
     const self = this
     return new HeatStressWarningTcEntity(self,data)
