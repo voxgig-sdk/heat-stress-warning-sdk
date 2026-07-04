@@ -13,6 +13,9 @@ require_relative 'config'
 require_relative 'feature/base_feature'
 require_relative 'features'
 
+# Load typed models (Struct value objects).
+require_relative 'HeatStressWarning_types'
+
 
 class HeatStressWarningSDK
   attr_accessor :mode, :features, :options
@@ -131,7 +134,7 @@ class HeatStressWarningSDK
     end
 
     _, err = utility.prepare_auth.call(ctx)
-    return nil, err if err
+    raise err if err
 
     utility.make_fetch_def.call(ctx)
   end
@@ -139,8 +142,14 @@ class HeatStressWarningSDK
   def direct(fetchargs = {})
     utility = @_utility
 
-    fetchdef, err = prepare(fetchargs)
-    return { "ok" => false, "err" => err }, nil if err
+    # direct() is the raw-HTTP escape hatch: it always returns a result hash
+    # ({ "ok" => ..., ... }) and never raises. prepare() raises on error, so
+    # trap that and surface it in the hash.
+    begin
+      fetchdef = prepare(fetchargs)
+    rescue HeatStressWarningError => err
+      return { "ok" => false, "err" => err }
+    end
 
     fetchargs ||= {}
     ctrl = HeatStressWarningHelpers.to_map(VoxgigStruct.getprop(fetchargs, "ctrl")) || {}
@@ -153,13 +162,13 @@ class HeatStressWarningSDK
     url = fetchdef["url"] || ""
     fetched, fetch_err = utility.fetcher.call(ctx, url, fetchdef)
 
-    return { "ok" => false, "err" => fetch_err }, nil if fetch_err
+    return { "ok" => false, "err" => fetch_err } if fetch_err
 
     if fetched.nil?
       return {
         "ok" => false,
         "err" => ctx.make_error("direct_no_response", "response: undefined"),
-      }, nil
+      }
     end
 
     if fetched.is_a?(Hash)
@@ -189,28 +198,49 @@ class HeatStressWarningSDK
         "status" => status,
         "headers" => headers,
         "data" => json_data,
-      }, nil
+      }
     end
 
     return {
       "ok" => false,
       "err" => ctx.make_error("direct_invalid", "invalid response type"),
-    }, nil
+    }
   end
 
 
+  # Idiomatic facade: client.heat_stress_warning_en.list / client.heat_stress_warning_en.load({ "id" => ... })
+  def heat_stress_warning_en
+    require_relative 'entity/heat_stress_warning_en_entity'
+    @heat_stress_warning_en ||= HeatStressWarningEnEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.heat_stress_warning_en instead.
   def HeatStressWarningEn(data = nil)
     require_relative 'entity/heat_stress_warning_en_entity'
     HeatStressWarningEnEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.heat_stress_warning_sc.list / client.heat_stress_warning_sc.load({ "id" => ... })
+  def heat_stress_warning_sc
+    require_relative 'entity/heat_stress_warning_sc_entity'
+    @heat_stress_warning_sc ||= HeatStressWarningScEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.heat_stress_warning_sc instead.
   def HeatStressWarningSc(data = nil)
     require_relative 'entity/heat_stress_warning_sc_entity'
     HeatStressWarningScEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.heat_stress_warning_tc.list / client.heat_stress_warning_tc.load({ "id" => ... })
+  def heat_stress_warning_tc
+    require_relative 'entity/heat_stress_warning_tc_entity'
+    @heat_stress_warning_tc ||= HeatStressWarningTcEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.heat_stress_warning_tc instead.
   def HeatStressWarningTc(data = nil)
     require_relative 'entity/heat_stress_warning_tc_entity'
     HeatStressWarningTcEntity.new(self, data)

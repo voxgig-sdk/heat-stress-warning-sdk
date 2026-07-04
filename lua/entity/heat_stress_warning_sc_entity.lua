@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch HeatStressWarningScListMatch
+---@param ctrl? table
+---@return HeatStressWarningSc[]
+---@return string? err
 function HeatStressWarningScEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

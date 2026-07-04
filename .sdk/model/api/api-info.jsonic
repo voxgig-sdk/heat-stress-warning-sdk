@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         email: "enquiry@labour.gov.hk"
         name: "Labour Department"

@@ -93,14 +93,12 @@ func heat_stress_warning_scDirectSetup(mockres any) *heat_stress_warning_scDirec
 	env := envOverride(map[string]any{
 		"HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_SC_ENTID": map[string]any{},
 		"HEATSTRESSWARNING_TEST_LIVE":    "FALSE",
-		"HEATSTRESSWARNING_APIKEY":       "NONE",
 	})
 
 	live := env["HEATSTRESSWARNING_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["HEATSTRESSWARNING_APIKEY"],
 		}
 		client := sdk.NewHeatStressWarningSDK(mergedOpts)
 

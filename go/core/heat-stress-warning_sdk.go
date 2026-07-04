@@ -245,16 +245,25 @@ func (sdk *HeatStressWarningSDK) Direct(fetchargs map[string]any) (map[string]an
 }
 
 
+// HeatStressWarningEn returns a HeatStressWarningEn entity bound to this client.
+// Idiomatic usage: client.HeatStressWarningEn(nil).List(nil, nil) or
+// client.HeatStressWarningEn(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *HeatStressWarningSDK) HeatStressWarningEn(data map[string]any) HeatStressWarningEntity {
 	return NewHeatStressWarningEnEntityFunc(sdk, data)
 }
 
 
+// HeatStressWarningSc returns a HeatStressWarningSc entity bound to this client.
+// Idiomatic usage: client.HeatStressWarningSc(nil).List(nil, nil) or
+// client.HeatStressWarningSc(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *HeatStressWarningSDK) HeatStressWarningSc(data map[string]any) HeatStressWarningEntity {
 	return NewHeatStressWarningScEntityFunc(sdk, data)
 }
 
 
+// HeatStressWarningTc returns a HeatStressWarningTc entity bound to this client.
+// Idiomatic usage: client.HeatStressWarningTc(nil).List(nil, nil) or
+// client.HeatStressWarningTc(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *HeatStressWarningSDK) HeatStressWarningTc(data map[string]any) HeatStressWarningEntity {
 	return NewHeatStressWarningTcEntityFunc(sdk, data)
 }

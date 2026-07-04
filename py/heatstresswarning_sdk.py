@@ -144,16 +144,23 @@ class HeatStressWarningSDK:
 
         _, err = utility.prepare_auth(ctx)
         if err is not None:
-            return None, err
+            raise err
 
-        return utility.make_fetch_def(ctx)
+        fetchdef, err = utility.make_fetch_def(ctx)
+        if err is not None:
+            raise err
+
+        return fetchdef
 
     def direct(self, fetchargs=None):
         utility = self._utility
 
-        fetchdef, err = self.prepare(fetchargs)
-        if err is not None:
-            return {"ok": False, "err": err}, None
+        try:
+            fetchdef = self.prepare(fetchargs)
+        except Exception as err:
+            # direct() is the raw-HTTP escape hatch: it never raises, it
+            # returns a result object callers branch on via result["ok"].
+            return {"ok": False, "err": err}
 
         if fetchargs is None:
             fetchargs = {}
@@ -170,13 +177,13 @@ class HeatStressWarningSDK:
         fetched, fetch_err = utility.fetcher(ctx, url, fetchdef)
 
         if fetch_err is not None:
-            return {"ok": False, "err": fetch_err}, None
+            return {"ok": False, "err": fetch_err}
 
         if fetched is None:
             return {
                 "ok": False,
                 "err": ctx.make_error("direct_no_response", "response: undefined"),
-            }, None
+            }
 
         if isinstance(fetched, dict):
             status = helpers.to_int(vs.getprop(fetched, "status"))
@@ -205,25 +212,58 @@ class HeatStressWarningSDK:
                 "status": status,
                 "headers": headers,
                 "data": json_data,
-            }, None
+            }
 
         return {
             "ok": False,
             "err": ctx.make_error("direct_invalid", "invalid response type"),
-        }, None
+        }
 
+
+    @property
+    def heat_stress_warning_en(self):
+        """Idiomatic facade: client.heat_stress_warning_en.list() / client.heat_stress_warning_en.load({"id": ...})."""
+        from entity.heat_stress_warning_en_entity import HeatStressWarningEnEntity
+        cached = getattr(self, "_heat_stress_warning_en", None)
+        if cached is None:
+            cached = HeatStressWarningEnEntity(self, None)
+            self._heat_stress_warning_en = cached
+        return cached
 
     def HeatStressWarningEn(self, data=None):
+        # Deprecated: use client.heat_stress_warning_en instead.
         from entity.heat_stress_warning_en_entity import HeatStressWarningEnEntity
         return HeatStressWarningEnEntity(self, data)
 
 
+    @property
+    def heat_stress_warning_sc(self):
+        """Idiomatic facade: client.heat_stress_warning_sc.list() / client.heat_stress_warning_sc.load({"id": ...})."""
+        from entity.heat_stress_warning_sc_entity import HeatStressWarningScEntity
+        cached = getattr(self, "_heat_stress_warning_sc", None)
+        if cached is None:
+            cached = HeatStressWarningScEntity(self, None)
+            self._heat_stress_warning_sc = cached
+        return cached
+
     def HeatStressWarningSc(self, data=None):
+        # Deprecated: use client.heat_stress_warning_sc instead.
         from entity.heat_stress_warning_sc_entity import HeatStressWarningScEntity
         return HeatStressWarningScEntity(self, data)
 
 
+    @property
+    def heat_stress_warning_tc(self):
+        """Idiomatic facade: client.heat_stress_warning_tc.list() / client.heat_stress_warning_tc.load({"id": ...})."""
+        from entity.heat_stress_warning_tc_entity import HeatStressWarningTcEntity
+        cached = getattr(self, "_heat_stress_warning_tc", None)
+        if cached is None:
+            cached = HeatStressWarningTcEntity(self, None)
+            self._heat_stress_warning_tc = cached
+        return cached
+
     def HeatStressWarningTc(self, data=None):
+        # Deprecated: use client.heat_stress_warning_tc instead.
         from entity.heat_stress_warning_tc_entity import HeatStressWarningTcEntity
         return HeatStressWarningTcEntity(self, data)
 

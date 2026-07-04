@@ -92,7 +92,6 @@ function heat_stress_warning_en_basic_setup(extra)
     ["HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID"] = idmap,
     ["HEATSTRESSWARNING_TEST_LIVE"] = "FALSE",
     ["HEATSTRESSWARNING_TEST_EXPLAIN"] = "FALSE",
-    ["HEATSTRESSWARNING_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -104,7 +103,6 @@ function heat_stress_warning_en_basic_setup(extra)
   if env["HEATSTRESSWARNING_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["HEATSTRESSWARNING_APIKEY"],
       },
       extra or {},
     })

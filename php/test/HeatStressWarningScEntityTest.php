@@ -50,8 +50,7 @@ class HeatStressWarningScEntityTest extends TestCase
         $heat_stress_warning_sc_ref01_ent = $client->HeatStressWarningSc(null);
         $heat_stress_warning_sc_ref01_match = [];
 
-        [$heat_stress_warning_sc_ref01_list_result, $err] = $heat_stress_warning_sc_ref01_ent->list($heat_stress_warning_sc_ref01_match, null);
-        $this->assertNull($err);
+        $heat_stress_warning_sc_ref01_list_result = $heat_stress_warning_sc_ref01_ent->list($heat_stress_warning_sc_ref01_match, null);
         $this->assertIsArray($heat_stress_warning_sc_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function heat_stress_warning_sc_basic_setup($extra)
         "HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_SC_ENTID" => $idmap,
         "HEATSTRESSWARNING_TEST_LIVE" => "FALSE",
         "HEATSTRESSWARNING_TEST_EXPLAIN" => "FALSE",
-        "HEATSTRESSWARNING_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function heat_stress_warning_sc_basic_setup($extra)
     if ($env["HEATSTRESSWARNING_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["HEATSTRESSWARNING_APIKEY"],
             ],
             $extra ?? [],
         ]);

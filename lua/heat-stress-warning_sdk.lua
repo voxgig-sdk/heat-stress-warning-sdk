@@ -244,18 +244,57 @@ end
 
 
 
+-- Idiomatic facade: client:heat_stress_warning_en():list() / client:heat_stress_warning_en():load({ id = ... })
+function HeatStressWarningSDK:heat_stress_warning_en(data)
+  local EntityMod = require("entity.heat_stress_warning_en_entity")
+  if data == nil then
+    if self._heat_stress_warning_en == nil then
+      self._heat_stress_warning_en = EntityMod.new(self, nil)
+    end
+    return self._heat_stress_warning_en
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:heat_stress_warning_en() instead.
 function HeatStressWarningSDK:HeatStressWarningEn(data)
   local EntityMod = require("entity.heat_stress_warning_en_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:heat_stress_warning_sc():list() / client:heat_stress_warning_sc():load({ id = ... })
+function HeatStressWarningSDK:heat_stress_warning_sc(data)
+  local EntityMod = require("entity.heat_stress_warning_sc_entity")
+  if data == nil then
+    if self._heat_stress_warning_sc == nil then
+      self._heat_stress_warning_sc = EntityMod.new(self, nil)
+    end
+    return self._heat_stress_warning_sc
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:heat_stress_warning_sc() instead.
 function HeatStressWarningSDK:HeatStressWarningSc(data)
   local EntityMod = require("entity.heat_stress_warning_sc_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:heat_stress_warning_tc():list() / client:heat_stress_warning_tc():load({ id = ... })
+function HeatStressWarningSDK:heat_stress_warning_tc(data)
+  local EntityMod = require("entity.heat_stress_warning_tc_entity")
+  if data == nil then
+    if self._heat_stress_warning_tc == nil then
+      self._heat_stress_warning_tc = EntityMod.new(self, nil)
+    end
+    return self._heat_stress_warning_tc
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:heat_stress_warning_tc() instead.
 function HeatStressWarningSDK:HeatStressWarningTc(data)
   local EntityMod = require("entity.heat_stress_warning_tc_entity")
   return EntityMod.new(self, data)

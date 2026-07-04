@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID': idmap,
     'HEAT_STRESS_WARNING_TEST_LIVE': 'FALSE',
     'HEAT_STRESS_WARNING_TEST_EXPLAIN': 'FALSE',
-    'HEAT_STRESS_WARNING_APIKEY': 'NONE',
   })
 
   idmap = env['HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new HeatStressWarningSDK(merge([
       {
-        apikey: env.HEAT_STRESS_WARNING_APIKEY,
       },
       extra
     ]))

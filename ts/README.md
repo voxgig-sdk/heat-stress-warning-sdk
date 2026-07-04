@@ -9,9 +9,12 @@ The TypeScript SDK for the HeatStressWarning API — a type-safe, entity-oriente
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/heat-stress-warning
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { HeatStressWarningSDK } from 'heat-stress-warning'
+import { HeatStressWarningSDK } from '@voxgig-sdk/heat-stress-warning'
 
-const client = new HeatStressWarningSDK({
-  apikey: process.env.HEAT-STRESS-WARNING_APIKEY,
-})
+const client = new HeatStressWarningSDK()
 ```
 
 ### 2. List heatstresswarningens
 
 ```ts
-const result = await client.HeatStressWarningEn().list()
+const result = await client.heatstresswarningen.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = HeatStressWarningSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.heatstresswarningen.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new HeatStressWarningSDK({ apikey: '...' })
+const client = new HeatStressWarningSDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.heatstresswarningen
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new HeatStressWarningSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -135,8 +135,7 @@ const client = new HeatStressWarningSDK({
 Create a `.env.local` file at the project root:
 
 ```
-HEAT-STRESS-WARNING_TEST_LIVE=TRUE
-HEAT-STRESS-WARNING_APIKEY=<your-key>
+HEAT_STRESS_WARNING_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new HeatStressWarningSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new HeatStressWarningSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -317,7 +314,7 @@ API path: `/opendata/heat-stress-warning-tc.json`
 
 ### HeatStressWarningEn
 
-Create an instance: `const heat_stress_warning_en = client.HeatStressWarningEn()`
+Create an instance: `const heat_stress_warning_en = client.heat_stress_warning_en`
 
 #### Operations
 
@@ -343,13 +340,13 @@ Create an instance: `const heat_stress_warning_en = client.HeatStressWarningEn()
 #### Example: List
 
 ```ts
-const heat_stress_warning_ens = await client.HeatStressWarningEn().list()
+const heat_stress_warning_ens = await client.heat_stress_warning_en.list()
 ```
 
 
 ### HeatStressWarningSc
 
-Create an instance: `const heat_stress_warning_sc = client.HeatStressWarningSc()`
+Create an instance: `const heat_stress_warning_sc = client.heat_stress_warning_sc`
 
 #### Operations
 
@@ -375,13 +372,13 @@ Create an instance: `const heat_stress_warning_sc = client.HeatStressWarningSc()
 #### Example: List
 
 ```ts
-const heat_stress_warning_scs = await client.HeatStressWarningSc().list()
+const heat_stress_warning_scs = await client.heat_stress_warning_sc.list()
 ```
 
 
 ### HeatStressWarningTc
 
-Create an instance: `const heat_stress_warning_tc = client.HeatStressWarningTc()`
+Create an instance: `const heat_stress_warning_tc = client.heat_stress_warning_tc`
 
 #### Operations
 
@@ -407,7 +404,7 @@ Create an instance: `const heat_stress_warning_tc = client.HeatStressWarningTc()
 #### Example: List
 
 ```ts
-const heat_stress_warning_tcs = await client.HeatStressWarningTc().list()
+const heat_stress_warning_tcs = await client.heat_stress_warning_tc.list()
 ```
 
 
@@ -468,7 +465,7 @@ heat-stress-warning/
 Import the SDK from the package root:
 
 ```ts
-import { HeatStressWarningSDK } from 'heat-stress-warning'
+import { HeatStressWarningSDK } from '@voxgig-sdk/heat-stress-warning'
 ```
 
 ### Entity state
@@ -478,11 +475,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const heatstresswarningen = client.heatstresswarningen
+await heatstresswarningen.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// heatstresswarningen.data() now returns the loaded heatstresswarningen data
+// heatstresswarningen.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

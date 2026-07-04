@@ -85,6 +85,27 @@ func (e *HeatStressWarningScEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an HeatStressWarningSc; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *HeatStressWarningScEntity) DataTyped(data ...HeatStressWarningSc) HeatStressWarningSc {
+	if len(data) > 0 {
+		return typedFrom[HeatStressWarningSc](e.Data(asMap(data[0])))
+	}
+	return typedFrom[HeatStressWarningSc](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through HeatStressWarningSc (all fields
+// optional at the wire level).
+func (e *HeatStressWarningScEntity) MatchTyped(match ...HeatStressWarningSc) HeatStressWarningSc {
+	if len(match) > 0 {
+		return typedFrom[HeatStressWarningSc](e.Match(asMap(match[0])))
+	}
+	return typedFrom[HeatStressWarningSc](e.Match())
+}
+
 func (e *HeatStressWarningScEntity) Load(_ map[string]any, _ map[string]any) (any, error) {
 	return core.UnsupportedOp("load", e.name)
 }
@@ -108,6 +129,17 @@ func (e *HeatStressWarningScEntity) List(reqmatch map[string]any, ctrl map[strin
 			}
 		}
 	})
+}
+
+// ListTyped is the statically-typed variant of List: it takes an
+// HeatStressWarningScListMatch and returns []HeatStressWarningSc. It delegates to the untyped
+// List (identical runtime) and converts at the typed boundary.
+func (e *HeatStressWarningScEntity) ListTyped(reqmatch HeatStressWarningScListMatch, ctrl map[string]any) ([]HeatStressWarningSc, error) {
+	res, err := e.List(asMap(reqmatch), ctrl)
+	if err != nil {
+		return nil, err
+	}
+	return typedSliceFrom[HeatStressWarningSc](res), nil
 }
 
 

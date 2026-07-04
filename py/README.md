@@ -9,11 +9,9 @@ The Python SDK for the HeatStressWarning API — an entity-oriented client follo
 
 
 ## Install
-```bash
-pip install voxgig-sdk-heat-stress-warning
-```
-
-Or install from source:
+This package is not yet published to PyPI. Install it from the GitHub
+release tag (`py/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases)) or
+from a source checkout:
 
 ```bash
 pip install -e .
@@ -28,25 +26,21 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
-import os
 from heatstresswarning_sdk import HeatStressWarningSDK
 
-client = HeatStressWarningSDK({
-    "apikey": os.environ.get("HEAT-STRESS-WARNING_APIKEY"),
-})
+client = HeatStressWarningSDK()
 ```
 
 ### 2. List heatstresswarningens
 
 ```python
-result, err = client.HeatStressWarningEn().list()
-if err:
-    raise Exception(err)
-
-if isinstance(result, list):
+try:
+    result = client.heatstresswarningen.list()
     for item in result:
         d = item.data_get()
         print(d["id"], d["name"])
+except Exception as err:
+    print(f"list failed: {err}")
 ```
 
 
@@ -57,29 +51,28 @@ if isinstance(result, list):
 For endpoints not covered by entity methods:
 
 ```python
-result, err = client.direct({
+result = client.direct({
     "path": "/api/resource/{id}",
     "method": "GET",
     "params": {"id": "example"},
 })
-if err:
-    raise Exception(err)
 
 if result["ok"]:
     print(result["status"])  # 200
     print(result["data"])    # response body
+else:
+    print(result["err"])     # error value
 ```
 
 ### Prepare a request without sending it
 
 ```python
-fetchdef, err = client.prepare({
+# prepare() returns the fetch definition and raises on error.
+fetchdef = client.prepare({
     "path": "/api/resource/{id}",
     "method": "DELETE",
     "params": {"id": "example"},
 })
-if err:
-    raise Exception(err)
 
 print(fetchdef["url"])
 print(fetchdef["method"])
@@ -93,7 +86,7 @@ Create a mock client for unit testing — no server required:
 ```python
 client = HeatStressWarningSDK.test()
 
-result, err = client.HeatStressWarning().load({"id": "test01"})
+result = client.heatstresswarningen.load({"id": "test01"})
 # result contains mock response data
 ```
 
@@ -123,8 +116,7 @@ client = HeatStressWarningSDK({
 Create a `.env.local` file at the project root:
 
 ```
-HEAT-STRESS-WARNING_TEST_LIVE=TRUE
-HEAT-STRESS-WARNING_APIKEY=<your-key>
+HEAT_STRESS_WARNING_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -148,7 +140,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |
@@ -170,8 +161,8 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | --- | --- | --- |
 | `options_map` | `() -> dict` | Deep copy of current SDK options. |
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
-| `prepare` | `(fetchargs) -> (dict, err)` | Build an HTTP request definition without sending. |
-| `direct` | `(fetchargs) -> (dict, err)` | Build and send an HTTP request. |
+| `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
+| `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
 | `HeatStressWarningEn` | `(data) -> HeatStressWarningEnEntity` | Create a HeatStressWarningEn entity instance. |
 | `HeatStressWarningSc` | `(data) -> HeatStressWarningScEntity` | Create a HeatStressWarningSc entity instance. |
 | `HeatStressWarningTc` | `(data) -> HeatStressWarningTcEntity` | Create a HeatStressWarningTc entity instance. |
@@ -182,11 +173,11 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> (any, err)` | Load a single entity by match criteria. |
-| `list` | `(reqmatch, ctrl) -> (any, err)` | List entities matching the criteria. |
-| `create` | `(reqdata, ctrl) -> (any, err)` | Create a new entity. |
-| `update` | `(reqdata, ctrl) -> (any, err)` | Update an existing entity. |
-| `remove` | `(reqmatch, ctrl) -> (any, err)` | Remove an entity. |
+| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
+| `list` | `(reqmatch, ctrl) -> list` | List entities matching the criteria. Raises on error. |
+| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
+| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
+| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
 | `data_get` | `() -> dict` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> dict` | Get entity match criteria. |
@@ -196,8 +187,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`dict` with these keys:
+Entity operations return the bare result data (a `dict` for single-entity
+ops, a `list` for `list`) and raise on error. Wrap calls in
+`try`/`except` to handle failures.
+
+The `direct()` escape hatch never raises — it returns a result `dict`
+you branch on via `result["ok"]`:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -274,7 +269,7 @@ API path: `/opendata/heat-stress-warning-tc.json`
 
 ### HeatStressWarningEn
 
-Create an instance: `const heat_stress_warning_en = client.HeatStressWarningEn()`
+Create an instance: `const heat_stress_warning_en = client.heat_stress_warning_en`
 
 #### Operations
 
@@ -300,13 +295,13 @@ Create an instance: `const heat_stress_warning_en = client.HeatStressWarningEn()
 #### Example: List
 
 ```ts
-const heat_stress_warning_ens = await client.HeatStressWarningEn().list()
+const heat_stress_warning_ens = await client.heat_stress_warning_en.list()
 ```
 
 
 ### HeatStressWarningSc
 
-Create an instance: `const heat_stress_warning_sc = client.HeatStressWarningSc()`
+Create an instance: `const heat_stress_warning_sc = client.heat_stress_warning_sc`
 
 #### Operations
 
@@ -332,13 +327,13 @@ Create an instance: `const heat_stress_warning_sc = client.HeatStressWarningSc()
 #### Example: List
 
 ```ts
-const heat_stress_warning_scs = await client.HeatStressWarningSc().list()
+const heat_stress_warning_scs = await client.heat_stress_warning_sc.list()
 ```
 
 
 ### HeatStressWarningTc
 
-Create an instance: `const heat_stress_warning_tc = client.HeatStressWarningTc()`
+Create an instance: `const heat_stress_warning_tc = client.heat_stress_warning_tc`
 
 #### Operations
 
@@ -364,7 +359,7 @@ Create an instance: `const heat_stress_warning_tc = client.HeatStressWarningTc()
 #### Example: List
 
 ```ts
-const heat_stress_warning_tcs = await client.HeatStressWarningTc().list()
+const heat_stress_warning_tcs = await client.heat_stress_warning_tc.list()
 ```
 
 
@@ -438,11 +433,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-moon = client.Moon()
-moon.load({"planet_id": "earth", "id": "luna"})
+heatstresswarningen = client.heatstresswarningen
+heatstresswarningen.load({"id": "example_id"})
 
-# moon.data_get() now returns the loaded moon data
-# moon.match_get() returns the last match criteria
+# heatstresswarningen.data_get() now returns the loaded heatstresswarningen data
+# heatstresswarningen.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

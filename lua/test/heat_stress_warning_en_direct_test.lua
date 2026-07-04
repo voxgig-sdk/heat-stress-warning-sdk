@@ -63,14 +63,12 @@ function heat_stress_warning_en_direct_setup(mockres)
   local env = runner.env_override({
     ["HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID"] = {},
     ["HEATSTRESSWARNING_TEST_LIVE"] = "FALSE",
-    ["HEATSTRESSWARNING_APIKEY"] = "NONE",
   })
 
   local live = env["HEATSTRESSWARNING_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["HEATSTRESSWARNING_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

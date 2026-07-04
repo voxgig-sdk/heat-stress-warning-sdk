@@ -43,8 +43,7 @@ class HeatStressWarningEnEntityTest < Minitest::Test
     heat_stress_warning_en_ref01_ent = client.HeatStressWarningEn(nil)
     heat_stress_warning_en_ref01_match = {}
 
-    heat_stress_warning_en_ref01_list_result, err = heat_stress_warning_en_ref01_ent.list(heat_stress_warning_en_ref01_match, nil)
-    assert_nil err
+    heat_stress_warning_en_ref01_list_result = heat_stress_warning_en_ref01_ent.list(heat_stress_warning_en_ref01_match, nil)
     assert heat_stress_warning_en_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def heat_stress_warning_en_basic_setup(extra)
     "HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID" => idmap,
     "HEATSTRESSWARNING_TEST_LIVE" => "FALSE",
     "HEATSTRESSWARNING_TEST_EXPLAIN" => "FALSE",
-    "HEATSTRESSWARNING_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def heat_stress_warning_en_basic_setup(extra)
   if env["HEATSTRESSWARNING_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["HEATSTRESSWARNING_APIKEY"],
       },
       extra || {},
     ])

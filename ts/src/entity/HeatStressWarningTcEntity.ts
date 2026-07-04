@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  HeatStressWarningTc,
+  HeatStressWarningTcListMatch,
+} from '../HeatStressWarningTypes'
 
 // TODO: needs Entity superclass
-class HeatStressWarningTcEntity extends HeatStressWarningEntityBase {
+class HeatStressWarningTcEntity extends HeatStressWarningEntityBase<HeatStressWarningTc> {
 
   constructor(client: HeatStressWarningSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class HeatStressWarningTcEntity extends HeatStressWarningEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: HeatStressWarningTcListMatch, ctrl?: Control): Promise<HeatStressWarningTc[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class HeatStressWarningTcEntity extends HeatStressWarningEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<HeatStressWarningTc[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

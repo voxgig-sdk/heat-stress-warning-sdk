@@ -24,7 +24,7 @@ class HeatStressWarningEnDirectTest extends TestCase
         $client = $setup["client"];
 
 
-        [$result, $err] = $client->direct([
+        $result = $client->direct([
             "path" => "opendata/heat-stress-warning-en.json",
             "method" => "GET",
             "params" => [],
@@ -33,8 +33,8 @@ class HeatStressWarningEnDirectTest extends TestCase
             // Live mode is lenient: synthetic IDs frequently 4xx and the
             // list-response shape varies wildly across public APIs. Skip
             // rather than fail when the call doesn't return a usable list.
-            if ($err !== null) {
-                $this->markTestSkipped("list call failed (likely synthetic IDs against live API): " . (string)$err);
+            if (!empty($result["err"])) {
+                $this->markTestSkipped("list call failed (likely synthetic IDs against live API): " . (string)$result["err"]);
                 return;
             }
             if (empty($result["ok"])) {
@@ -47,7 +47,7 @@ class HeatStressWarningEnDirectTest extends TestCase
                 return;
             }
         } else {
-            $this->assertNull($err);
+            $this->assertArrayNotHasKey("err", $result);
             $this->assertTrue($result["ok"]);
             $this->assertEquals(200, Helpers::to_int($result["status"]));
             $this->assertIsArray($result["data"]);
@@ -68,14 +68,12 @@ function heat_stress_warning_en_direct_setup($mockres)
     $env = Runner::env_override([
         "HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID" => [],
         "HEATSTRESSWARNING_TEST_LIVE" => "FALSE",
-        "HEATSTRESSWARNING_APIKEY" => "NONE",
     ]);
 
     $live = $env["HEATSTRESSWARNING_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["HEATSTRESSWARNING_APIKEY"],
         ];
         $client = new HeatStressWarningSDK($merged_opts);
         return [

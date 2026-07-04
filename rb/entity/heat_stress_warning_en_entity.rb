@@ -45,6 +45,7 @@ class HeatStressWarningEnEntity
     end
   end
 
+  # @return [HeatStressWarningEn, Hash] the current HeatStressWarningEn data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class HeatStressWarningEnEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of HeatStressWarningEn fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class HeatStressWarningEnEntity
   
 
   
+  # List HeatStressWarningEn items matching the given filter.
+  #
+  # @param reqmatch [HeatStressWarningEnListMatch, Hash, nil] match filter (any subset of HeatStressWarningEn fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<HeatStressWarningEn>, Array] the matching HeatStressWarningEn items; raises HeatStressWarningError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -92,7 +91,7 @@ same parameters as `direct()`.
 ## HeatStressWarningEnEntity
 
 ```lua
-local heat_stress_warning_en = client:HeatStressWarningEn(nil)
+local heat_stress_warning_en = client:heat_stress_warning_en(nil)
 ```
 
 ### Fields
@@ -117,7 +116,7 @@ local heat_stress_warning_en = client:HeatStressWarningEn(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:HeatStressWarningEn():list()
+local results, err = client:heat_stress_warning_en():list()
 ```
 
 ### Common Methods
@@ -153,7 +152,7 @@ Return the entity name.
 ## HeatStressWarningScEntity
 
 ```lua
-local heat_stress_warning_sc = client:HeatStressWarningSc(nil)
+local heat_stress_warning_sc = client:heat_stress_warning_sc(nil)
 ```
 
 ### Fields
@@ -178,7 +177,7 @@ local heat_stress_warning_sc = client:HeatStressWarningSc(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:HeatStressWarningSc():list()
+local results, err = client:heat_stress_warning_sc():list()
 ```
 
 ### Common Methods
@@ -214,7 +213,7 @@ Return the entity name.
 ## HeatStressWarningTcEntity
 
 ```lua
-local heat_stress_warning_tc = client:HeatStressWarningTc(nil)
+local heat_stress_warning_tc = client:heat_stress_warning_tc(nil)
 ```
 
 ### Fields
@@ -239,7 +238,7 @@ local heat_stress_warning_tc = client:HeatStressWarningTc(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:HeatStressWarningTc():list()
+local results, err = client:heat_stress_warning_tc():list()
 ```
 
 ### Common Methods

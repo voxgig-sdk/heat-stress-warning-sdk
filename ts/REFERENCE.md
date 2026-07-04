@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -134,7 +133,7 @@ Alias for `HeatStressWarningSDK.test()`.
 ## HeatStressWarningEnEntity
 
 ```ts
-const heat_stress_warning_en = client.HeatStressWarningEn()
+const heat_stress_warning_en = client.heat_stress_warning_en
 ```
 
 ### Fields
@@ -159,7 +158,7 @@ const heat_stress_warning_en = client.HeatStressWarningEn()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.HeatStressWarningEn().list()
+const results = await client.heat_stress_warning_en.list()
 ```
 
 ### Common Methods
@@ -193,7 +192,7 @@ Return a copy of the entity options.
 ## HeatStressWarningScEntity
 
 ```ts
-const heat_stress_warning_sc = client.HeatStressWarningSc()
+const heat_stress_warning_sc = client.heat_stress_warning_sc
 ```
 
 ### Fields
@@ -218,7 +217,7 @@ const heat_stress_warning_sc = client.HeatStressWarningSc()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.HeatStressWarningSc().list()
+const results = await client.heat_stress_warning_sc.list()
 ```
 
 ### Common Methods
@@ -252,7 +251,7 @@ Return a copy of the entity options.
 ## HeatStressWarningTcEntity
 
 ```ts
-const heat_stress_warning_tc = client.HeatStressWarningTc()
+const heat_stress_warning_tc = client.heat_stress_warning_tc
 ```
 
 ### Fields
@@ -277,7 +276,7 @@ const heat_stress_warning_tc = client.HeatStressWarningTc()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.HeatStressWarningTc().list()
+const results = await client.heat_stress_warning_tc.list()
 ```
 
 ### Common Methods

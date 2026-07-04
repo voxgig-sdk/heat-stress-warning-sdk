@@ -9,9 +9,10 @@ The PHP SDK for the HeatStressWarning API — an entity-oriented client using PH
 
 
 ## Install
-```bash
-composer require voxgig-sdk/heat-stress-warning
-```
+This package is not yet published to Packagist. Install it from the
+GitHub release tag (`php/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases)
 
 
 ## Tutorial: your first API call
@@ -25,22 +26,22 @@ loading a specific record.
 <?php
 require_once 'heatstresswarning_sdk.php';
 
-$client = new HeatStressWarningSDK([
-    "apikey" => getenv("HEAT-STRESS-WARNING_APIKEY"),
-]);
+$client = new HeatStressWarningSDK();
 ```
 
 ### 2. List heatstresswarningens
 
 ```php
-[$result, $err] = $client->HeatStressWarningEn()->list();
-if ($err) { throw new \Exception($err); }
-
-if (is_array($result)) {
-    foreach ($result as $item) {
-        $d = $item->data_get();
-        echo $d["id"] . " " . $d["name"] . "\n";
+try {
+    $result = $client->heatstresswarningen()->list();
+    if (is_array($result)) {
+        foreach ($result as $item) {
+            $d = $item->data_get();
+            echo $d["id"] . " " . $d["name"] . "\n";
+        }
     }
+} catch (\Exception $err) {
+    echo "Error: " . $err->getMessage();
 }
 ```
 
@@ -52,28 +53,31 @@ if (is_array($result)) {
 For endpoints not covered by entity methods:
 
 ```php
-[$result, $err] = $client->direct([
+// direct() is the raw-HTTP escape hatch: it returns a result array
+// (it does not throw). Branch on $result["ok"].
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
+} else {
+    echo "Error: " . $result["err"]->getMessage();
 }
 ```
 
 ### Prepare a request without sending it
 
 ```php
-[$fetchdef, $err] = $client->prepare([
+// prepare() throws on error and returns the fetch definition.
+$fetchdef = $client->prepare([
     "path" => "/api/resource/{id}",
     "method" => "DELETE",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 echo $fetchdef["url"];
 echo $fetchdef["method"];
@@ -87,7 +91,7 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = HeatStressWarningSDK::test();
 
-[$result, $err] = $client->HeatStressWarning()->load(["id" => "test01"]);
+$result = $client->heatstresswarningen()->load(["id" => "test01"]);
 // $result contains mock response data
 ```
 
@@ -121,8 +125,7 @@ $client = new HeatStressWarningSDK([
 Create a `.env.local` file at the project root:
 
 ```
-HEAT-STRESS-WARNING_TEST_LIVE=TRUE
-HEAT-STRESS-WARNING_APIKEY=<your-key>
+HEAT_STRESS_WARNING_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -145,7 +148,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -193,8 +195,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `[$result, $err]`. The first value is an
-`array` with these keys:
+Entity operations return the bare result data (an `array` for single-entity
+ops, a `list` for `list`) and throw on error. Wrap calls in
+`try`/`catch` to handle failures.
+
+The `direct()` escape hatch never throws — it returns a result `array`
+you branch on via `$result["ok"]`:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -271,7 +277,7 @@ API path: `/opendata/heat-stress-warning-tc.json`
 
 ### HeatStressWarningEn
 
-Create an instance: `const heat_stress_warning_en = client.HeatStressWarningEn()`
+Create an instance: `const heat_stress_warning_en = client.heat_stress_warning_en`
 
 #### Operations
 
@@ -297,13 +303,13 @@ Create an instance: `const heat_stress_warning_en = client.HeatStressWarningEn()
 #### Example: List
 
 ```ts
-const heat_stress_warning_ens = await client.HeatStressWarningEn().list()
+const heat_stress_warning_ens = await client.heat_stress_warning_en.list()
 ```
 
 
 ### HeatStressWarningSc
 
-Create an instance: `const heat_stress_warning_sc = client.HeatStressWarningSc()`
+Create an instance: `const heat_stress_warning_sc = client.heat_stress_warning_sc`
 
 #### Operations
 
@@ -329,13 +335,13 @@ Create an instance: `const heat_stress_warning_sc = client.HeatStressWarningSc()
 #### Example: List
 
 ```ts
-const heat_stress_warning_scs = await client.HeatStressWarningSc().list()
+const heat_stress_warning_scs = await client.heat_stress_warning_sc.list()
 ```
 
 
 ### HeatStressWarningTc
 
-Create an instance: `const heat_stress_warning_tc = client.HeatStressWarningTc()`
+Create an instance: `const heat_stress_warning_tc = client.heat_stress_warning_tc`
 
 #### Operations
 
@@ -361,7 +367,7 @@ Create an instance: `const heat_stress_warning_tc = client.HeatStressWarningTc()
 #### Example: List
 
 ```ts
-const heat_stress_warning_tcs = await client.HeatStressWarningTc().list()
+const heat_stress_warning_tcs = await client.heat_stress_warning_tc.list()
 ```
 
 
@@ -436,11 +442,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$moon = $client->Moon();
-[$result, $err] = $moon->load(["planet_id" => "earth", "id" => "luna"]);
+$heatstresswarningen = $client->heatstresswarningen();
+$heatstresswarningen->load(["id" => "example_id"]);
 
-// $moon->dataGet() now returns the loaded moon data
-// $moon->matchGet() returns the last match criteria
+// $heatstresswarningen->dataGet() now returns the loaded heatstresswarningen data
+// $heatstresswarningen->matchGet() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

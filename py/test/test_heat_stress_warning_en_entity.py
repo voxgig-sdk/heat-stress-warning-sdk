@@ -50,8 +50,7 @@ class TestHeatStressWarningEnEntity:
         heat_stress_warning_en_ref01_ent = client.HeatStressWarningEn(None)
         heat_stress_warning_en_ref01_match = {}
 
-        heat_stress_warning_en_ref01_list_result, err = heat_stress_warning_en_ref01_ent.list(heat_stress_warning_en_ref01_match, None)
-        assert err is None
+        heat_stress_warning_en_ref01_list_result = heat_stress_warning_en_ref01_ent.list(heat_stress_warning_en_ref01_match, None)
         assert isinstance(heat_stress_warning_en_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _heat_stress_warning_en_basic_setup(extra):
         "HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID": idmap,
         "HEATSTRESSWARNING_TEST_LIVE": "FALSE",
         "HEATSTRESSWARNING_TEST_EXPLAIN": "FALSE",
-        "HEATSTRESSWARNING_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _heat_stress_warning_en_basic_setup(extra):
     if env.get("HEATSTRESSWARNING_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("HEATSTRESSWARNING_APIKEY"),
             },
             extra or {},
         ])

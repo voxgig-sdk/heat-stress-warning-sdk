@@ -55,6 +55,9 @@ class HeatStressWarningScEntity
         return new HeatStressWarningScEntity($this->_client, $opts);
     }
 
+    /**
+     * @param HeatStressWarningSc|array $args HeatStressWarningSc data (assoc-array) to store.
+     */
     public function data_set($args): void
     {
         if ($args) {
@@ -63,12 +66,18 @@ class HeatStressWarningScEntity
         }
     }
 
+    /**
+     * @return HeatStressWarningSc|array The current HeatStressWarningSc data as an assoc-array.
+     */
     public function data_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetData");
         return Struct::clone($this->_data);
     }
 
+    /**
+     * @param array $args Match filter (any subset of HeatStressWarningSc fields).
+     */
     public function match_set($args): void
     {
         if ($args) {
@@ -77,6 +86,9 @@ class HeatStressWarningScEntity
         }
     }
 
+    /**
+     * @return array The current match filter (any subset of HeatStressWarningSc fields).
+     */
     public function match_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetMatch");
@@ -86,7 +98,16 @@ class HeatStressWarningScEntity
     
 
     
-    public function list($reqmatch, $ctrl = null): array
+    /**
+     * List HeatStressWarningSc items matching the given filter.
+     *
+     * @param HeatStressWarningScListMatch|array|null $reqmatch Match filter (any subset
+     *   of HeatStressWarningSc fields) as an assoc-array; HeatStressWarningScListMatch names the shape.
+     * @param mixed $ctrl Optional per-call control overrides.
+     * @return HeatStressWarningSc[]|array A list of HeatStressWarningSc items as assoc-arrays at
+     *   the SDK boundary; throws HeatStressWarningError on failure (item-5 convention).
+     */
+    public function list(?array $reqmatch = null, $ctrl = null): mixed
     {
         $utility = $this->_utility;
         $ctx = ($utility->make_context)([
@@ -114,7 +135,7 @@ class HeatStressWarningScEntity
 
     
 
-    private function _run_op($ctx, callable $post_done): array
+    private function _run_op($ctx, callable $post_done): mixed
     {
         $utility = $this->_utility;
 
