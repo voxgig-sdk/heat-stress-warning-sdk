@@ -66,8 +66,12 @@ class HeatStressWarningTcEntity:
     
 
     
-    def list(self, reqmatch: HeatStressWarningTcListMatch, ctrl=None) -> list[HeatStressWarningTc]:
+    def list(self, reqmatch=None, ctrl=None) -> list[HeatStressWarningTc]:
         utility = self._utility
+        # reqmatch is optional: an omitted match lists all records. Treat None
+        # as an empty match so client.HeatStressWarningTc().list() works with no args.
+        if reqmatch is None:
+            reqmatch = {}
         ctx = utility.make_context({
             "opname": "list",
             "ctrl": ctrl,

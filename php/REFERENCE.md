@@ -8,7 +8,7 @@ Complete API reference for the HeatStressWarning PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/heat-stress-warning_sdk.php';
+require_once __DIR__ . '/heatstresswarning_sdk.php';
 
 $client = new HeatStressWarningSDK($options);
 ```
@@ -53,11 +53,11 @@ Create a new `HeatStressWarningScEntity` instance. Pass `null` for no initial da
 
 Create a new `HeatStressWarningTcEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): HeatStressWarningUtility`
 
 Return a copy of the SDK utility object.
 
@@ -100,42 +100,42 @@ $heat_stress_warning_en = $client->HeatStressWarningEn();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `string` | No |  |
+| `expiry_time` | `string` | No |  |
+| `heat_index` | `float` | No |  |
+| `humidity` | `int` | No |  |
+| `issue_time` | `string` | No |  |
+| `recommendation` | `array` | No |  |
+| `temperature` | `float` | No |  |
+| `update_time` | `string` | No |  |
+| `warning_level` | `string` | No |  |
+| `warning_message` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->HeatStressWarningEn()->list([]);
+$results = $client->HeatStressWarningEn()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -144,7 +144,7 @@ Set the entity match criteria.
 Create a new `HeatStressWarningEnEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -161,42 +161,42 @@ $heat_stress_warning_sc = $client->HeatStressWarningSc();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `string` | No |  |
+| `expiry_time` | `string` | No |  |
+| `heat_index` | `float` | No |  |
+| `humidity` | `int` | No |  |
+| `issue_time` | `string` | No |  |
+| `recommendation` | `array` | No |  |
+| `temperature` | `float` | No |  |
+| `update_time` | `string` | No |  |
+| `warning_level` | `string` | No |  |
+| `warning_message` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->HeatStressWarningSc()->list([]);
+$results = $client->HeatStressWarningSc()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -205,7 +205,7 @@ Set the entity match criteria.
 Create a new `HeatStressWarningScEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -222,42 +222,42 @@ $heat_stress_warning_tc = $client->HeatStressWarningTc();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `string` | No |  |
+| `expiry_time` | `string` | No |  |
+| `heat_index` | `float` | No |  |
+| `humidity` | `int` | No |  |
+| `issue_time` | `string` | No |  |
+| `recommendation` | `array` | No |  |
+| `temperature` | `float` | No |  |
+| `update_time` | `string` | No |  |
+| `warning_level` | `string` | No |  |
+| `warning_message` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->HeatStressWarningTc()->list([]);
+$results = $client->HeatStressWarningTc()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -266,7 +266,7 @@ Set the entity match criteria.
 Create a new `HeatStressWarningTcEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

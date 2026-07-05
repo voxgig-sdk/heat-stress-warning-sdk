@@ -18,7 +18,18 @@ export interface HeatStressWarningEn {
   warning_message?: string
 }
 
-export type HeatStressWarningEnListMatch = Partial<HeatStressWarningEn>
+export interface HeatStressWarningEnListMatch {
+  effective_time?: string
+  expiry_time?: string
+  heat_index?: number
+  humidity?: number
+  issue_time?: string
+  recommendation?: any[]
+  temperature?: number
+  update_time?: string
+  warning_level?: string
+  warning_message?: string
+}
 
 export interface HeatStressWarningSc {
   effective_time?: string
@@ -33,7 +44,18 @@ export interface HeatStressWarningSc {
   warning_message?: string
 }
 
-export type HeatStressWarningScListMatch = Partial<HeatStressWarningSc>
+export interface HeatStressWarningScListMatch {
+  effective_time?: string
+  expiry_time?: string
+  heat_index?: number
+  humidity?: number
+  issue_time?: string
+  recommendation?: any[]
+  temperature?: number
+  update_time?: string
+  warning_level?: string
+  warning_message?: string
+}
 
 export interface HeatStressWarningTc {
   effective_time?: string
@@ -48,5 +70,16 @@ export interface HeatStressWarningTc {
   warning_message?: string
 }
 
-export type HeatStressWarningTcListMatch = Partial<HeatStressWarningTc>
+export interface HeatStressWarningTcListMatch {
+  effective_time?: string
+  expiry_time?: string
+  heat_index?: number
+  humidity?: number
+  issue_time?: string
+  recommendation?: any[]
+  temperature?: number
+  update_time?: string
+  warning_level?: string
+  warning_message?: string
+}
 

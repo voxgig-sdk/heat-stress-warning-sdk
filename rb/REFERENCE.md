@@ -8,7 +8,7 @@ Complete API reference for the HeatStressWarning Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'heat-stress-warning_sdk'
+require_relative 'HeatStressWarning_sdk'
 
 client = HeatStressWarningSDK.new(options)
 ```
@@ -101,25 +101,25 @@ heat_stress_warning_en = client.HeatStressWarningEn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `String` | No |  |
+| `expiry_time` | `String` | No |  |
+| `heat_index` | `Float` | No |  |
+| `humidity` | `Integer` | No |  |
+| `issue_time` | `String` | No |  |
+| `recommendation` | `Array` | No |  |
+| `temperature` | `Float` | No |  |
+| `update_time` | `String` | No |  |
+| `warning_level` | `String` | No |  |
+| `warning_message` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.HeatStressWarningEn.list(nil)
+results = client.HeatStressWarningEn.list
 ```
 
 ### Common Methods
@@ -162,25 +162,25 @@ heat_stress_warning_sc = client.HeatStressWarningSc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `String` | No |  |
+| `expiry_time` | `String` | No |  |
+| `heat_index` | `Float` | No |  |
+| `humidity` | `Integer` | No |  |
+| `issue_time` | `String` | No |  |
+| `recommendation` | `Array` | No |  |
+| `temperature` | `Float` | No |  |
+| `update_time` | `String` | No |  |
+| `warning_level` | `String` | No |  |
+| `warning_message` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.HeatStressWarningSc.list(nil)
+results = client.HeatStressWarningSc.list
 ```
 
 ### Common Methods
@@ -223,25 +223,25 @@ heat_stress_warning_tc = client.HeatStressWarningTc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `String` | No |  |
+| `expiry_time` | `String` | No |  |
+| `heat_index` | `Float` | No |  |
+| `humidity` | `Integer` | No |  |
+| `issue_time` | `String` | No |  |
+| `recommendation` | `Array` | No |  |
+| `temperature` | `Float` | No |  |
+| `update_time` | `String` | No |  |
+| `warning_level` | `String` | No |  |
+| `warning_message` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.HeatStressWarningTc.list(nil)
+results = client.HeatStressWarningTc.list
 ```
 
 ### Common Methods

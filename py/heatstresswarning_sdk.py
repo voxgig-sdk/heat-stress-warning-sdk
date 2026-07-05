@@ -221,19 +221,19 @@ class HeatStressWarningSDK:
 
 
     def HeatStressWarningEn(self, data=None) -> "HeatStressWarningEnEntity":
-        """Entity factory: client.HeatStressWarningEn().list({}) / client.HeatStressWarningEn().load({"id": ...})."""
+        """Entity factory: client.HeatStressWarningEn().list() / client.HeatStressWarningEn().load({"id": ...})."""
         from entity.heat_stress_warning_en_entity import HeatStressWarningEnEntity
         return HeatStressWarningEnEntity(self, data)
 
 
     def HeatStressWarningSc(self, data=None) -> "HeatStressWarningScEntity":
-        """Entity factory: client.HeatStressWarningSc().list({}) / client.HeatStressWarningSc().load({"id": ...})."""
+        """Entity factory: client.HeatStressWarningSc().list() / client.HeatStressWarningSc().load({"id": ...})."""
         from entity.heat_stress_warning_sc_entity import HeatStressWarningScEntity
         return HeatStressWarningScEntity(self, data)
 
 
     def HeatStressWarningTc(self, data=None) -> "HeatStressWarningTcEntity":
-        """Entity factory: client.HeatStressWarningTc().list({}) / client.HeatStressWarningTc().load({"id": ...})."""
+        """Entity factory: client.HeatStressWarningTc().list() / client.HeatStressWarningTc().load({"id": ...})."""
         from entity.heat_stress_warning_tc_entity import HeatStressWarningTcEntity
         return HeatStressWarningTcEntity(self, data)
 

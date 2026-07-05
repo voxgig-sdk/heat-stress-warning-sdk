@@ -140,16 +140,16 @@ const heat_stress_warning_en = client.HeatStressWarningEn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `string` | No |  |
+| `expiry_time` | `string` | No |  |
+| `heat_index` | `number` | No |  |
+| `humidity` | `number` | No |  |
+| `issue_time` | `string` | No |  |
+| `recommendation` | `any[]` | No |  |
+| `temperature` | `number` | No |  |
+| `update_time` | `string` | No |  |
+| `warning_level` | `string` | No |  |
+| `warning_message` | `string` | No |  |
 
 ### Operations
 
@@ -199,16 +199,16 @@ const heat_stress_warning_sc = client.HeatStressWarningSc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `string` | No |  |
+| `expiry_time` | `string` | No |  |
+| `heat_index` | `number` | No |  |
+| `humidity` | `number` | No |  |
+| `issue_time` | `string` | No |  |
+| `recommendation` | `any[]` | No |  |
+| `temperature` | `number` | No |  |
+| `update_time` | `string` | No |  |
+| `warning_level` | `string` | No |  |
+| `warning_message` | `string` | No |  |
 
 ### Operations
 
@@ -258,16 +258,16 @@ const heat_stress_warning_tc = client.HeatStressWarningTc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `string` | No |  |
+| `expiry_time` | `string` | No |  |
+| `heat_index` | `number` | No |  |
+| `humidity` | `number` | No |  |
+| `issue_time` | `string` | No |  |
+| `recommendation` | `any[]` | No |  |
+| `temperature` | `number` | No |  |
+| `update_time` | `string` | No |  |
+| `warning_level` | `string` | No |  |
+| `warning_message` | `string` | No |  |
 
 ### Operations
 

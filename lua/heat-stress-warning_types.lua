@@ -19,6 +19,16 @@
 ---@field warning_message? string
 
 ---@class HeatStressWarningEnListMatch
+---@field effective_time? string
+---@field expiry_time? string
+---@field heat_index? number
+---@field humidity? number
+---@field issue_time? string
+---@field recommendation? table
+---@field temperature? number
+---@field update_time? string
+---@field warning_level? string
+---@field warning_message? string
 
 ---@class HeatStressWarningSc
 ---@field effective_time? string
@@ -33,6 +43,16 @@
 ---@field warning_message? string
 
 ---@class HeatStressWarningScListMatch
+---@field effective_time? string
+---@field expiry_time? string
+---@field heat_index? number
+---@field humidity? number
+---@field issue_time? string
+---@field recommendation? table
+---@field temperature? number
+---@field update_time? string
+---@field warning_level? string
+---@field warning_message? string
 
 ---@class HeatStressWarningTc
 ---@field effective_time? string
@@ -47,6 +67,16 @@
 ---@field warning_message? string
 
 ---@class HeatStressWarningTcListMatch
+---@field effective_time? string
+---@field expiry_time? string
+---@field heat_index? number
+---@field humidity? number
+---@field issue_time? string
+---@field recommendation? table
+---@field temperature? number
+---@field update_time? string
+---@field warning_level? string
+---@field warning_message? string
 
 local M = {}
 

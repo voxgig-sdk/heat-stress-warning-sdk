@@ -27,7 +27,7 @@ class HeatStressWarningEn
     public ?string $warning_message = null;
 }
 
-/** Match filter for HeatStressWarningEn#list (any subset of HeatStressWarningEn fields). */
+/** Request payload for HeatStressWarningEn#list. */
 class HeatStressWarningEnListMatch
 {
     public ?string $effective_time = null;
@@ -57,7 +57,7 @@ class HeatStressWarningSc
     public ?string $warning_message = null;
 }
 
-/** Match filter for HeatStressWarningSc#list (any subset of HeatStressWarningSc fields). */
+/** Request payload for HeatStressWarningSc#list. */
 class HeatStressWarningScListMatch
 {
     public ?string $effective_time = null;
@@ -87,7 +87,7 @@ class HeatStressWarningTc
     public ?string $warning_message = null;
 }
 
-/** Match filter for HeatStressWarningTc#list (any subset of HeatStressWarningTc fields). */
+/** Request payload for HeatStressWarningTc#list. */
 class HeatStressWarningTcListMatch
 {
     public ?string $effective_time = null;

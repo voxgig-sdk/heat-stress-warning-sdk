@@ -8,7 +8,7 @@ Complete API reference for the HeatStressWarning Python SDK.
 ### Constructor
 
 ```python
-from heat-stress-warning_sdk import HeatStressWarningSDK
+from heatstresswarning_sdk import HeatStressWarningSDK
 
 client = HeatStressWarningSDK(options)
 ```
@@ -95,25 +95,25 @@ heat_stress_warning_en = client.HeatStressWarningEn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `str` | No |  |
+| `expiry_time` | `str` | No |  |
+| `heat_index` | `float` | No |  |
+| `humidity` | `int` | No |  |
+| `issue_time` | `str` | No |  |
+| `recommendation` | `list` | No |  |
+| `temperature` | `float` | No |  |
+| `update_time` | `str` | No |  |
+| `warning_level` | `str` | No |  |
+| `warning_message` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.HeatStressWarningEn().list({})
+results = client.HeatStressWarningEn().list()
 for heat_stress_warning_en in results:
     print(heat_stress_warning_en)
 ```
@@ -157,25 +157,25 @@ heat_stress_warning_sc = client.HeatStressWarningSc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `str` | No |  |
+| `expiry_time` | `str` | No |  |
+| `heat_index` | `float` | No |  |
+| `humidity` | `int` | No |  |
+| `issue_time` | `str` | No |  |
+| `recommendation` | `list` | No |  |
+| `temperature` | `float` | No |  |
+| `update_time` | `str` | No |  |
+| `warning_level` | `str` | No |  |
+| `warning_message` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.HeatStressWarningSc().list({})
+results = client.HeatStressWarningSc().list()
 for heat_stress_warning_sc in results:
     print(heat_stress_warning_sc)
 ```
@@ -219,25 +219,25 @@ heat_stress_warning_tc = client.HeatStressWarningTc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | ``$STRING`` | No |  |
-| `expiry_time` | ``$STRING`` | No |  |
-| `heat_index` | ``$NUMBER`` | No |  |
-| `humidity` | ``$INTEGER`` | No |  |
-| `issue_time` | ``$STRING`` | No |  |
-| `recommendation` | ``$ARRAY`` | No |  |
-| `temperature` | ``$NUMBER`` | No |  |
-| `update_time` | ``$STRING`` | No |  |
-| `warning_level` | ``$STRING`` | No |  |
-| `warning_message` | ``$STRING`` | No |  |
+| `effective_time` | `str` | No |  |
+| `expiry_time` | `str` | No |  |
+| `heat_index` | `float` | No |  |
+| `humidity` | `int` | No |  |
+| `issue_time` | `str` | No |  |
+| `recommendation` | `list` | No |  |
+| `temperature` | `float` | No |  |
+| `update_time` | `str` | No |  |
+| `warning_level` | `str` | No |  |
+| `warning_message` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.HeatStressWarningTc().list({})
+results = client.HeatStressWarningTc().list()
 for heat_stress_warning_tc in results:
     print(heat_stress_warning_tc)
 ```

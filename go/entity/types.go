@@ -22,8 +22,7 @@ type HeatStressWarningEn struct {
 	WarningMessage *string `json:"warning_message,omitempty"`
 }
 
-// HeatStressWarningEnListMatch mirrors the heat_stress_warning_en fields as an all-optional match
-// filter (Go analog of Partial<HeatStressWarningEn>).
+// HeatStressWarningEnListMatch is the typed request payload for HeatStressWarningEn.ListTyped.
 type HeatStressWarningEnListMatch struct {
 	EffectiveTime *string `json:"effective_time,omitempty"`
 	ExpiryTime *string `json:"expiry_time,omitempty"`
@@ -51,8 +50,7 @@ type HeatStressWarningSc struct {
 	WarningMessage *string `json:"warning_message,omitempty"`
 }
 
-// HeatStressWarningScListMatch mirrors the heat_stress_warning_sc fields as an all-optional match
-// filter (Go analog of Partial<HeatStressWarningSc>).
+// HeatStressWarningScListMatch is the typed request payload for HeatStressWarningSc.ListTyped.
 type HeatStressWarningScListMatch struct {
 	EffectiveTime *string `json:"effective_time,omitempty"`
 	ExpiryTime *string `json:"expiry_time,omitempty"`
@@ -80,8 +78,7 @@ type HeatStressWarningTc struct {
 	WarningMessage *string `json:"warning_message,omitempty"`
 }
 
-// HeatStressWarningTcListMatch mirrors the heat_stress_warning_tc fields as an all-optional match
-// filter (Go analog of Partial<HeatStressWarningTc>).
+// HeatStressWarningTcListMatch is the typed request payload for HeatStressWarningTc.ListTyped.
 type HeatStressWarningTcListMatch struct {
 	EffectiveTime *string `json:"effective_time,omitempty"`
 	ExpiryTime *string `json:"expiry_time,omitempty"`

@@ -53,7 +53,7 @@ HeatStressWarningEn = Struct.new(
   keyword_init: true
 )
 
-# Match filter for HeatStressWarningEn#list (any subset of HeatStressWarningEn fields).
+# Request payload for HeatStressWarningEn#list.
 #
 # @!attribute [rw] effective_time
 #   @return [String, nil]
@@ -143,7 +143,7 @@ HeatStressWarningSc = Struct.new(
   keyword_init: true
 )
 
-# Match filter for HeatStressWarningSc#list (any subset of HeatStressWarningSc fields).
+# Request payload for HeatStressWarningSc#list.
 #
 # @!attribute [rw] effective_time
 #   @return [String, nil]
@@ -233,7 +233,7 @@ HeatStressWarningTc = Struct.new(
   keyword_init: true
 )
 
-# Match filter for HeatStressWarningTc#list (any subset of HeatStressWarningTc fields).
+# Request payload for HeatStressWarningTc#list.
 #
 # @!attribute [rw] effective_time
 #   @return [String, nil]
