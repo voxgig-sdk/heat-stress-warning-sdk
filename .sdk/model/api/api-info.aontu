@@ -17,10 +17,10 @@ main: {
           url: "https://data.weather.gov.hk/weatherAPI"
         }
       ]
+      summary: "This API provides the latest information regarding heat stress warnings at work in different languages including English, Traditional Chinese, and Simplified Chinese."
       termsOfService: "https://data.gov.hk/en/terms-and-conditions"
       title: "Heat Stress Warning API"
       version: "1.0.0"
+      website: "https://data.weather.gov.hk/weatherAPI/doc/HSWW_API_Documentation.pdf"
     }
   }
-}
-

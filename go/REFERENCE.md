@@ -98,7 +98,8 @@ same parameters as `Direct()`.
 ## HeatStressWarningEnEntity
 
 ```go
-heat_stress_warning_en := client.HeatStressWarningEn(nil)
+heatStressWarningEn := client.HeatStressWarningEn(nil)
+fmt.Println(heatStressWarningEn.GetName()) // "heat_stress_warning_en"
 ```
 
 ### Fields
@@ -124,6 +125,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.HeatStressWarningEn(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -153,7 +158,8 @@ Return the entity name.
 ## HeatStressWarningScEntity
 
 ```go
-heat_stress_warning_sc := client.HeatStressWarningSc(nil)
+heatStressWarningSc := client.HeatStressWarningSc(nil)
+fmt.Println(heatStressWarningSc.GetName()) // "heat_stress_warning_sc"
 ```
 
 ### Fields
@@ -179,6 +185,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.HeatStressWarningSc(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -208,7 +218,8 @@ Return the entity name.
 ## HeatStressWarningTcEntity
 
 ```go
-heat_stress_warning_tc := client.HeatStressWarningTc(nil)
+heatStressWarningTc := client.HeatStressWarningTc(nil)
+fmt.Println(heatStressWarningTc.GetName()) // "heat_stress_warning_tc"
 ```
 
 ### Fields
@@ -234,6 +245,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.HeatStressWarningTc(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

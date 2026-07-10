@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // List heatstresswarningen records — the value is the array of records itself.
-    heatstresswarningens, err := client.HeatStressWarningEn(nil).List(nil, nil)
+    // List heatStressWarningEn records — the value is the array of records itself.
+    heatStressWarningEns, err := client.HeatStressWarningEn(nil).List(nil, nil)
     if err != nil {
         panic(err)
     }
-    for _, item := range heatstresswarningens.([]any) {
+    for _, item := range heatStressWarningEns.([]any) {
         fmt.Println(item)
     }
 }
@@ -137,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-heatstresswarningen, err := client.HeatStressWarningEn(nil).List(
+heatStressWarningEn, err := client.HeatStressWarningEn(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(heatstresswarningen) // the returned mock data
+fmt.Println(heatStressWarningEn) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -249,9 +249,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    heatstresswarningen, err := client.HeatStressWarningEn(nil).List(map[string]any{/* fields */}, nil)
+    heatStressWarningEn, err := client.HeatStressWarningEn(nil).List(map[string]any{/* fields */}, nil)
     if err != nil { /* handle */ }
-    // heatstresswarningen is the returned record
+    // heatStressWarningEn is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -322,7 +322,7 @@ API path: `/opendata/heat-stress-warning-tc.json`
 
 ### HeatStressWarningEn
 
-Create an instance: `heat_stress_warning_en := client.HeatStressWarningEn(nil)`
+Create an instance: `heatStressWarningEn := client.HeatStressWarningEn(nil)`
 
 #### Operations
 
@@ -348,17 +348,17 @@ Create an instance: `heat_stress_warning_en := client.HeatStressWarningEn(nil)`
 #### Example: List
 
 ```go
-heat_stress_warning_ens, err := client.HeatStressWarningEn(nil).List(nil, nil)
+heatStressWarningEns, err := client.HeatStressWarningEn(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(heat_stress_warning_ens) // the array of records
+fmt.Println(heatStressWarningEns) // the array of records
 ```
 
 
 ### HeatStressWarningSc
 
-Create an instance: `heat_stress_warning_sc := client.HeatStressWarningSc(nil)`
+Create an instance: `heatStressWarningSc := client.HeatStressWarningSc(nil)`
 
 #### Operations
 
@@ -384,17 +384,17 @@ Create an instance: `heat_stress_warning_sc := client.HeatStressWarningSc(nil)`
 #### Example: List
 
 ```go
-heat_stress_warning_scs, err := client.HeatStressWarningSc(nil).List(nil, nil)
+heatStressWarningScs, err := client.HeatStressWarningSc(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(heat_stress_warning_scs) // the array of records
+fmt.Println(heatStressWarningScs) // the array of records
 ```
 
 
 ### HeatStressWarningTc
 
-Create an instance: `heat_stress_warning_tc := client.HeatStressWarningTc(nil)`
+Create an instance: `heatStressWarningTc := client.HeatStressWarningTc(nil)`
 
 #### Operations
 
@@ -420,11 +420,11 @@ Create an instance: `heat_stress_warning_tc := client.HeatStressWarningTc(nil)`
 #### Example: List
 
 ```go
-heat_stress_warning_tcs, err := client.HeatStressWarningTc(nil).List(nil, nil)
+heatStressWarningTcs, err := client.HeatStressWarningTc(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(heat_stress_warning_tcs) // the array of records
+fmt.Println(heatStressWarningTcs) // the array of records
 ```
 
 
