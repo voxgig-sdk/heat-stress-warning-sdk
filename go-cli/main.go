@@ -27,7 +27,20 @@ func main() {
 }
 
 func run(args []string, in io.Reader, out, errOut io.Writer) int {
-	client := sdk.NewHeatStressWarningSDK(nil)
+	// Configure from the environment: HEAT_STRESS_WARNING_APIKEY carries the API key and
+	// HEAT_STRESS_WARNING_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("HEAT_STRESS_WARNING_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("HEAT_STRESS_WARNING_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewHeatStressWarningSDK(opts)
 
 	r, err := eng.NewRegistry()
 	if err != nil {
