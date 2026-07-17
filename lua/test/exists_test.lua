@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- HeatStressWarning SDK exists test
 
 local sdk = require("heat-stress-warning_sdk")
 
