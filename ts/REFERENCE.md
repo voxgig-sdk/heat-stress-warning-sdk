@@ -140,16 +140,16 @@ const heat_stress_warning_en = client.HeatStressWarningEn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `string` | No |  |
-| `expiry_time` | `string` | No |  |
-| `heat_index` | `number` | No |  |
+| `effectiveTime` | `string` | No |  |
+| `expiryTime` | `string` | No |  |
+| `heatIndex` | `number` | No |  |
 | `humidity` | `number` | No |  |
-| `issue_time` | `string` | No |  |
-| `recommendation` | `any[]` | No |  |
+| `issueTime` | `string` | No |  |
+| `recommendations` | `any[]` | No |  |
 | `temperature` | `number` | No |  |
-| `update_time` | `string` | No |  |
-| `warning_level` | `string` | No |  |
-| `warning_message` | `string` | No |  |
+| `updateTime` | `string` | No |  |
+| `warningLevel` | `string` | No |  |
+| `warningMessage` | `string` | No |  |
 
 ### Operations
 
@@ -199,16 +199,16 @@ const heat_stress_warning_sc = client.HeatStressWarningSc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `string` | No |  |
-| `expiry_time` | `string` | No |  |
-| `heat_index` | `number` | No |  |
+| `effectiveTime` | `string` | No |  |
+| `expiryTime` | `string` | No |  |
+| `heatIndex` | `number` | No |  |
 | `humidity` | `number` | No |  |
-| `issue_time` | `string` | No |  |
-| `recommendation` | `any[]` | No |  |
+| `issueTime` | `string` | No |  |
+| `recommendations` | `any[]` | No |  |
 | `temperature` | `number` | No |  |
-| `update_time` | `string` | No |  |
-| `warning_level` | `string` | No |  |
-| `warning_message` | `string` | No |  |
+| `updateTime` | `string` | No |  |
+| `warningLevel` | `string` | No |  |
+| `warningMessage` | `string` | No |  |
 
 ### Operations
 
@@ -258,16 +258,16 @@ const heat_stress_warning_tc = client.HeatStressWarningTc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `string` | No |  |
-| `expiry_time` | `string` | No |  |
-| `heat_index` | `number` | No |  |
+| `effectiveTime` | `string` | No |  |
+| `expiryTime` | `string` | No |  |
+| `heatIndex` | `number` | No |  |
 | `humidity` | `number` | No |  |
-| `issue_time` | `string` | No |  |
-| `recommendation` | `any[]` | No |  |
+| `issueTime` | `string` | No |  |
+| `recommendations` | `any[]` | No |  |
 | `temperature` | `number` | No |  |
-| `update_time` | `string` | No |  |
-| `warning_level` | `string` | No |  |
-| `warning_message` | `string` | No |  |
+| `updateTime` | `string` | No |  |
+| `warningLevel` | `string` | No |  |
+| `warningMessage` | `string` | No |  |
 
 ### Operations
 

@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = HeatStressWarningSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = HeatStressWarningSDK.test({
+  entity: {
+    heat_stress_warning_en: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const heatstresswarningens = await client.HeatStressWarningEn().list()
-// heatstresswarningens is an array of bare HeatStressWarningEn records populated with mock data
+// heatstresswarningens is an array of HeatStressWarningEn entities, populated with mock data
+// — call heatstresswarningens[0].data() for the record itself
 console.log(heatstresswarningens)
 ```
 
@@ -110,7 +119,7 @@ import { HeatStressWarningSDK } from '@voxgig-sdk/heat-stress-warning'
 
 const client = new HeatStressWarningSDK()
 
-// List all heatstresswarningens (returns HeatStressWarningEn[])
+// List all heatstresswarningens (returns HeatStressWarningEnEntity[] — .data() for the record)
 const heatstresswarningens = await client.HeatStressWarningEn().list()
 for (const heatstresswarningen of heatstresswarningens) {
   console.log(heatstresswarningen)
@@ -345,6 +354,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://data.gov.hk/en-data/dataset/hk-ld-ohs-ohs-heat-stress-at-work-warning](https://data.gov.hk/en-data/dataset/hk-ld-ohs-ohs-heat-stress-at-work-warning)
 

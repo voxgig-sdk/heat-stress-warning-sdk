@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import HeatStressWarningControl
-from core.error import HeatStressWarningError
-from core.result import HeatStressWarningResult
-from core.spec import HeatStressWarningSpec
+from heatstresswarning_sdk.config import make_config
+from heatstresswarning_sdk.features import _make_feature
+from heatstresswarning_sdk.core.control import HeatStressWarningControl
+from heatstresswarning_sdk.core.error import HeatStressWarningError
+from heatstresswarning_sdk.core.result import HeatStressWarningResult
+from heatstresswarning_sdk.core.spec import HeatStressWarningSpec
 
 
 # True when this SDK was generated with the named feature.

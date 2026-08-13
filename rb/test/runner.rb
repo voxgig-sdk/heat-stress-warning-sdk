@@ -23,8 +23,8 @@ module HeatStressWarningTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("HEATSTRESSWARNING_TEST_LIVE")
-    override = getenv("HEATSTRESSWARNING_TEST_OVERRIDE")
+    live = getenv("HEAT_STRESS_WARNING_TEST_LIVE")
+    override = getenv("HEAT_STRESS_WARNING_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module HeatStressWarningTestRunner
       end
     end
 
-    explain = getenv("HEATSTRESSWARNING_TEST_EXPLAIN")
-    m["HEATSTRESSWARNING_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("HEAT_STRESS_WARNING_TEST_EXPLAIN")
+    m["HEAT_STRESS_WARNING_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

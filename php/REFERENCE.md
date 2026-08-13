@@ -100,16 +100,16 @@ $heat_stress_warning_en = $client->HeatStressWarningEn();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `string` | No |  |
-| `expiry_time` | `string` | No |  |
-| `heat_index` | `float` | No |  |
+| `effectiveTime` | `string` | No |  |
+| `expiryTime` | `string` | No |  |
+| `heatIndex` | `float` | No |  |
 | `humidity` | `int` | No |  |
-| `issue_time` | `string` | No |  |
-| `recommendation` | `array` | No |  |
+| `issueTime` | `string` | No |  |
+| `recommendations` | `array` | No |  |
 | `temperature` | `float` | No |  |
-| `update_time` | `string` | No |  |
-| `warning_level` | `string` | No |  |
-| `warning_message` | `string` | No |  |
+| `updateTime` | `string` | No |  |
+| `warningLevel` | `string` | No |  |
+| `warningMessage` | `string` | No |  |
 
 ### Operations
 
@@ -161,16 +161,16 @@ $heat_stress_warning_sc = $client->HeatStressWarningSc();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `string` | No |  |
-| `expiry_time` | `string` | No |  |
-| `heat_index` | `float` | No |  |
+| `effectiveTime` | `string` | No |  |
+| `expiryTime` | `string` | No |  |
+| `heatIndex` | `float` | No |  |
 | `humidity` | `int` | No |  |
-| `issue_time` | `string` | No |  |
-| `recommendation` | `array` | No |  |
+| `issueTime` | `string` | No |  |
+| `recommendations` | `array` | No |  |
 | `temperature` | `float` | No |  |
-| `update_time` | `string` | No |  |
-| `warning_level` | `string` | No |  |
-| `warning_message` | `string` | No |  |
+| `updateTime` | `string` | No |  |
+| `warningLevel` | `string` | No |  |
+| `warningMessage` | `string` | No |  |
 
 ### Operations
 
@@ -222,16 +222,16 @@ $heat_stress_warning_tc = $client->HeatStressWarningTc();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `string` | No |  |
-| `expiry_time` | `string` | No |  |
-| `heat_index` | `float` | No |  |
+| `effectiveTime` | `string` | No |  |
+| `expiryTime` | `string` | No |  |
+| `heatIndex` | `float` | No |  |
 | `humidity` | `int` | No |  |
-| `issue_time` | `string` | No |  |
-| `recommendation` | `array` | No |  |
+| `issueTime` | `string` | No |  |
+| `recommendations` | `array` | No |  |
 | `temperature` | `float` | No |  |
-| `update_time` | `string` | No |  |
-| `warning_level` | `string` | No |  |
-| `warning_message` | `string` | No |  |
+| `updateTime` | `string` | No |  |
+| `warningLevel` | `string` | No |  |
+| `warningMessage` | `string` | No |  |
 
 ### Operations
 

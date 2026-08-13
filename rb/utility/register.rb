@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ HeatStressWarningUtility.registrar = ->(u) {
   u.prepare_params = HeatStressWarningUtilities::PrepareParams
   u.prepare_path = HeatStressWarningUtilities::PreparePath
   u.prepare_query = HeatStressWarningUtilities::PrepareQuery
+  u.graphql_body = HeatStressWarningUtilities::GraphqlBody
+  u.graphql_errors = HeatStressWarningUtilities::GraphqlErrors
   u.result_basic = HeatStressWarningUtilities::ResultBasic
   u.result_body = HeatStressWarningUtilities::ResultBody
   u.result_headers = HeatStressWarningUtilities::ResultHeaders

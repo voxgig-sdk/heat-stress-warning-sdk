@@ -38,7 +38,7 @@ try {
     // list() returns an array of HeatStressWarningEn records — iterate directly.
     $heatstresswarningens = $client->HeatStressWarningEn()->list();
     foreach ($heatstresswarningens as $item) {
-        echo $item["effective_time"] . "\n";
+        echo $item["effectiveTime"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = HeatStressWarningSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $heatstresswarningen = $client->HeatStressWarningEn()->list();
 print_r($heatstresswarningen);
 ```
@@ -226,7 +227,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -248,16 +249,16 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: List.
 
@@ -267,16 +268,16 @@ API path: `/opendata/heat-stress-warning-en.json`
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: List.
 
@@ -286,16 +287,16 @@ API path: `/opendata/heat-stress-warning-sc.json`
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: List.
 
@@ -320,16 +321,16 @@ Create an instance: `$heat_stress_warning_en = $client->HeatStressWarningEn();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `float` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `float` |  |
 | `humidity` | `int` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `array` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `array` |  |
 | `temperature` | `float` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 
@@ -353,16 +354,16 @@ Create an instance: `$heat_stress_warning_sc = $client->HeatStressWarningSc();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `float` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `float` |  |
 | `humidity` | `int` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `array` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `array` |  |
 | `temperature` | `float` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 
@@ -386,16 +387,16 @@ Create an instance: `$heat_stress_warning_tc = $client->HeatStressWarningTc();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `float` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `float` |  |
 | `humidity` | `int` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `array` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `array` |  |
 | `temperature` | `float` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 

@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# HeatStressWarning SDK exists test
 
 import pytest
 from heatstresswarning_sdk import HeatStressWarningSDK

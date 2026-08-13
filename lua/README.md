@@ -43,7 +43,7 @@ local heatstresswarningens, err = client:HeatStressWarningEn():list()
 if err then error(err) end
 
 for _, item in ipairs(heatstresswarningens) do
-  print(item["effective_time"])
+  print(item["effectiveTime"])
 end
 ```
 
@@ -220,9 +220,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local heat_stress_warning_en, err = client:HeatStressWarningEn():load()
+    local heat_stress_warning_en, err = client:HeatStressWarningEn():list()
     if err then error(err) end
-    -- heat_stress_warning_en is the loaded record
+    -- heat_stress_warning_en is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -233,16 +233,16 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: List.
 
@@ -252,16 +252,16 @@ API path: `/opendata/heat-stress-warning-en.json`
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: List.
 
@@ -271,16 +271,16 @@ API path: `/opendata/heat-stress-warning-sc.json`
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: List.
 
@@ -305,16 +305,16 @@ Create an instance: `local heat_stress_warning_en = client:HeatStressWarningEn(n
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `number` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `number` |  |
 | `humidity` | `number` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `table` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `table` |  |
 | `temperature` | `number` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 
@@ -337,16 +337,16 @@ Create an instance: `local heat_stress_warning_sc = client:HeatStressWarningSc(n
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `number` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `number` |  |
 | `humidity` | `number` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `table` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `table` |  |
 | `temperature` | `number` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 
@@ -369,16 +369,16 @@ Create an instance: `local heat_stress_warning_tc = client:HeatStressWarningTc(n
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `number` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `number` |  |
 | `humidity` | `number` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `table` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `table` |  |
 | `temperature` | `number` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 

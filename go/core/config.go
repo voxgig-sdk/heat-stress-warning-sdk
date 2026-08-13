@@ -28,21 +28,21 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "effective_time",
+						"name": "effectiveTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 0,
 					},
 					map[string]any{
 						"active": true,
-						"name": "expiry_time",
+						"name": "expiryTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 1,
 					},
 					map[string]any{
 						"active": true,
-						"name": "heat_index",
+						"name": "heatIndex",
 						"req": false,
 						"type": "`$NUMBER`",
 						"index$": 2,
@@ -56,14 +56,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "issue_time",
+						"name": "issueTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 4,
 					},
 					map[string]any{
 						"active": true,
-						"name": "recommendation",
+						"name": "recommendations",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 5,
@@ -77,21 +77,21 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "update_time",
+						"name": "updateTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 7,
 					},
 					map[string]any{
 						"active": true,
-						"name": "warning_level",
+						"name": "warningLevel",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 8,
 					},
 					map[string]any{
 						"active": true,
-						"name": "warning_message",
+						"name": "warningMessage",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 9,
@@ -106,6 +106,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/opendata/heat-stress-warning-en.json",
 								"parts": []any{
@@ -115,12 +116,11 @@ func MakeConfig() map[string]any {
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.recommendations`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -131,21 +131,21 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "effective_time",
+						"name": "effectiveTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 0,
 					},
 					map[string]any{
 						"active": true,
-						"name": "expiry_time",
+						"name": "expiryTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 1,
 					},
 					map[string]any{
 						"active": true,
-						"name": "heat_index",
+						"name": "heatIndex",
 						"req": false,
 						"type": "`$NUMBER`",
 						"index$": 2,
@@ -159,14 +159,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "issue_time",
+						"name": "issueTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 4,
 					},
 					map[string]any{
 						"active": true,
-						"name": "recommendation",
+						"name": "recommendations",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 5,
@@ -180,21 +180,21 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "update_time",
+						"name": "updateTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 7,
 					},
 					map[string]any{
 						"active": true,
-						"name": "warning_level",
+						"name": "warningLevel",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 8,
 					},
 					map[string]any{
 						"active": true,
-						"name": "warning_message",
+						"name": "warningMessage",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 9,
@@ -209,6 +209,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/opendata/heat-stress-warning-sc.json",
 								"parts": []any{
@@ -218,12 +219,11 @@ func MakeConfig() map[string]any {
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.recommendations`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -234,21 +234,21 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "effective_time",
+						"name": "effectiveTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 0,
 					},
 					map[string]any{
 						"active": true,
-						"name": "expiry_time",
+						"name": "expiryTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 1,
 					},
 					map[string]any{
 						"active": true,
-						"name": "heat_index",
+						"name": "heatIndex",
 						"req": false,
 						"type": "`$NUMBER`",
 						"index$": 2,
@@ -262,14 +262,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "issue_time",
+						"name": "issueTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 4,
 					},
 					map[string]any{
 						"active": true,
-						"name": "recommendation",
+						"name": "recommendations",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 5,
@@ -283,21 +283,21 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "update_time",
+						"name": "updateTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 7,
 					},
 					map[string]any{
 						"active": true,
-						"name": "warning_level",
+						"name": "warningLevel",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 8,
 					},
 					map[string]any{
 						"active": true,
-						"name": "warning_message",
+						"name": "warningMessage",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 9,
@@ -312,6 +312,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/opendata/heat-stress-warning-tc.json",
 								"parts": []any{
@@ -321,12 +322,11 @@ func MakeConfig() map[string]any {
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.recommendations`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

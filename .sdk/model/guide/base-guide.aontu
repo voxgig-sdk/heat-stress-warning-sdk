@@ -8,18 +8,21 @@ guide: {
   entity: heat_stress_warning_en: {
     path: "/opendata/heat-stress-warning-en.json": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.recommendations`")|top
     }
   }
 
   entity: heat_stress_warning_sc: {
     path: "/opendata/heat-stress-warning-sc.json": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.recommendations`")|top
     }
   }
 
   entity: heat_stress_warning_tc: {
     path: "/opendata/heat-stress-warning-tc.json": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.recommendations`")|top
     }
   }
 

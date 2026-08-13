@@ -101,16 +101,16 @@ heat_stress_warning_en = client.HeatStressWarningEn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `String` | No |  |
-| `expiry_time` | `String` | No |  |
-| `heat_index` | `Float` | No |  |
+| `effectiveTime` | `String` | No |  |
+| `expiryTime` | `String` | No |  |
+| `heatIndex` | `Float` | No |  |
 | `humidity` | `Integer` | No |  |
-| `issue_time` | `String` | No |  |
-| `recommendation` | `Array` | No |  |
+| `issueTime` | `String` | No |  |
+| `recommendations` | `Array` | No |  |
 | `temperature` | `Float` | No |  |
-| `update_time` | `String` | No |  |
-| `warning_level` | `String` | No |  |
-| `warning_message` | `String` | No |  |
+| `updateTime` | `String` | No |  |
+| `warningLevel` | `String` | No |  |
+| `warningMessage` | `String` | No |  |
 
 ### Operations
 
@@ -162,16 +162,16 @@ heat_stress_warning_sc = client.HeatStressWarningSc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `String` | No |  |
-| `expiry_time` | `String` | No |  |
-| `heat_index` | `Float` | No |  |
+| `effectiveTime` | `String` | No |  |
+| `expiryTime` | `String` | No |  |
+| `heatIndex` | `Float` | No |  |
 | `humidity` | `Integer` | No |  |
-| `issue_time` | `String` | No |  |
-| `recommendation` | `Array` | No |  |
+| `issueTime` | `String` | No |  |
+| `recommendations` | `Array` | No |  |
 | `temperature` | `Float` | No |  |
-| `update_time` | `String` | No |  |
-| `warning_level` | `String` | No |  |
-| `warning_message` | `String` | No |  |
+| `updateTime` | `String` | No |  |
+| `warningLevel` | `String` | No |  |
+| `warningMessage` | `String` | No |  |
 
 ### Operations
 
@@ -223,16 +223,16 @@ heat_stress_warning_tc = client.HeatStressWarningTc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `String` | No |  |
-| `expiry_time` | `String` | No |  |
-| `heat_index` | `Float` | No |  |
+| `effectiveTime` | `String` | No |  |
+| `expiryTime` | `String` | No |  |
+| `heatIndex` | `Float` | No |  |
 | `humidity` | `Integer` | No |  |
-| `issue_time` | `String` | No |  |
-| `recommendation` | `Array` | No |  |
+| `issueTime` | `String` | No |  |
+| `recommendations` | `Array` | No |  |
 | `temperature` | `Float` | No |  |
-| `update_time` | `String` | No |  |
-| `warning_level` | `String` | No |  |
-| `warning_message` | `String` | No |  |
+| `updateTime` | `String` | No |  |
+| `warningLevel` | `String` | No |  |
+| `warningMessage` | `String` | No |  |
 
 ### Operations
 

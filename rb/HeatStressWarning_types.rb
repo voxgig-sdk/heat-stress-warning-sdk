@@ -10,271 +10,271 @@
 
 # HeatStressWarningEn entity data model.
 #
-# @!attribute [rw] effective_time
+# @!attribute [rw] effectiveTime
 #   @return [String, nil]
 #
-# @!attribute [rw] expiry_time
+# @!attribute [rw] expiryTime
 #   @return [String, nil]
 #
-# @!attribute [rw] heat_index
+# @!attribute [rw] heatIndex
 #   @return [Float, nil]
 #
 # @!attribute [rw] humidity
 #   @return [Integer, nil]
 #
-# @!attribute [rw] issue_time
+# @!attribute [rw] issueTime
 #   @return [String, nil]
 #
-# @!attribute [rw] recommendation
+# @!attribute [rw] recommendations
 #   @return [Array, nil]
 #
 # @!attribute [rw] temperature
 #   @return [Float, nil]
 #
-# @!attribute [rw] update_time
+# @!attribute [rw] updateTime
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_level
+# @!attribute [rw] warningLevel
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_message
+# @!attribute [rw] warningMessage
 #   @return [String, nil]
 HeatStressWarningEn = Struct.new(
-  :effective_time,
-  :expiry_time,
-  :heat_index,
+  :effectiveTime,
+  :expiryTime,
+  :heatIndex,
   :humidity,
-  :issue_time,
-  :recommendation,
+  :issueTime,
+  :recommendations,
   :temperature,
-  :update_time,
-  :warning_level,
-  :warning_message,
+  :updateTime,
+  :warningLevel,
+  :warningMessage,
   keyword_init: true
 )
 
 # Request payload for HeatStressWarningEn#list.
 #
-# @!attribute [rw] effective_time
+# @!attribute [rw] effectiveTime
 #   @return [String, nil]
 #
-# @!attribute [rw] expiry_time
+# @!attribute [rw] expiryTime
 #   @return [String, nil]
 #
-# @!attribute [rw] heat_index
+# @!attribute [rw] heatIndex
 #   @return [Float, nil]
 #
 # @!attribute [rw] humidity
 #   @return [Integer, nil]
 #
-# @!attribute [rw] issue_time
+# @!attribute [rw] issueTime
 #   @return [String, nil]
 #
-# @!attribute [rw] recommendation
+# @!attribute [rw] recommendations
 #   @return [Array, nil]
 #
 # @!attribute [rw] temperature
 #   @return [Float, nil]
 #
-# @!attribute [rw] update_time
+# @!attribute [rw] updateTime
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_level
+# @!attribute [rw] warningLevel
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_message
+# @!attribute [rw] warningMessage
 #   @return [String, nil]
 HeatStressWarningEnListMatch = Struct.new(
-  :effective_time,
-  :expiry_time,
-  :heat_index,
+  :effectiveTime,
+  :expiryTime,
+  :heatIndex,
   :humidity,
-  :issue_time,
-  :recommendation,
+  :issueTime,
+  :recommendations,
   :temperature,
-  :update_time,
-  :warning_level,
-  :warning_message,
+  :updateTime,
+  :warningLevel,
+  :warningMessage,
   keyword_init: true
 )
 
 # HeatStressWarningSc entity data model.
 #
-# @!attribute [rw] effective_time
+# @!attribute [rw] effectiveTime
 #   @return [String, nil]
 #
-# @!attribute [rw] expiry_time
+# @!attribute [rw] expiryTime
 #   @return [String, nil]
 #
-# @!attribute [rw] heat_index
+# @!attribute [rw] heatIndex
 #   @return [Float, nil]
 #
 # @!attribute [rw] humidity
 #   @return [Integer, nil]
 #
-# @!attribute [rw] issue_time
+# @!attribute [rw] issueTime
 #   @return [String, nil]
 #
-# @!attribute [rw] recommendation
+# @!attribute [rw] recommendations
 #   @return [Array, nil]
 #
 # @!attribute [rw] temperature
 #   @return [Float, nil]
 #
-# @!attribute [rw] update_time
+# @!attribute [rw] updateTime
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_level
+# @!attribute [rw] warningLevel
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_message
+# @!attribute [rw] warningMessage
 #   @return [String, nil]
 HeatStressWarningSc = Struct.new(
-  :effective_time,
-  :expiry_time,
-  :heat_index,
+  :effectiveTime,
+  :expiryTime,
+  :heatIndex,
   :humidity,
-  :issue_time,
-  :recommendation,
+  :issueTime,
+  :recommendations,
   :temperature,
-  :update_time,
-  :warning_level,
-  :warning_message,
+  :updateTime,
+  :warningLevel,
+  :warningMessage,
   keyword_init: true
 )
 
 # Request payload for HeatStressWarningSc#list.
 #
-# @!attribute [rw] effective_time
+# @!attribute [rw] effectiveTime
 #   @return [String, nil]
 #
-# @!attribute [rw] expiry_time
+# @!attribute [rw] expiryTime
 #   @return [String, nil]
 #
-# @!attribute [rw] heat_index
+# @!attribute [rw] heatIndex
 #   @return [Float, nil]
 #
 # @!attribute [rw] humidity
 #   @return [Integer, nil]
 #
-# @!attribute [rw] issue_time
+# @!attribute [rw] issueTime
 #   @return [String, nil]
 #
-# @!attribute [rw] recommendation
+# @!attribute [rw] recommendations
 #   @return [Array, nil]
 #
 # @!attribute [rw] temperature
 #   @return [Float, nil]
 #
-# @!attribute [rw] update_time
+# @!attribute [rw] updateTime
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_level
+# @!attribute [rw] warningLevel
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_message
+# @!attribute [rw] warningMessage
 #   @return [String, nil]
 HeatStressWarningScListMatch = Struct.new(
-  :effective_time,
-  :expiry_time,
-  :heat_index,
+  :effectiveTime,
+  :expiryTime,
+  :heatIndex,
   :humidity,
-  :issue_time,
-  :recommendation,
+  :issueTime,
+  :recommendations,
   :temperature,
-  :update_time,
-  :warning_level,
-  :warning_message,
+  :updateTime,
+  :warningLevel,
+  :warningMessage,
   keyword_init: true
 )
 
 # HeatStressWarningTc entity data model.
 #
-# @!attribute [rw] effective_time
+# @!attribute [rw] effectiveTime
 #   @return [String, nil]
 #
-# @!attribute [rw] expiry_time
+# @!attribute [rw] expiryTime
 #   @return [String, nil]
 #
-# @!attribute [rw] heat_index
+# @!attribute [rw] heatIndex
 #   @return [Float, nil]
 #
 # @!attribute [rw] humidity
 #   @return [Integer, nil]
 #
-# @!attribute [rw] issue_time
+# @!attribute [rw] issueTime
 #   @return [String, nil]
 #
-# @!attribute [rw] recommendation
+# @!attribute [rw] recommendations
 #   @return [Array, nil]
 #
 # @!attribute [rw] temperature
 #   @return [Float, nil]
 #
-# @!attribute [rw] update_time
+# @!attribute [rw] updateTime
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_level
+# @!attribute [rw] warningLevel
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_message
+# @!attribute [rw] warningMessage
 #   @return [String, nil]
 HeatStressWarningTc = Struct.new(
-  :effective_time,
-  :expiry_time,
-  :heat_index,
+  :effectiveTime,
+  :expiryTime,
+  :heatIndex,
   :humidity,
-  :issue_time,
-  :recommendation,
+  :issueTime,
+  :recommendations,
   :temperature,
-  :update_time,
-  :warning_level,
-  :warning_message,
+  :updateTime,
+  :warningLevel,
+  :warningMessage,
   keyword_init: true
 )
 
 # Request payload for HeatStressWarningTc#list.
 #
-# @!attribute [rw] effective_time
+# @!attribute [rw] effectiveTime
 #   @return [String, nil]
 #
-# @!attribute [rw] expiry_time
+# @!attribute [rw] expiryTime
 #   @return [String, nil]
 #
-# @!attribute [rw] heat_index
+# @!attribute [rw] heatIndex
 #   @return [Float, nil]
 #
 # @!attribute [rw] humidity
 #   @return [Integer, nil]
 #
-# @!attribute [rw] issue_time
+# @!attribute [rw] issueTime
 #   @return [String, nil]
 #
-# @!attribute [rw] recommendation
+# @!attribute [rw] recommendations
 #   @return [Array, nil]
 #
 # @!attribute [rw] temperature
 #   @return [Float, nil]
 #
-# @!attribute [rw] update_time
+# @!attribute [rw] updateTime
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_level
+# @!attribute [rw] warningLevel
 #   @return [String, nil]
 #
-# @!attribute [rw] warning_message
+# @!attribute [rw] warningMessage
 #   @return [String, nil]
 HeatStressWarningTcListMatch = Struct.new(
-  :effective_time,
-  :expiry_time,
-  :heat_index,
+  :effectiveTime,
+  :expiryTime,
+  :heatIndex,
   :humidity,
-  :issue_time,
-  :recommendation,
+  :issueTime,
+  :recommendations,
   :temperature,
-  :update_time,
-  :warning_level,
-  :warning_message,
+  :updateTime,
+  :warningLevel,
+  :warningMessage,
   keyword_init: true
 )
 

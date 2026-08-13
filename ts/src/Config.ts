@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'HeatStressWarning',
   }
 
 
@@ -62,21 +62,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "effective_time",
+          "name": "effectiveTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "expiry_time",
+          "name": "expiryTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "heat_index",
+          "name": "heatIndex",
           "req": false,
           "type": "`$NUMBER`",
           "index$": 2
@@ -90,14 +90,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "issue_time",
+          "name": "issueTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "recommendation",
+          "name": "recommendations",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 5
@@ -111,21 +111,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "update_time",
+          "name": "updateTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "warning_level",
+          "name": "warningLevel",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "warning_message",
+          "name": "warningMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
@@ -140,6 +140,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/opendata/heat-stress-warning-en.json",
               "parts": [
@@ -149,7 +150,7 @@ class Config {
               "select": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.recommendations`"
               },
               "index$": 0
             }
@@ -165,21 +166,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "effective_time",
+          "name": "effectiveTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "expiry_time",
+          "name": "expiryTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "heat_index",
+          "name": "heatIndex",
           "req": false,
           "type": "`$NUMBER`",
           "index$": 2
@@ -193,14 +194,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "issue_time",
+          "name": "issueTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "recommendation",
+          "name": "recommendations",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 5
@@ -214,21 +215,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "update_time",
+          "name": "updateTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "warning_level",
+          "name": "warningLevel",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "warning_message",
+          "name": "warningMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
@@ -243,6 +244,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/opendata/heat-stress-warning-sc.json",
               "parts": [
@@ -252,7 +254,7 @@ class Config {
               "select": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.recommendations`"
               },
               "index$": 0
             }
@@ -268,21 +270,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "effective_time",
+          "name": "effectiveTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "expiry_time",
+          "name": "expiryTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "heat_index",
+          "name": "heatIndex",
           "req": false,
           "type": "`$NUMBER`",
           "index$": 2
@@ -296,14 +298,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "issue_time",
+          "name": "issueTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "recommendation",
+          "name": "recommendations",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 5
@@ -317,21 +319,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "update_time",
+          "name": "updateTime",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "warning_level",
+          "name": "warningLevel",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "warning_message",
+          "name": "warningMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
@@ -346,6 +348,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/opendata/heat-stress-warning-tc.json",
               "parts": [
@@ -355,7 +358,7 @@ class Config {
               "select": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.recommendations`"
               },
               "index$": 0
             }

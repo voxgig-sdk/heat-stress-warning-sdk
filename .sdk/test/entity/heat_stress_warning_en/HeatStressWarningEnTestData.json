@@ -2,56 +2,56 @@
   "existing": {
     "heat_stress_warning_en": {
       "HEAT_STRESS_WARNING_EN00": {
-        "effective_time": "s64",
-        "expiry_time": "s65",
-        "heat_index": 102,
+        "effectiveTime": "s64",
+        "expiryTime": "s65",
+        "heatIndex": 102,
         "humidity": "s67",
-        "issue_time": "s68",
-        "recommendation": [],
+        "issueTime": "s68",
+        "recommendations": [],
         "temperature": 106,
-        "update_time": "s6b",
-        "warning_level": "s6c",
-        "warning_message": "s6d"
+        "updateTime": "s6b",
+        "warningLevel": "s6c",
+        "warningMessage": "s6d"
       },
       "HEAT_STRESS_WARNING_EN01": {
-        "effective_time": "sc8",
-        "expiry_time": "sc9",
-        "heat_index": 202,
+        "effectiveTime": "sc8",
+        "expiryTime": "sc9",
+        "heatIndex": 202,
         "humidity": "scb",
-        "issue_time": "scc",
-        "recommendation": [],
+        "issueTime": "scc",
+        "recommendations": [],
         "temperature": 206,
-        "update_time": "scf",
-        "warning_level": "sd0",
-        "warning_message": "sd1"
+        "updateTime": "scf",
+        "warningLevel": "sd0",
+        "warningMessage": "sd1"
       },
       "HEAT_STRESS_WARNING_EN02": {
-        "effective_time": "s12c",
-        "expiry_time": "s12d",
-        "heat_index": 302,
+        "effectiveTime": "s12c",
+        "expiryTime": "s12d",
+        "heatIndex": 302,
         "humidity": "s12f",
-        "issue_time": "s130",
-        "recommendation": [],
+        "issueTime": "s130",
+        "recommendations": [],
         "temperature": 306,
-        "update_time": "s133",
-        "warning_level": "s134",
-        "warning_message": "s135"
+        "updateTime": "s133",
+        "warningLevel": "s134",
+        "warningMessage": "s135"
       }
     }
   },
   "new": {
     "heat_stress_warning_en": {
       "heat_stress_warning_en_ref01": {
-        "effective_time": "s190",
-        "expiry_time": "s191",
-        "heat_index": 402,
+        "effectiveTime": "s190",
+        "expiryTime": "s191",
+        "heatIndex": 402,
         "humidity": "s193",
-        "issue_time": "s194",
-        "recommendation": [],
+        "issueTime": "s194",
+        "recommendations": [],
         "temperature": 406,
-        "update_time": "s197",
-        "warning_level": "s198",
-        "warning_message": "s199"
+        "updateTime": "s197",
+        "warningLevel": "s198",
+        "warningMessage": "s199"
       }
     }
   }

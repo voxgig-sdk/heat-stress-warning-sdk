@@ -6,90 +6,94 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
 
-import "encoding/json"
+import (
+	"encoding/json"
+
+	"github.com/voxgig-sdk/heat-stress-warning-sdk/go/core"
+)
 
 // HeatStressWarningEn is the typed data model for the heat_stress_warning_en entity.
 type HeatStressWarningEn struct {
-	EffectiveTime *string `json:"effective_time,omitempty"`
-	ExpiryTime *string `json:"expiry_time,omitempty"`
-	HeatIndex *float64 `json:"heat_index,omitempty"`
+	EffectiveTime *string `json:"effectiveTime,omitempty"`
+	ExpiryTime *string `json:"expiryTime,omitempty"`
+	HeatIndex *float64 `json:"heatIndex,omitempty"`
 	Humidity *int `json:"humidity,omitempty"`
-	IssueTime *string `json:"issue_time,omitempty"`
-	Recommendation *[]any `json:"recommendation,omitempty"`
+	IssueTime *string `json:"issueTime,omitempty"`
+	Recommendations *[]any `json:"recommendations,omitempty"`
 	Temperature *float64 `json:"temperature,omitempty"`
-	UpdateTime *string `json:"update_time,omitempty"`
-	WarningLevel *string `json:"warning_level,omitempty"`
-	WarningMessage *string `json:"warning_message,omitempty"`
+	UpdateTime *string `json:"updateTime,omitempty"`
+	WarningLevel *string `json:"warningLevel,omitempty"`
+	WarningMessage *string `json:"warningMessage,omitempty"`
 }
 
 // HeatStressWarningEnListMatch is the typed request payload for HeatStressWarningEn.ListTyped.
 type HeatStressWarningEnListMatch struct {
-	EffectiveTime *string `json:"effective_time,omitempty"`
-	ExpiryTime *string `json:"expiry_time,omitempty"`
-	HeatIndex *float64 `json:"heat_index,omitempty"`
+	EffectiveTime *string `json:"effectiveTime,omitempty"`
+	ExpiryTime *string `json:"expiryTime,omitempty"`
+	HeatIndex *float64 `json:"heatIndex,omitempty"`
 	Humidity *int `json:"humidity,omitempty"`
-	IssueTime *string `json:"issue_time,omitempty"`
-	Recommendation *[]any `json:"recommendation,omitempty"`
+	IssueTime *string `json:"issueTime,omitempty"`
+	Recommendations *[]any `json:"recommendations,omitempty"`
 	Temperature *float64 `json:"temperature,omitempty"`
-	UpdateTime *string `json:"update_time,omitempty"`
-	WarningLevel *string `json:"warning_level,omitempty"`
-	WarningMessage *string `json:"warning_message,omitempty"`
+	UpdateTime *string `json:"updateTime,omitempty"`
+	WarningLevel *string `json:"warningLevel,omitempty"`
+	WarningMessage *string `json:"warningMessage,omitempty"`
 }
 
 // HeatStressWarningSc is the typed data model for the heat_stress_warning_sc entity.
 type HeatStressWarningSc struct {
-	EffectiveTime *string `json:"effective_time,omitempty"`
-	ExpiryTime *string `json:"expiry_time,omitempty"`
-	HeatIndex *float64 `json:"heat_index,omitempty"`
+	EffectiveTime *string `json:"effectiveTime,omitempty"`
+	ExpiryTime *string `json:"expiryTime,omitempty"`
+	HeatIndex *float64 `json:"heatIndex,omitempty"`
 	Humidity *int `json:"humidity,omitempty"`
-	IssueTime *string `json:"issue_time,omitempty"`
-	Recommendation *[]any `json:"recommendation,omitempty"`
+	IssueTime *string `json:"issueTime,omitempty"`
+	Recommendations *[]any `json:"recommendations,omitempty"`
 	Temperature *float64 `json:"temperature,omitempty"`
-	UpdateTime *string `json:"update_time,omitempty"`
-	WarningLevel *string `json:"warning_level,omitempty"`
-	WarningMessage *string `json:"warning_message,omitempty"`
+	UpdateTime *string `json:"updateTime,omitempty"`
+	WarningLevel *string `json:"warningLevel,omitempty"`
+	WarningMessage *string `json:"warningMessage,omitempty"`
 }
 
 // HeatStressWarningScListMatch is the typed request payload for HeatStressWarningSc.ListTyped.
 type HeatStressWarningScListMatch struct {
-	EffectiveTime *string `json:"effective_time,omitempty"`
-	ExpiryTime *string `json:"expiry_time,omitempty"`
-	HeatIndex *float64 `json:"heat_index,omitempty"`
+	EffectiveTime *string `json:"effectiveTime,omitempty"`
+	ExpiryTime *string `json:"expiryTime,omitempty"`
+	HeatIndex *float64 `json:"heatIndex,omitempty"`
 	Humidity *int `json:"humidity,omitempty"`
-	IssueTime *string `json:"issue_time,omitempty"`
-	Recommendation *[]any `json:"recommendation,omitempty"`
+	IssueTime *string `json:"issueTime,omitempty"`
+	Recommendations *[]any `json:"recommendations,omitempty"`
 	Temperature *float64 `json:"temperature,omitempty"`
-	UpdateTime *string `json:"update_time,omitempty"`
-	WarningLevel *string `json:"warning_level,omitempty"`
-	WarningMessage *string `json:"warning_message,omitempty"`
+	UpdateTime *string `json:"updateTime,omitempty"`
+	WarningLevel *string `json:"warningLevel,omitempty"`
+	WarningMessage *string `json:"warningMessage,omitempty"`
 }
 
 // HeatStressWarningTc is the typed data model for the heat_stress_warning_tc entity.
 type HeatStressWarningTc struct {
-	EffectiveTime *string `json:"effective_time,omitempty"`
-	ExpiryTime *string `json:"expiry_time,omitempty"`
-	HeatIndex *float64 `json:"heat_index,omitempty"`
+	EffectiveTime *string `json:"effectiveTime,omitempty"`
+	ExpiryTime *string `json:"expiryTime,omitempty"`
+	HeatIndex *float64 `json:"heatIndex,omitempty"`
 	Humidity *int `json:"humidity,omitempty"`
-	IssueTime *string `json:"issue_time,omitempty"`
-	Recommendation *[]any `json:"recommendation,omitempty"`
+	IssueTime *string `json:"issueTime,omitempty"`
+	Recommendations *[]any `json:"recommendations,omitempty"`
 	Temperature *float64 `json:"temperature,omitempty"`
-	UpdateTime *string `json:"update_time,omitempty"`
-	WarningLevel *string `json:"warning_level,omitempty"`
-	WarningMessage *string `json:"warning_message,omitempty"`
+	UpdateTime *string `json:"updateTime,omitempty"`
+	WarningLevel *string `json:"warningLevel,omitempty"`
+	WarningMessage *string `json:"warningMessage,omitempty"`
 }
 
 // HeatStressWarningTcListMatch is the typed request payload for HeatStressWarningTc.ListTyped.
 type HeatStressWarningTcListMatch struct {
-	EffectiveTime *string `json:"effective_time,omitempty"`
-	ExpiryTime *string `json:"expiry_time,omitempty"`
-	HeatIndex *float64 `json:"heat_index,omitempty"`
+	EffectiveTime *string `json:"effectiveTime,omitempty"`
+	ExpiryTime *string `json:"expiryTime,omitempty"`
+	HeatIndex *float64 `json:"heatIndex,omitempty"`
 	Humidity *int `json:"humidity,omitempty"`
-	IssueTime *string `json:"issue_time,omitempty"`
-	Recommendation *[]any `json:"recommendation,omitempty"`
+	IssueTime *string `json:"issueTime,omitempty"`
+	Recommendations *[]any `json:"recommendations,omitempty"`
 	Temperature *float64 `json:"temperature,omitempty"`
-	UpdateTime *string `json:"update_time,omitempty"`
-	WarningLevel *string `json:"warning_level,omitempty"`
-	WarningMessage *string `json:"warning_message,omitempty"`
+	UpdateTime *string `json:"updateTime,omitempty"`
+	WarningLevel *string `json:"warningLevel,omitempty"`
+	WarningMessage *string `json:"warningMessage,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the
@@ -104,12 +108,26 @@ func asMap(v any) map[string]any {
 	return out
 }
 
-// typedFrom decodes a runtime value (a map[string]any produced by the op
-// pipeline) into a typed model T via a JSON round-trip. On any error it
-// returns the zero value of T; the op's own (value, error) tuple carries the
-// real error.
+// entityData unwraps an entity to its data map.
+//
+// Operations resolve to the ENTITY, not the raw data (see AGENTS.md), and an
+// entity's fields are UNEXPORTED — marshalling one directly yields `{}`, so
+// every typed accessor would silently hand back a zero-valued struct. The
+// typed boundary therefore takes the data hop first.
+func entityData(v any) any {
+	if ent, ok := v.(core.Entity); ok {
+		return ent.Data()
+	}
+	return v
+}
+
+// typedFrom decodes a runtime value (an entity, or the map[string]any the op
+// pipeline produced) into a typed model T via a JSON round-trip. On any error
+// it returns the zero value of T; the op's own (value, error) tuple carries
+// the real error.
 func typedFrom[T any](v any) T {
 	var out T
+	v = entityData(v)
 	if v == nil {
 		return out
 	}
@@ -121,12 +139,20 @@ func typedFrom[T any](v any) T {
 	return out
 }
 
-// typedSliceFrom decodes a runtime list value ([]any of maps) into a typed
-// slice []T via a JSON round-trip, for list ops.
+// typedSliceFrom decodes a runtime list value into a typed slice []T via a
+// JSON round-trip, for list ops. `list` resolves to a slice of ENTITY
+// instances, so each element takes the data hop.
 func typedSliceFrom[T any](v any) []T {
 	var out []T
 	if v == nil {
 		return out
+	}
+	if list, ok := v.([]any); ok {
+		unwrapped := make([]any, 0, len(list))
+		for _, item := range list {
+			unwrapped = append(unwrapped, entityData(item))
+		}
+		v = unwrapped
 	}
 	b, err := json.Marshal(v)
 	if err != nil {

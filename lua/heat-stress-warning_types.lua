@@ -7,76 +7,76 @@
 -- edit by hand.
 
 ---@class HeatStressWarningEn
----@field effective_time? string
----@field expiry_time? string
----@field heat_index? number
+---@field effectiveTime? string
+---@field expiryTime? string
+---@field heatIndex? number
 ---@field humidity? number
----@field issue_time? string
----@field recommendation? table
+---@field issueTime? string
+---@field recommendations? table
 ---@field temperature? number
----@field update_time? string
----@field warning_level? string
----@field warning_message? string
+---@field updateTime? string
+---@field warningLevel? string
+---@field warningMessage? string
 
 ---@class HeatStressWarningEnListMatch
----@field effective_time? string
----@field expiry_time? string
----@field heat_index? number
+---@field effectiveTime? string
+---@field expiryTime? string
+---@field heatIndex? number
 ---@field humidity? number
----@field issue_time? string
----@field recommendation? table
+---@field issueTime? string
+---@field recommendations? table
 ---@field temperature? number
----@field update_time? string
----@field warning_level? string
----@field warning_message? string
+---@field updateTime? string
+---@field warningLevel? string
+---@field warningMessage? string
 
 ---@class HeatStressWarningSc
----@field effective_time? string
----@field expiry_time? string
----@field heat_index? number
+---@field effectiveTime? string
+---@field expiryTime? string
+---@field heatIndex? number
 ---@field humidity? number
----@field issue_time? string
----@field recommendation? table
+---@field issueTime? string
+---@field recommendations? table
 ---@field temperature? number
----@field update_time? string
----@field warning_level? string
----@field warning_message? string
+---@field updateTime? string
+---@field warningLevel? string
+---@field warningMessage? string
 
 ---@class HeatStressWarningScListMatch
----@field effective_time? string
----@field expiry_time? string
----@field heat_index? number
+---@field effectiveTime? string
+---@field expiryTime? string
+---@field heatIndex? number
 ---@field humidity? number
----@field issue_time? string
----@field recommendation? table
+---@field issueTime? string
+---@field recommendations? table
 ---@field temperature? number
----@field update_time? string
----@field warning_level? string
----@field warning_message? string
+---@field updateTime? string
+---@field warningLevel? string
+---@field warningMessage? string
 
 ---@class HeatStressWarningTc
----@field effective_time? string
----@field expiry_time? string
----@field heat_index? number
+---@field effectiveTime? string
+---@field expiryTime? string
+---@field heatIndex? number
 ---@field humidity? number
----@field issue_time? string
----@field recommendation? table
+---@field issueTime? string
+---@field recommendations? table
 ---@field temperature? number
----@field update_time? string
----@field warning_level? string
----@field warning_message? string
+---@field updateTime? string
+---@field warningLevel? string
+---@field warningMessage? string
 
 ---@class HeatStressWarningTcListMatch
----@field effective_time? string
----@field expiry_time? string
----@field heat_index? number
+---@field effectiveTime? string
+---@field expiryTime? string
+---@field heatIndex? number
 ---@field humidity? number
----@field issue_time? string
----@field recommendation? table
+---@field issueTime? string
+---@field recommendations? table
 ---@field temperature? number
----@field update_time? string
----@field warning_level? string
----@field warning_message? string
+---@field updateTime? string
+---@field warningLevel? string
+---@field warningMessage? string
 
 local M = {}
 

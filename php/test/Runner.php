@@ -43,8 +43,8 @@ class HeatStressWarningTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('HEATSTRESSWARNING_TEST_LIVE');
-        $override = self::getenv('HEATSTRESSWARNING_TEST_OVERRIDE');
+        $live = self::getenv('HEAT_STRESS_WARNING_TEST_LIVE');
+        $override = self::getenv('HEAT_STRESS_WARNING_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class HeatStressWarningTestRunner
             }
         }
 
-        $explain = self::getenv('HEATSTRESSWARNING_TEST_EXPLAIN');
+        $explain = self::getenv('HEAT_STRESS_WARNING_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['HEATSTRESSWARNING_TEST_EXPLAIN'] = $explain;
+            $m['HEAT_STRESS_WARNING_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

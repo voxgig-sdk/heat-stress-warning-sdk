@@ -61,11 +61,11 @@ function heat_stress_warning_en_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID"] = {},
-    ["HEATSTRESSWARNING_TEST_LIVE"] = "FALSE",
+    ["HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID"] = {},
+    ["HEAT_STRESS_WARNING_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["HEATSTRESSWARNING_TEST_LIVE"] == "TRUE"
+  local live = env["HEAT_STRESS_WARNING_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

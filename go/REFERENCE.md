@@ -106,16 +106,16 @@ fmt.Println(heatStressWarningEn.GetName()) // "heat_stress_warning_en"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `string` | No |  |
-| `expiry_time` | `string` | No |  |
-| `heat_index` | `float64` | No |  |
+| `effectiveTime` | `string` | No |  |
+| `expiryTime` | `string` | No |  |
+| `heatIndex` | `float64` | No |  |
 | `humidity` | `int` | No |  |
-| `issue_time` | `string` | No |  |
-| `recommendation` | `[]any` | No |  |
+| `issueTime` | `string` | No |  |
+| `recommendations` | `[]any` | No |  |
 | `temperature` | `float64` | No |  |
-| `update_time` | `string` | No |  |
-| `warning_level` | `string` | No |  |
-| `warning_message` | `string` | No |  |
+| `updateTime` | `string` | No |  |
+| `warningLevel` | `string` | No |  |
+| `warningMessage` | `string` | No |  |
 
 ### Operations
 
@@ -166,16 +166,16 @@ fmt.Println(heatStressWarningSc.GetName()) // "heat_stress_warning_sc"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `string` | No |  |
-| `expiry_time` | `string` | No |  |
-| `heat_index` | `float64` | No |  |
+| `effectiveTime` | `string` | No |  |
+| `expiryTime` | `string` | No |  |
+| `heatIndex` | `float64` | No |  |
 | `humidity` | `int` | No |  |
-| `issue_time` | `string` | No |  |
-| `recommendation` | `[]any` | No |  |
+| `issueTime` | `string` | No |  |
+| `recommendations` | `[]any` | No |  |
 | `temperature` | `float64` | No |  |
-| `update_time` | `string` | No |  |
-| `warning_level` | `string` | No |  |
-| `warning_message` | `string` | No |  |
+| `updateTime` | `string` | No |  |
+| `warningLevel` | `string` | No |  |
+| `warningMessage` | `string` | No |  |
 
 ### Operations
 
@@ -226,16 +226,16 @@ fmt.Println(heatStressWarningTc.GetName()) // "heat_stress_warning_tc"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `string` | No |  |
-| `expiry_time` | `string` | No |  |
-| `heat_index` | `float64` | No |  |
+| `effectiveTime` | `string` | No |  |
+| `expiryTime` | `string` | No |  |
+| `heatIndex` | `float64` | No |  |
 | `humidity` | `int` | No |  |
-| `issue_time` | `string` | No |  |
-| `recommendation` | `[]any` | No |  |
+| `issueTime` | `string` | No |  |
+| `recommendations` | `[]any` | No |  |
 | `temperature` | `float64` | No |  |
-| `update_time` | `string` | No |  |
-| `warning_level` | `string` | No |  |
-| `warning_message` | `string` | No |  |
+| `updateTime` | `string` | No |  |
+| `warningLevel` | `string` | No |  |
+| `warningMessage` | `string` | No |  |
 
 ### Operations
 

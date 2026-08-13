@@ -6,9 +6,9 @@ import time
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from heatstresswarning_sdk.utility.voxgig_struct import voxgig_struct as vs
 from heatstresswarning_sdk import HeatStressWarningSDK
-from core import helpers
+from heatstresswarning_sdk.core import helpers
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 from test import runner
@@ -42,7 +42,7 @@ class TestHeatStressWarningEnEntity:
         assert len(seen) == 3
 
         # Inbound: streaming active -> yields each item from the feature.
-        from config import make_config
+        from heatstresswarning_sdk.config import make_config
         cfg = make_config()
         if isinstance(cfg.get("feature"), dict) and "streaming" in cfg["feature"]:
             sdk = HeatStressWarningSDK.test(
@@ -70,7 +70,7 @@ class TestHeatStressWarningEnEntity:
         # without an *_ENTID env override, those IDs hit the live API and 4xx.
         if setup.get("synthetic_only"):
             pytest.skip("live entity test uses synthetic IDs from fixture — "
-                        "set HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID JSON to run live")
+                        "set HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID JSON to run live")
         client = setup["client"]
 
         # Bootstrap entity data from existing test data.
@@ -118,21 +118,21 @@ def _heat_stress_warning_en_basic_setup(extra):
     # mode is on without a real override, the basic test runs against synthetic
     # IDs from the fixture and 4xx's. We surface this so the test can skip.
     _entid_env_raw = os.environ.get(
-        "HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID")
+        "HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID")
     _idmap_overridden = _entid_env_raw is not None and _entid_env_raw.strip().startswith("{")
 
     env = runner.env_override({
-        "HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID": idmap,
-        "HEATSTRESSWARNING_TEST_LIVE": "FALSE",
-        "HEATSTRESSWARNING_TEST_EXPLAIN": "FALSE",
+        "HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID": idmap,
+        "HEAT_STRESS_WARNING_TEST_LIVE": "FALSE",
+        "HEAT_STRESS_WARNING_TEST_EXPLAIN": "FALSE",
     })
 
     idmap_resolved = helpers.to_map(
-        env.get("HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID"))
+        env.get("HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID"))
     if idmap_resolved is None:
         idmap_resolved = helpers.to_map(idmap)
 
-    if env.get("HEATSTRESSWARNING_TEST_LIVE") == "TRUE":
+    if env.get("HEAT_STRESS_WARNING_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
             },
@@ -140,13 +140,13 @@ def _heat_stress_warning_en_basic_setup(extra):
         ])
         client = HeatStressWarningSDK(helpers.to_map(merged_opts))
 
-    _live = env.get("HEATSTRESSWARNING_TEST_LIVE") == "TRUE"
+    _live = env.get("HEAT_STRESS_WARNING_TEST_LIVE") == "TRUE"
     return {
         "client": client,
         "data": entity_data,
         "idmap": idmap_resolved,
         "env": env,
-        "explain": env.get("HEATSTRESSWARNING_TEST_EXPLAIN") == "TRUE",
+        "explain": env.get("HEAT_STRESS_WARNING_TEST_EXPLAIN") == "TRUE",
         "live": _live,
         "synthetic_only": _live and not _idmap_overridden,
         "now": int(time.time() * 1000),

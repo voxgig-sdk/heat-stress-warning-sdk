@@ -37,7 +37,7 @@ class HeatStressWarningScEntity extends HeatStressWarningEntityBase<HeatStressWa
 
 
 
-  async list(this: any, reqmatch?: HeatStressWarningScListMatch, ctrl?: Control): Promise<HeatStressWarningSc[]> {
+  async list(this: any, reqmatch?: HeatStressWarningScListMatch, ctrl?: Control): Promise<HeatStressWarningScEntity[]> {
 
     const utility = this._utility
 

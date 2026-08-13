@@ -37,7 +37,7 @@ begin
   # list returns an Array of HeatStressWarningEn records — iterate directly.
   heatstresswarningens = client.HeatStressWarningEn.list
   heatstresswarningens.each do |item|
-    puts "#{item["effective_time"]}"
+    puts "#{item["effectiveTime"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = HeatStressWarningSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 heatstresswarningen = client.HeatStressWarningEn.list()
 puts heatstresswarningen
 ```
@@ -238,16 +239,16 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: List.
 
@@ -257,16 +258,16 @@ API path: `/opendata/heat-stress-warning-en.json`
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: List.
 
@@ -276,16 +277,16 @@ API path: `/opendata/heat-stress-warning-sc.json`
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: List.
 
@@ -310,16 +311,16 @@ Create an instance: `heat_stress_warning_en = client.HeatStressWarningEn`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `String` |  |
-| `expiry_time` | `String` |  |
-| `heat_index` | `Float` |  |
+| `effectiveTime` | `String` |  |
+| `expiryTime` | `String` |  |
+| `heatIndex` | `Float` |  |
 | `humidity` | `Integer` |  |
-| `issue_time` | `String` |  |
-| `recommendation` | `Array` |  |
+| `issueTime` | `String` |  |
+| `recommendations` | `Array` |  |
 | `temperature` | `Float` |  |
-| `update_time` | `String` |  |
-| `warning_level` | `String` |  |
-| `warning_message` | `String` |  |
+| `updateTime` | `String` |  |
+| `warningLevel` | `String` |  |
+| `warningMessage` | `String` |  |
 
 #### Example: List
 
@@ -343,16 +344,16 @@ Create an instance: `heat_stress_warning_sc = client.HeatStressWarningSc`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `String` |  |
-| `expiry_time` | `String` |  |
-| `heat_index` | `Float` |  |
+| `effectiveTime` | `String` |  |
+| `expiryTime` | `String` |  |
+| `heatIndex` | `Float` |  |
 | `humidity` | `Integer` |  |
-| `issue_time` | `String` |  |
-| `recommendation` | `Array` |  |
+| `issueTime` | `String` |  |
+| `recommendations` | `Array` |  |
 | `temperature` | `Float` |  |
-| `update_time` | `String` |  |
-| `warning_level` | `String` |  |
-| `warning_message` | `String` |  |
+| `updateTime` | `String` |  |
+| `warningLevel` | `String` |  |
+| `warningMessage` | `String` |  |
 
 #### Example: List
 
@@ -376,16 +377,16 @@ Create an instance: `heat_stress_warning_tc = client.HeatStressWarningTc`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `String` |  |
-| `expiry_time` | `String` |  |
-| `heat_index` | `Float` |  |
+| `effectiveTime` | `String` |  |
+| `expiryTime` | `String` |  |
+| `heatIndex` | `Float` |  |
 | `humidity` | `Integer` |  |
-| `issue_time` | `String` |  |
-| `recommendation` | `Array` |  |
+| `issueTime` | `String` |  |
+| `recommendations` | `Array` |  |
 | `temperature` | `Float` |  |
-| `update_time` | `String` |  |
-| `warning_level` | `String` |  |
-| `warning_message` | `String` |  |
+| `updateTime` | `String` |  |
+| `warningLevel` | `String` |  |
+| `warningMessage` | `String` |  |
 
 #### Example: List
 

@@ -35,7 +35,9 @@ const client = new HeatStressWarningSDK()
 
 ### 2. List heatstresswarningen records
 
-`list()` resolves to an array of HeatStressWarningEn objects — iterate it directly:
+`list()` resolves to an array of HeatStressWarningEn ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const heatstresswarningens = await client.HeatStressWarningEn().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = HeatStressWarningSDK.test()
 
 const heatstresswarningen = await client.HeatStressWarningEn().list()
-// heatstresswarningen is a bare entity populated with mock response data
+// heatstresswarningen is the entity, populated with mock response data
+// — call heatstresswarningen.data() for the record itself
 console.log(heatstresswarningen)
 ```
 
@@ -286,16 +289,16 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: list.
 
@@ -305,16 +308,16 @@ API path: `/opendata/heat-stress-warning-en.json`
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: list.
 
@@ -324,16 +327,16 @@ API path: `/opendata/heat-stress-warning-sc.json`
 
 | Field | Description |
 | --- | --- |
-| `effective_time` |  |
-| `expiry_time` |  |
-| `heat_index` |  |
+| `effectiveTime` |  |
+| `expiryTime` |  |
+| `heatIndex` |  |
 | `humidity` |  |
-| `issue_time` |  |
-| `recommendation` |  |
+| `issueTime` |  |
+| `recommendations` |  |
 | `temperature` |  |
-| `update_time` |  |
-| `warning_level` |  |
-| `warning_message` |  |
+| `updateTime` |  |
+| `warningLevel` |  |
+| `warningMessage` |  |
 
 Operations: list.
 
@@ -358,16 +361,16 @@ Create an instance: `const heat_stress_warning_en = client.HeatStressWarningEn()
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `number` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `number` |  |
 | `humidity` | `number` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `any[]` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `any[]` |  |
 | `temperature` | `number` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 
@@ -390,16 +393,16 @@ Create an instance: `const heat_stress_warning_sc = client.HeatStressWarningSc()
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `number` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `number` |  |
 | `humidity` | `number` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `any[]` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `any[]` |  |
 | `temperature` | `number` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 
@@ -422,16 +425,16 @@ Create an instance: `const heat_stress_warning_tc = client.HeatStressWarningTc()
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `number` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `number` |  |
 | `humidity` | `number` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `any[]` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `any[]` |  |
 | `temperature` | `number` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 

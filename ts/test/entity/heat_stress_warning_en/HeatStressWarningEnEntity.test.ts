@@ -26,8 +26,8 @@ import {
 describe('HeatStressWarningEnEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when HEATSTRESSWARNING_TEST_LIVE=TRUE.
-  afterEach(liveDelay('HEATSTRESSWARNING_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when HEAT_STRESS_WARNING_TEST_LIVE=TRUE.
+  afterEach(liveDelay('HEAT_STRESS_WARNING_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = HeatStressWarningSDK.test()
@@ -63,7 +63,7 @@ describe('HeatStressWarningEnEntity', async () => {
     const heat_stress_warning_en_ref01_ent = client.HeatStressWarningEn()
     const heat_stress_warning_en_ref01_match: any = {}
 
-    const heat_stress_warning_en_ref01_list = await heat_stress_warning_en_ref01_ent.list(heat_stress_warning_en_ref01_match)
+    const heat_stress_warning_en_ref01_list = (await heat_stress_warning_en_ref01_ent.list(heat_stress_warning_en_ref01_match)).map((e: any) => e.data())
 
 
   })

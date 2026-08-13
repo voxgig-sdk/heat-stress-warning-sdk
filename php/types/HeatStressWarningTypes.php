@@ -15,90 +15,90 @@ declare(strict_types=1);
 /** HeatStressWarningEn entity data model. */
 class HeatStressWarningEn
 {
-    public ?string $effective_time = null;
-    public ?string $expiry_time = null;
-    public ?float $heat_index = null;
+    public ?string $effectiveTime = null;
+    public ?string $expiryTime = null;
+    public ?float $heatIndex = null;
     public ?int $humidity = null;
-    public ?string $issue_time = null;
-    public ?array $recommendation = null;
+    public ?string $issueTime = null;
+    public ?array $recommendations = null;
     public ?float $temperature = null;
-    public ?string $update_time = null;
-    public ?string $warning_level = null;
-    public ?string $warning_message = null;
+    public ?string $updateTime = null;
+    public ?string $warningLevel = null;
+    public ?string $warningMessage = null;
 }
 
 /** Request payload for HeatStressWarningEn#list. */
 class HeatStressWarningEnListMatch
 {
-    public ?string $effective_time = null;
-    public ?string $expiry_time = null;
-    public ?float $heat_index = null;
+    public ?string $effectiveTime = null;
+    public ?string $expiryTime = null;
+    public ?float $heatIndex = null;
     public ?int $humidity = null;
-    public ?string $issue_time = null;
-    public ?array $recommendation = null;
+    public ?string $issueTime = null;
+    public ?array $recommendations = null;
     public ?float $temperature = null;
-    public ?string $update_time = null;
-    public ?string $warning_level = null;
-    public ?string $warning_message = null;
+    public ?string $updateTime = null;
+    public ?string $warningLevel = null;
+    public ?string $warningMessage = null;
 }
 
 /** HeatStressWarningSc entity data model. */
 class HeatStressWarningSc
 {
-    public ?string $effective_time = null;
-    public ?string $expiry_time = null;
-    public ?float $heat_index = null;
+    public ?string $effectiveTime = null;
+    public ?string $expiryTime = null;
+    public ?float $heatIndex = null;
     public ?int $humidity = null;
-    public ?string $issue_time = null;
-    public ?array $recommendation = null;
+    public ?string $issueTime = null;
+    public ?array $recommendations = null;
     public ?float $temperature = null;
-    public ?string $update_time = null;
-    public ?string $warning_level = null;
-    public ?string $warning_message = null;
+    public ?string $updateTime = null;
+    public ?string $warningLevel = null;
+    public ?string $warningMessage = null;
 }
 
 /** Request payload for HeatStressWarningSc#list. */
 class HeatStressWarningScListMatch
 {
-    public ?string $effective_time = null;
-    public ?string $expiry_time = null;
-    public ?float $heat_index = null;
+    public ?string $effectiveTime = null;
+    public ?string $expiryTime = null;
+    public ?float $heatIndex = null;
     public ?int $humidity = null;
-    public ?string $issue_time = null;
-    public ?array $recommendation = null;
+    public ?string $issueTime = null;
+    public ?array $recommendations = null;
     public ?float $temperature = null;
-    public ?string $update_time = null;
-    public ?string $warning_level = null;
-    public ?string $warning_message = null;
+    public ?string $updateTime = null;
+    public ?string $warningLevel = null;
+    public ?string $warningMessage = null;
 }
 
 /** HeatStressWarningTc entity data model. */
 class HeatStressWarningTc
 {
-    public ?string $effective_time = null;
-    public ?string $expiry_time = null;
-    public ?float $heat_index = null;
+    public ?string $effectiveTime = null;
+    public ?string $expiryTime = null;
+    public ?float $heatIndex = null;
     public ?int $humidity = null;
-    public ?string $issue_time = null;
-    public ?array $recommendation = null;
+    public ?string $issueTime = null;
+    public ?array $recommendations = null;
     public ?float $temperature = null;
-    public ?string $update_time = null;
-    public ?string $warning_level = null;
-    public ?string $warning_message = null;
+    public ?string $updateTime = null;
+    public ?string $warningLevel = null;
+    public ?string $warningMessage = null;
 }
 
 /** Request payload for HeatStressWarningTc#list. */
 class HeatStressWarningTcListMatch
 {
-    public ?string $effective_time = null;
-    public ?string $expiry_time = null;
-    public ?float $heat_index = null;
+    public ?string $effectiveTime = null;
+    public ?string $expiryTime = null;
+    public ?float $heatIndex = null;
     public ?int $humidity = null;
-    public ?string $issue_time = null;
-    public ?array $recommendation = null;
+    public ?string $issueTime = null;
+    public ?array $recommendations = null;
     public ?float $temperature = null;
-    public ?string $update_time = null;
-    public ?string $warning_level = null;
-    public ?string $warning_message = null;
+    public ?string $updateTime = null;
+    public ?string $warningLevel = null;
+    public ?string $warningMessage = null;
 }
 

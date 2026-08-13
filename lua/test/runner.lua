@@ -35,8 +35,8 @@ end
 
 
 function runner.env_override(m)
-  local live = runner.getenv("HEATSTRESSWARNING_TEST_LIVE")
-  local override = runner.getenv("HEATSTRESSWARNING_TEST_OVERRIDE")
+  local live = runner.getenv("HEAT_STRESS_WARNING_TEST_LIVE")
+  local override = runner.getenv("HEAT_STRESS_WARNING_TEST_OVERRIDE")
 
   if live == "TRUE" or override == "TRUE" then
     for key, _ in pairs(m) do
@@ -56,9 +56,9 @@ function runner.env_override(m)
     end
   end
 
-  local explain = runner.getenv("HEATSTRESSWARNING_TEST_EXPLAIN")
+  local explain = runner.getenv("HEAT_STRESS_WARNING_TEST_EXPLAIN")
   if explain ~= nil and explain ~= "" then
-    m["HEATSTRESSWARNING_TEST_EXPLAIN"] = explain
+    m["HEAT_STRESS_WARNING_TEST_EXPLAIN"] = explain
   end
 
   return m

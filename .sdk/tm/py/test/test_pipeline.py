@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import HeatStressWarningSDK
-from core.error import HeatStressWarningError
-from core.result import HeatStressWarningResult
-from core.response import HeatStressWarningResponse
-from core.spec import HeatStressWarningSpec
-from feature.base_feature import HeatStressWarningBaseFeature
+from projectname_sdk.core.error import HeatStressWarningError
+from projectname_sdk.core.result import HeatStressWarningResult
+from projectname_sdk.core.response import HeatStressWarningResponse
+from projectname_sdk.core.spec import HeatStressWarningSpec
+from projectname_sdk.feature.base_feature import HeatStressWarningBaseFeature
 
 
 def _client():

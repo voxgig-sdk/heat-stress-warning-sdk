@@ -19,11 +19,15 @@ import {
 describe('HeatStressWarningEnDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when HEATSTRESSWARNING_TEST_LIVE=TRUE.
-  afterEach(liveDelay('HEATSTRESSWARNING_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when HEAT_STRESS_WARNING_TEST_LIVE=TRUE.
+  afterEach(liveDelay('HEAT_STRESS_WARNING_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new HeatStressWarningSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -77,17 +81,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID': {},
-    'HEATSTRESSWARNING_TEST_LIVE': 'FALSE',
+    'HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID': {},
+    'HEAT_STRESS_WARNING_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.HEATSTRESSWARNING_TEST_LIVE
+  const live = 'TRUE' === env.HEAT_STRESS_WARNING_TEST_LIVE
 
   if (live) {
     const client = new HeatStressWarningSDK({
     })
 
-    let idmap: any = env['HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID']
+    let idmap: any = env['HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

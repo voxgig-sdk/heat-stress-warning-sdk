@@ -262,16 +262,16 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"effective_time"` |  |
-| `"expiry_time"` |  |
-| `"heat_index"` |  |
+| `"effectiveTime"` |  |
+| `"expiryTime"` |  |
+| `"heatIndex"` |  |
 | `"humidity"` |  |
-| `"issue_time"` |  |
-| `"recommendation"` |  |
+| `"issueTime"` |  |
+| `"recommendations"` |  |
 | `"temperature"` |  |
-| `"update_time"` |  |
-| `"warning_level"` |  |
-| `"warning_message"` |  |
+| `"updateTime"` |  |
+| `"warningLevel"` |  |
+| `"warningMessage"` |  |
 
 Operations: List.
 
@@ -281,16 +281,16 @@ API path: `/opendata/heat-stress-warning-en.json`
 
 | Field | Description |
 | --- | --- |
-| `"effective_time"` |  |
-| `"expiry_time"` |  |
-| `"heat_index"` |  |
+| `"effectiveTime"` |  |
+| `"expiryTime"` |  |
+| `"heatIndex"` |  |
 | `"humidity"` |  |
-| `"issue_time"` |  |
-| `"recommendation"` |  |
+| `"issueTime"` |  |
+| `"recommendations"` |  |
 | `"temperature"` |  |
-| `"update_time"` |  |
-| `"warning_level"` |  |
-| `"warning_message"` |  |
+| `"updateTime"` |  |
+| `"warningLevel"` |  |
+| `"warningMessage"` |  |
 
 Operations: List.
 
@@ -300,16 +300,16 @@ API path: `/opendata/heat-stress-warning-sc.json`
 
 | Field | Description |
 | --- | --- |
-| `"effective_time"` |  |
-| `"expiry_time"` |  |
-| `"heat_index"` |  |
+| `"effectiveTime"` |  |
+| `"expiryTime"` |  |
+| `"heatIndex"` |  |
 | `"humidity"` |  |
-| `"issue_time"` |  |
-| `"recommendation"` |  |
+| `"issueTime"` |  |
+| `"recommendations"` |  |
 | `"temperature"` |  |
-| `"update_time"` |  |
-| `"warning_level"` |  |
-| `"warning_message"` |  |
+| `"updateTime"` |  |
+| `"warningLevel"` |  |
+| `"warningMessage"` |  |
 
 Operations: List.
 
@@ -334,16 +334,16 @@ Create an instance: `heatStressWarningEn := client.HeatStressWarningEn(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `float64` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `float64` |  |
 | `humidity` | `int` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `[]any` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `[]any` |  |
 | `temperature` | `float64` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 
@@ -370,16 +370,16 @@ Create an instance: `heatStressWarningSc := client.HeatStressWarningSc(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `float64` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `float64` |  |
 | `humidity` | `int` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `[]any` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `[]any` |  |
 | `temperature` | `float64` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 
@@ -406,16 +406,16 @@ Create an instance: `heatStressWarningTc := client.HeatStressWarningTc(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effective_time` | `string` |  |
-| `expiry_time` | `string` |  |
-| `heat_index` | `float64` |  |
+| `effectiveTime` | `string` |  |
+| `expiryTime` | `string` |  |
+| `heatIndex` | `float64` |  |
 | `humidity` | `int` |  |
-| `issue_time` | `string` |  |
-| `recommendation` | `[]any` |  |
+| `issueTime` | `string` |  |
+| `recommendations` | `[]any` |  |
 | `temperature` | `float64` |  |
-| `update_time` | `string` |  |
-| `warning_level` | `string` |  |
-| `warning_message` | `string` |  |
+| `updateTime` | `string` |  |
+| `warningLevel` | `string` |  |
+| `warningMessage` | `string` |  |
 
 #### Example: List
 

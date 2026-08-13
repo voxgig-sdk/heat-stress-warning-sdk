@@ -92,7 +92,7 @@ func TestHeatStressWarningTcEntity(t *testing.T) {
 		// The basic flow consumes synthetic IDs from the fixture. In live mode
 		// without an *_ENTID env override, those IDs hit the live API and 4xx.
 		if setup.syntheticOnly {
-			t.Skip("live entity test uses synthetic IDs from fixture — set HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_TC_ENTID JSON to run live")
+			t.Skip("live entity test uses synthetic IDs from fixture — set HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_TC_ENTID JSON to run live")
 			return
 		}
 		client := setup.client
@@ -160,21 +160,21 @@ func heat_stress_warning_tcBasicSetup(extra map[string]any) *entityTestSetup {
 	// Detect ENTID env override before envOverride consumes it. When live
 	// mode is on without a real override, the basic test runs against synthetic
 	// IDs from the fixture and 4xx's. Surface this so the test can skip.
-	entidEnvRaw := os.Getenv("HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_TC_ENTID")
+	entidEnvRaw := os.Getenv("HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_TC_ENTID")
 	idmapOverridden := entidEnvRaw != "" && strings.HasPrefix(strings.TrimSpace(entidEnvRaw), "{")
 
 	env := envOverride(map[string]any{
-		"HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_TC_ENTID": idmap,
-		"HEATSTRESSWARNING_TEST_LIVE":      "FALSE",
-		"HEATSTRESSWARNING_TEST_EXPLAIN":   "FALSE",
+		"HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_TC_ENTID": idmap,
+		"HEAT_STRESS_WARNING_TEST_LIVE":      "FALSE",
+		"HEAT_STRESS_WARNING_TEST_EXPLAIN":   "FALSE",
 	})
 
-	idmapResolved := core.ToMapAny(env["HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_TC_ENTID"])
+	idmapResolved := core.ToMapAny(env["HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_TC_ENTID"])
 	if idmapResolved == nil {
 		idmapResolved = core.ToMapAny(idmap)
 	}
 
-	if env["HEATSTRESSWARNING_TEST_LIVE"] == "TRUE" {
+	if env["HEAT_STRESS_WARNING_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
 			},
@@ -183,13 +183,13 @@ func heat_stress_warning_tcBasicSetup(extra map[string]any) *entityTestSetup {
 		client = sdk.NewHeatStressWarningSDK(core.ToMapAny(mergedOpts))
 	}
 
-	live := env["HEATSTRESSWARNING_TEST_LIVE"] == "TRUE"
+	live := env["HEAT_STRESS_WARNING_TEST_LIVE"] == "TRUE"
 	return &entityTestSetup{
 		client:        client,
 		data:          entityData,
 		idmap:         idmapResolved,
 		env:           env,
-		explain:       env["HEATSTRESSWARNING_TEST_EXPLAIN"] == "TRUE",
+		explain:       env["HEAT_STRESS_WARNING_TEST_EXPLAIN"] == "TRUE",
 		live:          live,
 		syntheticOnly: live && !idmapOverridden,
 		now:           time.Now().UnixMilli(),

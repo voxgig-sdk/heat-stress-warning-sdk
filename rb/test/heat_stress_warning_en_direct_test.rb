@@ -60,11 +60,11 @@ def heat_stress_warning_en_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "HEATSTRESSWARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID" => {},
-    "HEATSTRESSWARNING_TEST_LIVE" => "FALSE",
+    "HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID" => {},
+    "HEAT_STRESS_WARNING_TEST_LIVE" => "FALSE",
   })
 
-  live = env["HEATSTRESSWARNING_TEST_LIVE"] == "TRUE"
+  live = env["HEAT_STRESS_WARNING_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

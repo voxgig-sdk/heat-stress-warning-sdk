@@ -95,16 +95,16 @@ heat_stress_warning_en = client.HeatStressWarningEn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `str` | No |  |
-| `expiry_time` | `str` | No |  |
-| `heat_index` | `float` | No |  |
+| `effectiveTime` | `str` | No |  |
+| `expiryTime` | `str` | No |  |
+| `heatIndex` | `float` | No |  |
 | `humidity` | `int` | No |  |
-| `issue_time` | `str` | No |  |
-| `recommendation` | `list` | No |  |
+| `issueTime` | `str` | No |  |
+| `recommendations` | `list` | No |  |
 | `temperature` | `float` | No |  |
-| `update_time` | `str` | No |  |
-| `warning_level` | `str` | No |  |
-| `warning_message` | `str` | No |  |
+| `updateTime` | `str` | No |  |
+| `warningLevel` | `str` | No |  |
+| `warningMessage` | `str` | No |  |
 
 ### Operations
 
@@ -157,16 +157,16 @@ heat_stress_warning_sc = client.HeatStressWarningSc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `str` | No |  |
-| `expiry_time` | `str` | No |  |
-| `heat_index` | `float` | No |  |
+| `effectiveTime` | `str` | No |  |
+| `expiryTime` | `str` | No |  |
+| `heatIndex` | `float` | No |  |
 | `humidity` | `int` | No |  |
-| `issue_time` | `str` | No |  |
-| `recommendation` | `list` | No |  |
+| `issueTime` | `str` | No |  |
+| `recommendations` | `list` | No |  |
 | `temperature` | `float` | No |  |
-| `update_time` | `str` | No |  |
-| `warning_level` | `str` | No |  |
-| `warning_message` | `str` | No |  |
+| `updateTime` | `str` | No |  |
+| `warningLevel` | `str` | No |  |
+| `warningMessage` | `str` | No |  |
 
 ### Operations
 
@@ -219,16 +219,16 @@ heat_stress_warning_tc = client.HeatStressWarningTc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effective_time` | `str` | No |  |
-| `expiry_time` | `str` | No |  |
-| `heat_index` | `float` | No |  |
+| `effectiveTime` | `str` | No |  |
+| `expiryTime` | `str` | No |  |
+| `heatIndex` | `float` | No |  |
 | `humidity` | `int` | No |  |
-| `issue_time` | `str` | No |  |
-| `recommendation` | `list` | No |  |
+| `issueTime` | `str` | No |  |
+| `recommendations` | `list` | No |  |
 | `temperature` | `float` | No |  |
-| `update_time` | `str` | No |  |
-| `warning_level` | `str` | No |  |
-| `warning_message` | `str` | No |  |
+| `updateTime` | `str` | No |  |
+| `warningLevel` | `str` | No |  |
+| `warningMessage` | `str` | No |  |
 
 ### Operations
 

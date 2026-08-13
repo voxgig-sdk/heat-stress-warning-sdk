@@ -6,17 +6,17 @@ main: kit: entity: heat_stress_warning_en: {
 
   fields: [
     {
-      name: "effective_time"
+      name: "effectiveTime"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "expiry_time"
+      name: "expiryTime"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "heat_index"
+      name: "heatIndex"
       req: false
       type: "`$NUMBER`"
     }
@@ -26,12 +26,12 @@ main: kit: entity: heat_stress_warning_en: {
       type: "`$INTEGER`"
     }
     {
-      name: "issue_time"
+      name: "issueTime"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "recommendation"
+      name: "recommendations"
       req: false
       type: "`$ARRAY`"
     }
@@ -41,17 +41,17 @@ main: kit: entity: heat_stress_warning_en: {
       type: "`$NUMBER`"
     }
     {
-      name: "update_time"
+      name: "updateTime"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "warning_level"
+      name: "warningLevel"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "warning_message"
+      name: "warningMessage"
       req: false
       type: "`$STRING`"
     }
@@ -71,7 +71,7 @@ main: kit: entity: heat_stress_warning_en: {
           ]
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.recommendations`"
           }
         }
       ]
