@@ -40,7 +40,7 @@ class HeatStressWarningSDK
         $utility = new HeatStressWarningUtility();
         $this->_utility = $utility;
 
-        $config = HeatStressWarningConfig::make_config();
+        $config = HeatStressWarningConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

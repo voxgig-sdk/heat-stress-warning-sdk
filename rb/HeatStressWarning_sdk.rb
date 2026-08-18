@@ -28,7 +28,7 @@ class HeatStressWarningSDK
     utility = HeatStressWarningUtility.new
     @_utility = utility
 
-    config = HeatStressWarningConfig.make_config
+    config = HeatStressWarningConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

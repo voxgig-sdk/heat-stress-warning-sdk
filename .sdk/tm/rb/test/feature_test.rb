@@ -15,7 +15,7 @@ require_relative "../HeatStressWarning_sdk"
 module HeatStressWarningFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = HeatStressWarningConfig.make_config["feature"]
+    f = HeatStressWarningConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

@@ -33,7 +33,7 @@ class HeatStressWarningTcEntityTest < Minitest::Test
     assert_equal 3, seen.length
 
     # Inbound: streaming active -> yields each item from the feature.
-    cfg = HeatStressWarningConfig.make_config
+    cfg = HeatStressWarningConfig.shared_config
     if cfg["feature"].is_a?(Hash) && cfg["feature"].key?("streaming")
       sdk = HeatStressWarningSDK.test(seed, { "feature" => { "streaming" => { "active" => true } } })
       got = []
