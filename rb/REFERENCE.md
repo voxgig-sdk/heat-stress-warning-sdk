@@ -101,16 +101,16 @@ heat_stress_warning_en = client.HeatStressWarningEn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effectiveTime` | `String` | No |  |
-| `expiryTime` | `String` | No |  |
-| `heatIndex` | `Float` | No |  |
-| `humidity` | `Integer` | No |  |
-| `issueTime` | `String` | No |  |
-| `recommendations` | `Array` | No |  |
-| `temperature` | `Float` | No |  |
-| `updateTime` | `String` | No |  |
-| `warningLevel` | `String` | No |  |
-| `warningMessage` | `String` | No |  |
+| `effectiveTime` | `String` | No | Time when the warning becomes effective |
+| `expiryTime` | `String` | No | Time when the warning expires |
+| `heatIndex` | `Float` | No | Calculated heat index value |
+| `humidity` | `Integer` | No | Relative humidity percentage |
+| `issueTime` | `String` | No | Time when the warning was issued |
+| `recommendations` | `Array` | No | List of recommended actions for workers |
+| `temperature` | `Float` | No | Current temperature in degrees Celsius |
+| `updateTime` | `String` | No | Last update time of the data |
+| `warningLevel` | `String` | No | Current heat stress warning level |
+| `warningMessage` | `String` | No | Warning message with details and recommendations |
 
 ### Operations
 
@@ -162,16 +162,16 @@ heat_stress_warning_sc = client.HeatStressWarningSc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effectiveTime` | `String` | No |  |
-| `expiryTime` | `String` | No |  |
-| `heatIndex` | `Float` | No |  |
-| `humidity` | `Integer` | No |  |
-| `issueTime` | `String` | No |  |
-| `recommendations` | `Array` | No |  |
-| `temperature` | `Float` | No |  |
-| `updateTime` | `String` | No |  |
-| `warningLevel` | `String` | No |  |
-| `warningMessage` | `String` | No |  |
+| `effectiveTime` | `String` | No | Time when the warning becomes effective |
+| `expiryTime` | `String` | No | Time when the warning expires |
+| `heatIndex` | `Float` | No | Calculated heat index value |
+| `humidity` | `Integer` | No | Relative humidity percentage |
+| `issueTime` | `String` | No | Time when the warning was issued |
+| `recommendations` | `Array` | No | List of recommended actions for workers |
+| `temperature` | `Float` | No | Current temperature in degrees Celsius |
+| `updateTime` | `String` | No | Last update time of the data |
+| `warningLevel` | `String` | No | Current heat stress warning level |
+| `warningMessage` | `String` | No | Warning message with details and recommendations |
 
 ### Operations
 
@@ -223,16 +223,16 @@ heat_stress_warning_tc = client.HeatStressWarningTc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effectiveTime` | `String` | No |  |
-| `expiryTime` | `String` | No |  |
-| `heatIndex` | `Float` | No |  |
-| `humidity` | `Integer` | No |  |
-| `issueTime` | `String` | No |  |
-| `recommendations` | `Array` | No |  |
-| `temperature` | `Float` | No |  |
-| `updateTime` | `String` | No |  |
-| `warningLevel` | `String` | No |  |
-| `warningMessage` | `String` | No |  |
+| `effectiveTime` | `String` | No | Time when the warning becomes effective |
+| `expiryTime` | `String` | No | Time when the warning expires |
+| `heatIndex` | `Float` | No | Calculated heat index value |
+| `humidity` | `Integer` | No | Relative humidity percentage |
+| `issueTime` | `String` | No | Time when the warning was issued |
+| `recommendations` | `Array` | No | List of recommended actions for workers |
+| `temperature` | `Float` | No | Current temperature in degrees Celsius |
+| `updateTime` | `String` | No | Last update time of the data |
+| `warningLevel` | `String` | No | Current heat stress warning level |
+| `warningMessage` | `String` | No | Warning message with details and recommendations |
 
 ### Operations
 

@@ -140,16 +140,16 @@ const heat_stress_warning_en = client.HeatStressWarningEn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effectiveTime` | `string` | No |  |
-| `expiryTime` | `string` | No |  |
-| `heatIndex` | `number` | No |  |
-| `humidity` | `number` | No |  |
-| `issueTime` | `string` | No |  |
-| `recommendations` | `any[]` | No |  |
-| `temperature` | `number` | No |  |
-| `updateTime` | `string` | No |  |
-| `warningLevel` | `string` | No |  |
-| `warningMessage` | `string` | No |  |
+| `effectiveTime` | `string` | No | Time when the warning becomes effective |
+| `expiryTime` | `string` | No | Time when the warning expires |
+| `heatIndex` | `number` | No | Calculated heat index value |
+| `humidity` | `number` | No | Relative humidity percentage |
+| `issueTime` | `string` | No | Time when the warning was issued |
+| `recommendations` | `any[]` | No | List of recommended actions for workers |
+| `temperature` | `number` | No | Current temperature in degrees Celsius |
+| `updateTime` | `string` | No | Last update time of the data |
+| `warningLevel` | `string` | No | Current heat stress warning level |
+| `warningMessage` | `string` | No | Warning message with details and recommendations |
 
 ### Operations
 
@@ -199,16 +199,16 @@ const heat_stress_warning_sc = client.HeatStressWarningSc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effectiveTime` | `string` | No |  |
-| `expiryTime` | `string` | No |  |
-| `heatIndex` | `number` | No |  |
-| `humidity` | `number` | No |  |
-| `issueTime` | `string` | No |  |
-| `recommendations` | `any[]` | No |  |
-| `temperature` | `number` | No |  |
-| `updateTime` | `string` | No |  |
-| `warningLevel` | `string` | No |  |
-| `warningMessage` | `string` | No |  |
+| `effectiveTime` | `string` | No | Time when the warning becomes effective |
+| `expiryTime` | `string` | No | Time when the warning expires |
+| `heatIndex` | `number` | No | Calculated heat index value |
+| `humidity` | `number` | No | Relative humidity percentage |
+| `issueTime` | `string` | No | Time when the warning was issued |
+| `recommendations` | `any[]` | No | List of recommended actions for workers |
+| `temperature` | `number` | No | Current temperature in degrees Celsius |
+| `updateTime` | `string` | No | Last update time of the data |
+| `warningLevel` | `string` | No | Current heat stress warning level |
+| `warningMessage` | `string` | No | Warning message with details and recommendations |
 
 ### Operations
 
@@ -258,16 +258,16 @@ const heat_stress_warning_tc = client.HeatStressWarningTc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effectiveTime` | `string` | No |  |
-| `expiryTime` | `string` | No |  |
-| `heatIndex` | `number` | No |  |
-| `humidity` | `number` | No |  |
-| `issueTime` | `string` | No |  |
-| `recommendations` | `any[]` | No |  |
-| `temperature` | `number` | No |  |
-| `updateTime` | `string` | No |  |
-| `warningLevel` | `string` | No |  |
-| `warningMessage` | `string` | No |  |
+| `effectiveTime` | `string` | No | Time when the warning becomes effective |
+| `expiryTime` | `string` | No | Time when the warning expires |
+| `heatIndex` | `number` | No | Calculated heat index value |
+| `humidity` | `number` | No | Relative humidity percentage |
+| `issueTime` | `string` | No | Time when the warning was issued |
+| `recommendations` | `any[]` | No | List of recommended actions for workers |
+| `temperature` | `number` | No | Current temperature in degrees Celsius |
+| `updateTime` | `string` | No | Last update time of the data |
+| `warningLevel` | `string` | No | Current heat stress warning level |
+| `warningMessage` | `string` | No | Warning message with details and recommendations |
 
 ### Operations
 

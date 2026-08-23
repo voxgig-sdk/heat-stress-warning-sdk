@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "HeatStressWarning",
+            "slug": "heat-stress-warning",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -52,42 +55,52 @@ def make_config():
         "fields": [
           {
             "name": "effectiveTime",
+            "short": "Time when the warning becomes effective",
             "type": "`$STRING`",
           },
           {
             "name": "expiryTime",
+            "short": "Time when the warning expires",
             "type": "`$STRING`",
           },
           {
             "name": "heatIndex",
+            "short": "Calculated heat index value",
             "type": "`$NUMBER`",
           },
           {
             "name": "humidity",
+            "short": "Relative humidity percentage",
             "type": "`$INTEGER`",
           },
           {
             "name": "issueTime",
+            "short": "Time when the warning was issued",
             "type": "`$STRING`",
           },
           {
             "name": "recommendations",
+            "short": "List of recommended actions for workers",
             "type": "`$ARRAY`",
           },
           {
             "name": "temperature",
+            "short": "Current temperature in degrees Celsius",
             "type": "`$NUMBER`",
           },
           {
             "name": "updateTime",
+            "short": "Last update time of the data",
             "type": "`$STRING`",
           },
           {
             "name": "warningLevel",
+            "short": "Current heat stress warning level",
             "type": "`$STRING`",
           },
           {
             "name": "warningMessage",
+            "short": "Warning message with details and recommendations",
             "type": "`$STRING`",
           },
         ],
@@ -123,42 +136,52 @@ def make_config():
         "fields": [
           {
             "name": "effectiveTime",
+            "short": "Time when the warning becomes effective",
             "type": "`$STRING`",
           },
           {
             "name": "expiryTime",
+            "short": "Time when the warning expires",
             "type": "`$STRING`",
           },
           {
             "name": "heatIndex",
+            "short": "Calculated heat index value",
             "type": "`$NUMBER`",
           },
           {
             "name": "humidity",
+            "short": "Relative humidity percentage",
             "type": "`$INTEGER`",
           },
           {
             "name": "issueTime",
+            "short": "Time when the warning was issued",
             "type": "`$STRING`",
           },
           {
             "name": "recommendations",
+            "short": "List of recommended actions for workers",
             "type": "`$ARRAY`",
           },
           {
             "name": "temperature",
+            "short": "Current temperature in degrees Celsius",
             "type": "`$NUMBER`",
           },
           {
             "name": "updateTime",
+            "short": "Last update time of the data",
             "type": "`$STRING`",
           },
           {
             "name": "warningLevel",
+            "short": "Current heat stress warning level",
             "type": "`$STRING`",
           },
           {
             "name": "warningMessage",
+            "short": "Warning message with details and recommendations",
             "type": "`$STRING`",
           },
         ],
@@ -194,42 +217,52 @@ def make_config():
         "fields": [
           {
             "name": "effectiveTime",
+            "short": "Time when the warning becomes effective",
             "type": "`$STRING`",
           },
           {
             "name": "expiryTime",
+            "short": "Time when the warning expires",
             "type": "`$STRING`",
           },
           {
             "name": "heatIndex",
+            "short": "Calculated heat index value",
             "type": "`$NUMBER`",
           },
           {
             "name": "humidity",
+            "short": "Relative humidity percentage",
             "type": "`$INTEGER`",
           },
           {
             "name": "issueTime",
+            "short": "Time when the warning was issued",
             "type": "`$STRING`",
           },
           {
             "name": "recommendations",
+            "short": "List of recommended actions for workers",
             "type": "`$ARRAY`",
           },
           {
             "name": "temperature",
+            "short": "Current temperature in degrees Celsius",
             "type": "`$NUMBER`",
           },
           {
             "name": "updateTime",
+            "short": "Last update time of the data",
             "type": "`$STRING`",
           },
           {
             "name": "warningLevel",
+            "short": "Current heat stress warning level",
             "type": "`$STRING`",
           },
           {
             "name": "warningMessage",
+            "short": "Warning message with details and recommendations",
             "type": "`$STRING`",
           },
         ],

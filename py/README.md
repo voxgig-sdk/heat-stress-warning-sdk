@@ -245,16 +245,16 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `effectiveTime` |  |
-| `expiryTime` |  |
-| `heatIndex` |  |
-| `humidity` |  |
-| `issueTime` |  |
-| `recommendations` |  |
-| `temperature` |  |
-| `updateTime` |  |
-| `warningLevel` |  |
-| `warningMessage` |  |
+| `effectiveTime` | Time when the warning becomes effective |
+| `expiryTime` | Time when the warning expires |
+| `heatIndex` | Calculated heat index value |
+| `humidity` | Relative humidity percentage |
+| `issueTime` | Time when the warning was issued |
+| `recommendations` | List of recommended actions for workers |
+| `temperature` | Current temperature in degrees Celsius |
+| `updateTime` | Last update time of the data |
+| `warningLevel` | Current heat stress warning level |
+| `warningMessage` | Warning message with details and recommendations |
 
 Operations: List.
 
@@ -264,16 +264,16 @@ API path: `/opendata/heat-stress-warning-en.json`
 
 | Field | Description |
 | --- | --- |
-| `effectiveTime` |  |
-| `expiryTime` |  |
-| `heatIndex` |  |
-| `humidity` |  |
-| `issueTime` |  |
-| `recommendations` |  |
-| `temperature` |  |
-| `updateTime` |  |
-| `warningLevel` |  |
-| `warningMessage` |  |
+| `effectiveTime` | Time when the warning becomes effective |
+| `expiryTime` | Time when the warning expires |
+| `heatIndex` | Calculated heat index value |
+| `humidity` | Relative humidity percentage |
+| `issueTime` | Time when the warning was issued |
+| `recommendations` | List of recommended actions for workers |
+| `temperature` | Current temperature in degrees Celsius |
+| `updateTime` | Last update time of the data |
+| `warningLevel` | Current heat stress warning level |
+| `warningMessage` | Warning message with details and recommendations |
 
 Operations: List.
 
@@ -283,16 +283,16 @@ API path: `/opendata/heat-stress-warning-sc.json`
 
 | Field | Description |
 | --- | --- |
-| `effectiveTime` |  |
-| `expiryTime` |  |
-| `heatIndex` |  |
-| `humidity` |  |
-| `issueTime` |  |
-| `recommendations` |  |
-| `temperature` |  |
-| `updateTime` |  |
-| `warningLevel` |  |
-| `warningMessage` |  |
+| `effectiveTime` | Time when the warning becomes effective |
+| `expiryTime` | Time when the warning expires |
+| `heatIndex` | Calculated heat index value |
+| `humidity` | Relative humidity percentage |
+| `issueTime` | Time when the warning was issued |
+| `recommendations` | List of recommended actions for workers |
+| `temperature` | Current temperature in degrees Celsius |
+| `updateTime` | Last update time of the data |
+| `warningLevel` | Current heat stress warning level |
+| `warningMessage` | Warning message with details and recommendations |
 
 Operations: List.
 
@@ -317,16 +317,16 @@ Create an instance: `heat_stress_warning_en = client.HeatStressWarningEn()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effectiveTime` | `str` |  |
-| `expiryTime` | `str` |  |
-| `heatIndex` | `float` |  |
-| `humidity` | `int` |  |
-| `issueTime` | `str` |  |
-| `recommendations` | `list` |  |
-| `temperature` | `float` |  |
-| `updateTime` | `str` |  |
-| `warningLevel` | `str` |  |
-| `warningMessage` | `str` |  |
+| `effectiveTime` | `str` | Time when the warning becomes effective |
+| `expiryTime` | `str` | Time when the warning expires |
+| `heatIndex` | `float` | Calculated heat index value |
+| `humidity` | `int` | Relative humidity percentage |
+| `issueTime` | `str` | Time when the warning was issued |
+| `recommendations` | `list` | List of recommended actions for workers |
+| `temperature` | `float` | Current temperature in degrees Celsius |
+| `updateTime` | `str` | Last update time of the data |
+| `warningLevel` | `str` | Current heat stress warning level |
+| `warningMessage` | `str` | Warning message with details and recommendations |
 
 #### Example: List
 
@@ -349,16 +349,16 @@ Create an instance: `heat_stress_warning_sc = client.HeatStressWarningSc()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effectiveTime` | `str` |  |
-| `expiryTime` | `str` |  |
-| `heatIndex` | `float` |  |
-| `humidity` | `int` |  |
-| `issueTime` | `str` |  |
-| `recommendations` | `list` |  |
-| `temperature` | `float` |  |
-| `updateTime` | `str` |  |
-| `warningLevel` | `str` |  |
-| `warningMessage` | `str` |  |
+| `effectiveTime` | `str` | Time when the warning becomes effective |
+| `expiryTime` | `str` | Time when the warning expires |
+| `heatIndex` | `float` | Calculated heat index value |
+| `humidity` | `int` | Relative humidity percentage |
+| `issueTime` | `str` | Time when the warning was issued |
+| `recommendations` | `list` | List of recommended actions for workers |
+| `temperature` | `float` | Current temperature in degrees Celsius |
+| `updateTime` | `str` | Last update time of the data |
+| `warningLevel` | `str` | Current heat stress warning level |
+| `warningMessage` | `str` | Warning message with details and recommendations |
 
 #### Example: List
 
@@ -381,16 +381,16 @@ Create an instance: `heat_stress_warning_tc = client.HeatStressWarningTc()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effectiveTime` | `str` |  |
-| `expiryTime` | `str` |  |
-| `heatIndex` | `float` |  |
-| `humidity` | `int` |  |
-| `issueTime` | `str` |  |
-| `recommendations` | `list` |  |
-| `temperature` | `float` |  |
-| `updateTime` | `str` |  |
-| `warningLevel` | `str` |  |
-| `warningMessage` | `str` |  |
+| `effectiveTime` | `str` | Time when the warning becomes effective |
+| `expiryTime` | `str` | Time when the warning expires |
+| `heatIndex` | `float` | Calculated heat index value |
+| `humidity` | `int` | Relative humidity percentage |
+| `issueTime` | `str` | Time when the warning was issued |
+| `recommendations` | `list` | List of recommended actions for workers |
+| `temperature` | `float` | Current temperature in degrees Celsius |
+| `updateTime` | `str` | Last update time of the data |
+| `warningLevel` | `str` | Current heat stress warning level |
+| `warningMessage` | `str` | Warning message with details and recommendations |
 
 #### Example: List
 

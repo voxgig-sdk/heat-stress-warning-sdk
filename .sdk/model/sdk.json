@@ -36,60 +36,70 @@
               "active": true,
               "name": "effectiveTime",
               "req": false,
+              "short": "Time when the warning becomes effective",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "expiryTime",
               "req": false,
+              "short": "Time when the warning expires",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "heatIndex",
               "req": false,
+              "short": "Calculated heat index value",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "humidity",
               "req": false,
+              "short": "Relative humidity percentage",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "issueTime",
               "req": false,
+              "short": "Time when the warning was issued",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "recommendations",
               "req": false,
+              "short": "List of recommended actions for workers",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "temperature",
               "req": false,
+              "short": "Current temperature in degrees Celsius",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "updateTime",
               "req": false,
+              "short": "Last update time of the data",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "warningLevel",
               "req": false,
+              "short": "Current heat stress warning level",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "warningMessage",
               "req": false,
+              "short": "Warning message with details and recommendations",
               "type": "`$STRING`"
             }
           ],
@@ -132,60 +142,70 @@
               "active": true,
               "name": "effectiveTime",
               "req": false,
+              "short": "Time when the warning becomes effective",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "expiryTime",
               "req": false,
+              "short": "Time when the warning expires",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "heatIndex",
               "req": false,
+              "short": "Calculated heat index value",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "humidity",
               "req": false,
+              "short": "Relative humidity percentage",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "issueTime",
               "req": false,
+              "short": "Time when the warning was issued",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "recommendations",
               "req": false,
+              "short": "List of recommended actions for workers",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "temperature",
               "req": false,
+              "short": "Current temperature in degrees Celsius",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "updateTime",
               "req": false,
+              "short": "Last update time of the data",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "warningLevel",
               "req": false,
+              "short": "Current heat stress warning level",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "warningMessage",
               "req": false,
+              "short": "Warning message with details and recommendations",
               "type": "`$STRING`"
             }
           ],
@@ -228,60 +248,70 @@
               "active": true,
               "name": "effectiveTime",
               "req": false,
+              "short": "Time when the warning becomes effective",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "expiryTime",
               "req": false,
+              "short": "Time when the warning expires",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "heatIndex",
               "req": false,
+              "short": "Calculated heat index value",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "humidity",
               "req": false,
+              "short": "Relative humidity percentage",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "issueTime",
               "req": false,
+              "short": "Time when the warning was issued",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "recommendations",
               "req": false,
+              "short": "List of recommended actions for workers",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "temperature",
               "req": false,
+              "short": "Current temperature in degrees Celsius",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "updateTime",
               "req": false,
+              "short": "Last update time of the data",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "warningLevel",
               "req": false,
+              "short": "Current heat stress warning level",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "warningMessage",
               "req": false,
+              "short": "Warning message with details and recommendations",
               "type": "`$STRING`"
             }
           ],

@@ -239,16 +239,16 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `effectiveTime` |  |
-| `expiryTime` |  |
-| `heatIndex` |  |
-| `humidity` |  |
-| `issueTime` |  |
-| `recommendations` |  |
-| `temperature` |  |
-| `updateTime` |  |
-| `warningLevel` |  |
-| `warningMessage` |  |
+| `effectiveTime` | Time when the warning becomes effective |
+| `expiryTime` | Time when the warning expires |
+| `heatIndex` | Calculated heat index value |
+| `humidity` | Relative humidity percentage |
+| `issueTime` | Time when the warning was issued |
+| `recommendations` | List of recommended actions for workers |
+| `temperature` | Current temperature in degrees Celsius |
+| `updateTime` | Last update time of the data |
+| `warningLevel` | Current heat stress warning level |
+| `warningMessage` | Warning message with details and recommendations |
 
 Operations: List.
 
@@ -258,16 +258,16 @@ API path: `/opendata/heat-stress-warning-en.json`
 
 | Field | Description |
 | --- | --- |
-| `effectiveTime` |  |
-| `expiryTime` |  |
-| `heatIndex` |  |
-| `humidity` |  |
-| `issueTime` |  |
-| `recommendations` |  |
-| `temperature` |  |
-| `updateTime` |  |
-| `warningLevel` |  |
-| `warningMessage` |  |
+| `effectiveTime` | Time when the warning becomes effective |
+| `expiryTime` | Time when the warning expires |
+| `heatIndex` | Calculated heat index value |
+| `humidity` | Relative humidity percentage |
+| `issueTime` | Time when the warning was issued |
+| `recommendations` | List of recommended actions for workers |
+| `temperature` | Current temperature in degrees Celsius |
+| `updateTime` | Last update time of the data |
+| `warningLevel` | Current heat stress warning level |
+| `warningMessage` | Warning message with details and recommendations |
 
 Operations: List.
 
@@ -277,16 +277,16 @@ API path: `/opendata/heat-stress-warning-sc.json`
 
 | Field | Description |
 | --- | --- |
-| `effectiveTime` |  |
-| `expiryTime` |  |
-| `heatIndex` |  |
-| `humidity` |  |
-| `issueTime` |  |
-| `recommendations` |  |
-| `temperature` |  |
-| `updateTime` |  |
-| `warningLevel` |  |
-| `warningMessage` |  |
+| `effectiveTime` | Time when the warning becomes effective |
+| `expiryTime` | Time when the warning expires |
+| `heatIndex` | Calculated heat index value |
+| `humidity` | Relative humidity percentage |
+| `issueTime` | Time when the warning was issued |
+| `recommendations` | List of recommended actions for workers |
+| `temperature` | Current temperature in degrees Celsius |
+| `updateTime` | Last update time of the data |
+| `warningLevel` | Current heat stress warning level |
+| `warningMessage` | Warning message with details and recommendations |
 
 Operations: List.
 
@@ -311,16 +311,16 @@ Create an instance: `heat_stress_warning_en = client.HeatStressWarningEn`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effectiveTime` | `String` |  |
-| `expiryTime` | `String` |  |
-| `heatIndex` | `Float` |  |
-| `humidity` | `Integer` |  |
-| `issueTime` | `String` |  |
-| `recommendations` | `Array` |  |
-| `temperature` | `Float` |  |
-| `updateTime` | `String` |  |
-| `warningLevel` | `String` |  |
-| `warningMessage` | `String` |  |
+| `effectiveTime` | `String` | Time when the warning becomes effective |
+| `expiryTime` | `String` | Time when the warning expires |
+| `heatIndex` | `Float` | Calculated heat index value |
+| `humidity` | `Integer` | Relative humidity percentage |
+| `issueTime` | `String` | Time when the warning was issued |
+| `recommendations` | `Array` | List of recommended actions for workers |
+| `temperature` | `Float` | Current temperature in degrees Celsius |
+| `updateTime` | `String` | Last update time of the data |
+| `warningLevel` | `String` | Current heat stress warning level |
+| `warningMessage` | `String` | Warning message with details and recommendations |
 
 #### Example: List
 
@@ -344,16 +344,16 @@ Create an instance: `heat_stress_warning_sc = client.HeatStressWarningSc`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effectiveTime` | `String` |  |
-| `expiryTime` | `String` |  |
-| `heatIndex` | `Float` |  |
-| `humidity` | `Integer` |  |
-| `issueTime` | `String` |  |
-| `recommendations` | `Array` |  |
-| `temperature` | `Float` |  |
-| `updateTime` | `String` |  |
-| `warningLevel` | `String` |  |
-| `warningMessage` | `String` |  |
+| `effectiveTime` | `String` | Time when the warning becomes effective |
+| `expiryTime` | `String` | Time when the warning expires |
+| `heatIndex` | `Float` | Calculated heat index value |
+| `humidity` | `Integer` | Relative humidity percentage |
+| `issueTime` | `String` | Time when the warning was issued |
+| `recommendations` | `Array` | List of recommended actions for workers |
+| `temperature` | `Float` | Current temperature in degrees Celsius |
+| `updateTime` | `String` | Last update time of the data |
+| `warningLevel` | `String` | Current heat stress warning level |
+| `warningMessage` | `String` | Warning message with details and recommendations |
 
 #### Example: List
 
@@ -377,16 +377,16 @@ Create an instance: `heat_stress_warning_tc = client.HeatStressWarningTc`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effectiveTime` | `String` |  |
-| `expiryTime` | `String` |  |
-| `heatIndex` | `Float` |  |
-| `humidity` | `Integer` |  |
-| `issueTime` | `String` |  |
-| `recommendations` | `Array` |  |
-| `temperature` | `Float` |  |
-| `updateTime` | `String` |  |
-| `warningLevel` | `String` |  |
-| `warningMessage` | `String` |  |
+| `effectiveTime` | `String` | Time when the warning becomes effective |
+| `expiryTime` | `String` | Time when the warning expires |
+| `heatIndex` | `Float` | Calculated heat index value |
+| `humidity` | `Integer` | Relative humidity percentage |
+| `issueTime` | `String` | Time when the warning was issued |
+| `recommendations` | `Array` | List of recommended actions for workers |
+| `temperature` | `Float` | Current temperature in degrees Celsius |
+| `updateTime` | `String` | Last update time of the data |
+| `warningLevel` | `String` | Current heat stress warning level |
+| `warningMessage` | `String` | Warning message with details and recommendations |
 
 #### Example: List
 

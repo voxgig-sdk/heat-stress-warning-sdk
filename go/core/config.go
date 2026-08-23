@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "HeatStressWarning",
+			"slug": "heat-stress-warning",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -35,42 +38,52 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "effectiveTime",
+						"short": "Time when the warning becomes effective",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "expiryTime",
+						"short": "Time when the warning expires",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "heatIndex",
+						"short": "Calculated heat index value",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "humidity",
+						"short": "Relative humidity percentage",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "issueTime",
+						"short": "Time when the warning was issued",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "recommendations",
+						"short": "List of recommended actions for workers",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "temperature",
+						"short": "Current temperature in degrees Celsius",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "updateTime",
+						"short": "Last update time of the data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "warningLevel",
+						"short": "Current heat stress warning level",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "warningMessage",
+						"short": "Warning message with details and recommendations",
 						"type": "`$STRING`",
 					},
 				},
@@ -106,42 +119,52 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "effectiveTime",
+						"short": "Time when the warning becomes effective",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "expiryTime",
+						"short": "Time when the warning expires",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "heatIndex",
+						"short": "Calculated heat index value",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "humidity",
+						"short": "Relative humidity percentage",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "issueTime",
+						"short": "Time when the warning was issued",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "recommendations",
+						"short": "List of recommended actions for workers",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "temperature",
+						"short": "Current temperature in degrees Celsius",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "updateTime",
+						"short": "Last update time of the data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "warningLevel",
+						"short": "Current heat stress warning level",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "warningMessage",
+						"short": "Warning message with details and recommendations",
 						"type": "`$STRING`",
 					},
 				},
@@ -177,42 +200,52 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "effectiveTime",
+						"short": "Time when the warning becomes effective",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "expiryTime",
+						"short": "Time when the warning expires",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "heatIndex",
+						"short": "Calculated heat index value",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "humidity",
+						"short": "Relative humidity percentage",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "issueTime",
+						"short": "Time when the warning was issued",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "recommendations",
+						"short": "List of recommended actions for workers",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "temperature",
+						"short": "Current temperature in degrees Celsius",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "updateTime",
+						"short": "Last update time of the data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "warningLevel",
+						"short": "Current heat stress warning level",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "warningMessage",
+						"short": "Warning message with details and recommendations",
 						"type": "`$STRING`",
 					},
 				},

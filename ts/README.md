@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -289,16 +289,16 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `effectiveTime` |  |
-| `expiryTime` |  |
-| `heatIndex` |  |
-| `humidity` |  |
-| `issueTime` |  |
-| `recommendations` |  |
-| `temperature` |  |
-| `updateTime` |  |
-| `warningLevel` |  |
-| `warningMessage` |  |
+| `effectiveTime` | Time when the warning becomes effective |
+| `expiryTime` | Time when the warning expires |
+| `heatIndex` | Calculated heat index value |
+| `humidity` | Relative humidity percentage |
+| `issueTime` | Time when the warning was issued |
+| `recommendations` | List of recommended actions for workers |
+| `temperature` | Current temperature in degrees Celsius |
+| `updateTime` | Last update time of the data |
+| `warningLevel` | Current heat stress warning level |
+| `warningMessage` | Warning message with details and recommendations |
 
 Operations: list.
 
@@ -308,16 +308,16 @@ API path: `/opendata/heat-stress-warning-en.json`
 
 | Field | Description |
 | --- | --- |
-| `effectiveTime` |  |
-| `expiryTime` |  |
-| `heatIndex` |  |
-| `humidity` |  |
-| `issueTime` |  |
-| `recommendations` |  |
-| `temperature` |  |
-| `updateTime` |  |
-| `warningLevel` |  |
-| `warningMessage` |  |
+| `effectiveTime` | Time when the warning becomes effective |
+| `expiryTime` | Time when the warning expires |
+| `heatIndex` | Calculated heat index value |
+| `humidity` | Relative humidity percentage |
+| `issueTime` | Time when the warning was issued |
+| `recommendations` | List of recommended actions for workers |
+| `temperature` | Current temperature in degrees Celsius |
+| `updateTime` | Last update time of the data |
+| `warningLevel` | Current heat stress warning level |
+| `warningMessage` | Warning message with details and recommendations |
 
 Operations: list.
 
@@ -327,16 +327,16 @@ API path: `/opendata/heat-stress-warning-sc.json`
 
 | Field | Description |
 | --- | --- |
-| `effectiveTime` |  |
-| `expiryTime` |  |
-| `heatIndex` |  |
-| `humidity` |  |
-| `issueTime` |  |
-| `recommendations` |  |
-| `temperature` |  |
-| `updateTime` |  |
-| `warningLevel` |  |
-| `warningMessage` |  |
+| `effectiveTime` | Time when the warning becomes effective |
+| `expiryTime` | Time when the warning expires |
+| `heatIndex` | Calculated heat index value |
+| `humidity` | Relative humidity percentage |
+| `issueTime` | Time when the warning was issued |
+| `recommendations` | List of recommended actions for workers |
+| `temperature` | Current temperature in degrees Celsius |
+| `updateTime` | Last update time of the data |
+| `warningLevel` | Current heat stress warning level |
+| `warningMessage` | Warning message with details and recommendations |
 
 Operations: list.
 
@@ -361,16 +361,16 @@ Create an instance: `const heat_stress_warning_en = client.HeatStressWarningEn()
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effectiveTime` | `string` |  |
-| `expiryTime` | `string` |  |
-| `heatIndex` | `number` |  |
-| `humidity` | `number` |  |
-| `issueTime` | `string` |  |
-| `recommendations` | `any[]` |  |
-| `temperature` | `number` |  |
-| `updateTime` | `string` |  |
-| `warningLevel` | `string` |  |
-| `warningMessage` | `string` |  |
+| `effectiveTime` | `string` | Time when the warning becomes effective |
+| `expiryTime` | `string` | Time when the warning expires |
+| `heatIndex` | `number` | Calculated heat index value |
+| `humidity` | `number` | Relative humidity percentage |
+| `issueTime` | `string` | Time when the warning was issued |
+| `recommendations` | `any[]` | List of recommended actions for workers |
+| `temperature` | `number` | Current temperature in degrees Celsius |
+| `updateTime` | `string` | Last update time of the data |
+| `warningLevel` | `string` | Current heat stress warning level |
+| `warningMessage` | `string` | Warning message with details and recommendations |
 
 #### Example: List
 
@@ -393,16 +393,16 @@ Create an instance: `const heat_stress_warning_sc = client.HeatStressWarningSc()
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effectiveTime` | `string` |  |
-| `expiryTime` | `string` |  |
-| `heatIndex` | `number` |  |
-| `humidity` | `number` |  |
-| `issueTime` | `string` |  |
-| `recommendations` | `any[]` |  |
-| `temperature` | `number` |  |
-| `updateTime` | `string` |  |
-| `warningLevel` | `string` |  |
-| `warningMessage` | `string` |  |
+| `effectiveTime` | `string` | Time when the warning becomes effective |
+| `expiryTime` | `string` | Time when the warning expires |
+| `heatIndex` | `number` | Calculated heat index value |
+| `humidity` | `number` | Relative humidity percentage |
+| `issueTime` | `string` | Time when the warning was issued |
+| `recommendations` | `any[]` | List of recommended actions for workers |
+| `temperature` | `number` | Current temperature in degrees Celsius |
+| `updateTime` | `string` | Last update time of the data |
+| `warningLevel` | `string` | Current heat stress warning level |
+| `warningMessage` | `string` | Warning message with details and recommendations |
 
 #### Example: List
 
@@ -425,16 +425,16 @@ Create an instance: `const heat_stress_warning_tc = client.HeatStressWarningTc()
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `effectiveTime` | `string` |  |
-| `expiryTime` | `string` |  |
-| `heatIndex` | `number` |  |
-| `humidity` | `number` |  |
-| `issueTime` | `string` |  |
-| `recommendations` | `any[]` |  |
-| `temperature` | `number` |  |
-| `updateTime` | `string` |  |
-| `warningLevel` | `string` |  |
-| `warningMessage` | `string` |  |
+| `effectiveTime` | `string` | Time when the warning becomes effective |
+| `expiryTime` | `string` | Time when the warning expires |
+| `heatIndex` | `number` | Calculated heat index value |
+| `humidity` | `number` | Relative humidity percentage |
+| `issueTime` | `string` | Time when the warning was issued |
+| `recommendations` | `any[]` | List of recommended actions for workers |
+| `temperature` | `number` | Current temperature in degrees Celsius |
+| `updateTime` | `string` | Last update time of the data |
+| `warningLevel` | `string` | Current heat stress warning level |
+| `warningMessage` | `string` | Warning message with details and recommendations |
 
 #### Example: List
 

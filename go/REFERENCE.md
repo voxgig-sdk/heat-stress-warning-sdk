@@ -106,16 +106,16 @@ fmt.Println(heatStressWarningEn.GetName()) // "heat_stress_warning_en"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effectiveTime` | `string` | No |  |
-| `expiryTime` | `string` | No |  |
-| `heatIndex` | `float64` | No |  |
-| `humidity` | `int` | No |  |
-| `issueTime` | `string` | No |  |
-| `recommendations` | `[]any` | No |  |
-| `temperature` | `float64` | No |  |
-| `updateTime` | `string` | No |  |
-| `warningLevel` | `string` | No |  |
-| `warningMessage` | `string` | No |  |
+| `effectiveTime` | `string` | No | Time when the warning becomes effective |
+| `expiryTime` | `string` | No | Time when the warning expires |
+| `heatIndex` | `float64` | No | Calculated heat index value |
+| `humidity` | `int` | No | Relative humidity percentage |
+| `issueTime` | `string` | No | Time when the warning was issued |
+| `recommendations` | `[]any` | No | List of recommended actions for workers |
+| `temperature` | `float64` | No | Current temperature in degrees Celsius |
+| `updateTime` | `string` | No | Last update time of the data |
+| `warningLevel` | `string` | No | Current heat stress warning level |
+| `warningMessage` | `string` | No | Warning message with details and recommendations |
 
 ### Operations
 
@@ -166,16 +166,16 @@ fmt.Println(heatStressWarningSc.GetName()) // "heat_stress_warning_sc"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effectiveTime` | `string` | No |  |
-| `expiryTime` | `string` | No |  |
-| `heatIndex` | `float64` | No |  |
-| `humidity` | `int` | No |  |
-| `issueTime` | `string` | No |  |
-| `recommendations` | `[]any` | No |  |
-| `temperature` | `float64` | No |  |
-| `updateTime` | `string` | No |  |
-| `warningLevel` | `string` | No |  |
-| `warningMessage` | `string` | No |  |
+| `effectiveTime` | `string` | No | Time when the warning becomes effective |
+| `expiryTime` | `string` | No | Time when the warning expires |
+| `heatIndex` | `float64` | No | Calculated heat index value |
+| `humidity` | `int` | No | Relative humidity percentage |
+| `issueTime` | `string` | No | Time when the warning was issued |
+| `recommendations` | `[]any` | No | List of recommended actions for workers |
+| `temperature` | `float64` | No | Current temperature in degrees Celsius |
+| `updateTime` | `string` | No | Last update time of the data |
+| `warningLevel` | `string` | No | Current heat stress warning level |
+| `warningMessage` | `string` | No | Warning message with details and recommendations |
 
 ### Operations
 
@@ -226,16 +226,16 @@ fmt.Println(heatStressWarningTc.GetName()) // "heat_stress_warning_tc"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `effectiveTime` | `string` | No |  |
-| `expiryTime` | `string` | No |  |
-| `heatIndex` | `float64` | No |  |
-| `humidity` | `int` | No |  |
-| `issueTime` | `string` | No |  |
-| `recommendations` | `[]any` | No |  |
-| `temperature` | `float64` | No |  |
-| `updateTime` | `string` | No |  |
-| `warningLevel` | `string` | No |  |
-| `warningMessage` | `string` | No |  |
+| `effectiveTime` | `string` | No | Time when the warning becomes effective |
+| `expiryTime` | `string` | No | Time when the warning expires |
+| `heatIndex` | `float64` | No | Calculated heat index value |
+| `humidity` | `int` | No | Relative humidity percentage |
+| `issueTime` | `string` | No | Time when the warning was issued |
+| `recommendations` | `[]any` | No | List of recommended actions for workers |
+| `temperature` | `float64` | No | Current temperature in degrees Celsius |
+| `updateTime` | `string` | No | Last update time of the data |
+| `warningLevel` | `string` | No | Current heat stress warning level |
+| `warningMessage` | `string` | No | Warning message with details and recommendations |
 
 ### Operations
 
