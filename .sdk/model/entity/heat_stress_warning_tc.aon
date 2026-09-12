@@ -6,18 +6,21 @@ main: kit: entity: heat_stress_warning_tc: {
 
   fields: [
     {
+      format: "date-time"
       name: "effectiveTime"
       req: false
       short: "Time when the warning becomes effective"
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "expiryTime"
       req: false
       short: "Time when the warning expires"
       type: "`$STRING`"
     }
     {
+      format: "float"
       name: "heatIndex"
       req: false
       short: "Calculated heat index value"
@@ -30,6 +33,7 @@ main: kit: entity: heat_stress_warning_tc: {
       type: "`$INTEGER`"
     }
     {
+      format: "date-time"
       name: "issueTime"
       req: false
       short: "Time when the warning was issued"
@@ -42,12 +46,14 @@ main: kit: entity: heat_stress_warning_tc: {
       type: "`$ARRAY`"
     }
     {
+      format: "float"
       name: "temperature"
       req: false
       short: "Current temperature in degrees Celsius"
       type: "`$NUMBER`"
     }
     {
+      format: "date-time"
       name: "updateTime"
       req: false
       short: "Last update time of the data"
@@ -75,9 +81,13 @@ main: kit: entity: heat_stress_warning_tc: {
         {
           method: "GET"
           orig: "/opendata/heat-stress-warning-tc.json"
-          parts: [
-            "opendata"
-            "heat-stress-warning-tc.json"
+          segments: [
+            {
+              lit: "opendata"
+            }
+            {
+              lit: "heat-stress-warning-tc.json"
+            }
           ]
           transform: {
             req: "`reqdata`"

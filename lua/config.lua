@@ -34,16 +34,19 @@ local function make_config()
       ["heat_stress_warning_en"] = {
         ["fields"] = {
           {
+            ["format"] = "date-time",
             ["name"] = "effectiveTime",
             ["short"] = "Time when the warning becomes effective",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "expiryTime",
             ["short"] = "Time when the warning expires",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "float",
             ["name"] = "heatIndex",
             ["short"] = "Calculated heat index value",
             ["type"] = "`$NUMBER`",
@@ -54,6 +57,7 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "issueTime",
             ["short"] = "Time when the warning was issued",
             ["type"] = "`$STRING`",
@@ -64,11 +68,13 @@ local function make_config()
             ["type"] = "`$ARRAY`",
           },
           {
+            ["format"] = "float",
             ["name"] = "temperature",
             ["short"] = "Current temperature in degrees Celsius",
             ["type"] = "`$NUMBER`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "updateTime",
             ["short"] = "Last update time of the data",
             ["type"] = "`$STRING`",
@@ -95,14 +101,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/opendata/heat-stress-warning-en.json",
-                ["parts"] = {
-                  "opendata",
-                  "heat-stress-warning-en.json",
+                ["segments"] = {
+                  {
+                    ["lit"] = "opendata",
+                  },
+                  {
+                    ["lit"] = "heat-stress-warning-en.json",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.recommendations`",
+                },
+                ["parts"] = {
+                  "opendata",
+                  "heat-stress-warning-en.json",
                 },
               },
             },
@@ -115,16 +129,19 @@ local function make_config()
       ["heat_stress_warning_sc"] = {
         ["fields"] = {
           {
+            ["format"] = "date-time",
             ["name"] = "effectiveTime",
             ["short"] = "Time when the warning becomes effective",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "expiryTime",
             ["short"] = "Time when the warning expires",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "float",
             ["name"] = "heatIndex",
             ["short"] = "Calculated heat index value",
             ["type"] = "`$NUMBER`",
@@ -135,6 +152,7 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "issueTime",
             ["short"] = "Time when the warning was issued",
             ["type"] = "`$STRING`",
@@ -145,11 +163,13 @@ local function make_config()
             ["type"] = "`$ARRAY`",
           },
           {
+            ["format"] = "float",
             ["name"] = "temperature",
             ["short"] = "Current temperature in degrees Celsius",
             ["type"] = "`$NUMBER`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "updateTime",
             ["short"] = "Last update time of the data",
             ["type"] = "`$STRING`",
@@ -176,14 +196,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/opendata/heat-stress-warning-sc.json",
-                ["parts"] = {
-                  "opendata",
-                  "heat-stress-warning-sc.json",
+                ["segments"] = {
+                  {
+                    ["lit"] = "opendata",
+                  },
+                  {
+                    ["lit"] = "heat-stress-warning-sc.json",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.recommendations`",
+                },
+                ["parts"] = {
+                  "opendata",
+                  "heat-stress-warning-sc.json",
                 },
               },
             },
@@ -196,16 +224,19 @@ local function make_config()
       ["heat_stress_warning_tc"] = {
         ["fields"] = {
           {
+            ["format"] = "date-time",
             ["name"] = "effectiveTime",
             ["short"] = "Time when the warning becomes effective",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "expiryTime",
             ["short"] = "Time when the warning expires",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "float",
             ["name"] = "heatIndex",
             ["short"] = "Calculated heat index value",
             ["type"] = "`$NUMBER`",
@@ -216,6 +247,7 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "issueTime",
             ["short"] = "Time when the warning was issued",
             ["type"] = "`$STRING`",
@@ -226,11 +258,13 @@ local function make_config()
             ["type"] = "`$ARRAY`",
           },
           {
+            ["format"] = "float",
             ["name"] = "temperature",
             ["short"] = "Current temperature in degrees Celsius",
             ["type"] = "`$NUMBER`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "updateTime",
             ["short"] = "Last update time of the data",
             ["type"] = "`$STRING`",
@@ -257,14 +291,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/opendata/heat-stress-warning-tc.json",
-                ["parts"] = {
-                  "opendata",
-                  "heat-stress-warning-tc.json",
+                ["segments"] = {
+                  {
+                    ["lit"] = "opendata",
+                  },
+                  {
+                    ["lit"] = "heat-stress-warning-tc.json",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.recommendations`",
+                },
+                ["parts"] = {
+                  "opendata",
+                  "heat-stress-warning-tc.json",
                 },
               },
             },

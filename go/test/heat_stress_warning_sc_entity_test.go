@@ -98,7 +98,7 @@ func TestHeatStressWarningScEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		heatStressWarningScRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.heat_stress_warning_sc", setup.data)))
+		heatStressWarningScRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.heat_stress_warning_sc")))
 		var heatStressWarningScRef01Data map[string]any
 		if len(heatStressWarningScRef01DataRaw) > 0 {
 			heatStressWarningScRef01Data = core.ToMapAny(heatStressWarningScRef01DataRaw[0][1])
@@ -147,7 +147,7 @@ func heat_stress_warning_scBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"heat_stress_warning_sc01", "heat_stress_warning_sc02", "heat_stress_warning_sc03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -175,10 +175,22 @@ func heat_stress_warning_scBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["HEAT_STRESS_WARNING_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewHeatStressWarningSDK(core.ToMapAny(mergedOpts))
 	}

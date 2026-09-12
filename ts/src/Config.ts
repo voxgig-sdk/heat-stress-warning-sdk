@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -73,16 +84,19 @@ class Config {
     "heat_stress_warning_en": {
       "fields": [
         {
+          "format": "date-time",
           "name": "effectiveTime",
           "short": "Time when the warning becomes effective",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "expiryTime",
           "short": "Time when the warning expires",
           "type": "`$STRING`"
         },
         {
+          "format": "float",
           "name": "heatIndex",
           "short": "Calculated heat index value",
           "type": "`$NUMBER`"
@@ -93,6 +107,7 @@ class Config {
           "type": "`$INTEGER`"
         },
         {
+          "format": "date-time",
           "name": "issueTime",
           "short": "Time when the warning was issued",
           "type": "`$STRING`"
@@ -103,11 +118,13 @@ class Config {
           "type": "`$ARRAY`"
         },
         {
+          "format": "float",
           "name": "temperature",
           "short": "Current temperature in degrees Celsius",
           "type": "`$NUMBER`"
         },
         {
+          "format": "date-time",
           "name": "updateTime",
           "short": "Last update time of the data",
           "type": "`$STRING`"
@@ -134,15 +151,23 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/opendata/heat-stress-warning-en.json",
-              "parts": [
-                "opendata",
-                "heat-stress-warning-en.json"
+              "segments": [
+                {
+                  "lit": "opendata"
+                },
+                {
+                  "lit": "heat-stress-warning-en.json"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.recommendations`"
-              }
+              },
+              "parts": [
+                "opendata",
+                "heat-stress-warning-en.json"
+              ]
             }
           ]
         }
@@ -154,16 +179,19 @@ class Config {
     "heat_stress_warning_sc": {
       "fields": [
         {
+          "format": "date-time",
           "name": "effectiveTime",
           "short": "Time when the warning becomes effective",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "expiryTime",
           "short": "Time when the warning expires",
           "type": "`$STRING`"
         },
         {
+          "format": "float",
           "name": "heatIndex",
           "short": "Calculated heat index value",
           "type": "`$NUMBER`"
@@ -174,6 +202,7 @@ class Config {
           "type": "`$INTEGER`"
         },
         {
+          "format": "date-time",
           "name": "issueTime",
           "short": "Time when the warning was issued",
           "type": "`$STRING`"
@@ -184,11 +213,13 @@ class Config {
           "type": "`$ARRAY`"
         },
         {
+          "format": "float",
           "name": "temperature",
           "short": "Current temperature in degrees Celsius",
           "type": "`$NUMBER`"
         },
         {
+          "format": "date-time",
           "name": "updateTime",
           "short": "Last update time of the data",
           "type": "`$STRING`"
@@ -215,15 +246,23 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/opendata/heat-stress-warning-sc.json",
-              "parts": [
-                "opendata",
-                "heat-stress-warning-sc.json"
+              "segments": [
+                {
+                  "lit": "opendata"
+                },
+                {
+                  "lit": "heat-stress-warning-sc.json"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.recommendations`"
-              }
+              },
+              "parts": [
+                "opendata",
+                "heat-stress-warning-sc.json"
+              ]
             }
           ]
         }
@@ -235,16 +274,19 @@ class Config {
     "heat_stress_warning_tc": {
       "fields": [
         {
+          "format": "date-time",
           "name": "effectiveTime",
           "short": "Time when the warning becomes effective",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "expiryTime",
           "short": "Time when the warning expires",
           "type": "`$STRING`"
         },
         {
+          "format": "float",
           "name": "heatIndex",
           "short": "Calculated heat index value",
           "type": "`$NUMBER`"
@@ -255,6 +297,7 @@ class Config {
           "type": "`$INTEGER`"
         },
         {
+          "format": "date-time",
           "name": "issueTime",
           "short": "Time when the warning was issued",
           "type": "`$STRING`"
@@ -265,11 +308,13 @@ class Config {
           "type": "`$ARRAY`"
         },
         {
+          "format": "float",
           "name": "temperature",
           "short": "Current temperature in degrees Celsius",
           "type": "`$NUMBER`"
         },
         {
+          "format": "date-time",
           "name": "updateTime",
           "short": "Last update time of the data",
           "type": "`$STRING`"
@@ -296,15 +341,23 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/opendata/heat-stress-warning-tc.json",
-              "parts": [
-                "opendata",
-                "heat-stress-warning-tc.json"
+              "segments": [
+                {
+                  "lit": "opendata"
+                },
+                {
+                  "lit": "heat-stress-warning-tc.json"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.recommendations`"
-              }
+              },
+              "parts": [
+                "opendata",
+                "heat-stress-warning-tc.json"
+              ]
             }
           ]
         }
@@ -320,6 +373,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

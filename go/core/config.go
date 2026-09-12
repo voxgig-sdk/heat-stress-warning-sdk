@@ -38,16 +38,19 @@ func MakeConfig() map[string]any {
 			"heat_stress_warning_en": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "date-time",
 						"name": "effectiveTime",
 						"short": "Time when the warning becomes effective",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "expiryTime",
 						"short": "Time when the warning expires",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "heatIndex",
 						"short": "Calculated heat index value",
 						"type": "`$NUMBER`",
@@ -58,6 +61,7 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "issueTime",
 						"short": "Time when the warning was issued",
 						"type": "`$STRING`",
@@ -68,11 +72,13 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "temperature",
 						"short": "Current temperature in degrees Celsius",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "updateTime",
 						"short": "Last update time of the data",
 						"type": "`$STRING`",
@@ -99,14 +105,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/opendata/heat-stress-warning-en.json",
-								"parts": []any{
-									"opendata",
-									"heat-stress-warning-en.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "opendata",
+									},
+									map[string]any{
+										"lit": "heat-stress-warning-en.json",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.recommendations`",
+								},
+								"parts": []any{
+									"opendata",
+									"heat-stress-warning-en.json",
 								},
 							},
 						},
@@ -119,16 +133,19 @@ func MakeConfig() map[string]any {
 			"heat_stress_warning_sc": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "date-time",
 						"name": "effectiveTime",
 						"short": "Time when the warning becomes effective",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "expiryTime",
 						"short": "Time when the warning expires",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "heatIndex",
 						"short": "Calculated heat index value",
 						"type": "`$NUMBER`",
@@ -139,6 +156,7 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "issueTime",
 						"short": "Time when the warning was issued",
 						"type": "`$STRING`",
@@ -149,11 +167,13 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "temperature",
 						"short": "Current temperature in degrees Celsius",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "updateTime",
 						"short": "Last update time of the data",
 						"type": "`$STRING`",
@@ -180,14 +200,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/opendata/heat-stress-warning-sc.json",
-								"parts": []any{
-									"opendata",
-									"heat-stress-warning-sc.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "opendata",
+									},
+									map[string]any{
+										"lit": "heat-stress-warning-sc.json",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.recommendations`",
+								},
+								"parts": []any{
+									"opendata",
+									"heat-stress-warning-sc.json",
 								},
 							},
 						},
@@ -200,16 +228,19 @@ func MakeConfig() map[string]any {
 			"heat_stress_warning_tc": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "date-time",
 						"name": "effectiveTime",
 						"short": "Time when the warning becomes effective",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "expiryTime",
 						"short": "Time when the warning expires",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "heatIndex",
 						"short": "Calculated heat index value",
 						"type": "`$NUMBER`",
@@ -220,6 +251,7 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "issueTime",
 						"short": "Time when the warning was issued",
 						"type": "`$STRING`",
@@ -230,11 +262,13 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "temperature",
 						"short": "Current temperature in degrees Celsius",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "updateTime",
 						"short": "Last update time of the data",
 						"type": "`$STRING`",
@@ -261,14 +295,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/opendata/heat-stress-warning-tc.json",
-								"parts": []any{
-									"opendata",
-									"heat-stress-warning-tc.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "opendata",
+									},
+									map[string]any{
+										"lit": "heat-stress-warning-tc.json",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.recommendations`",
+								},
+								"parts": []any{
+									"opendata",
+									"heat-stress-warning-tc.json",
 								},
 							},
 						},
@@ -280,6 +322,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (
