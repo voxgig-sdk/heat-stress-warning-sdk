@@ -105,7 +105,7 @@ local results, err = client:HeatStressWarningEn():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases) |
+| TypeScript | `@voxgig-sdk/heat-stress-warning-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases) |
 | Python | `voxgig-sdk-heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases) |
 | PHP | `voxgig-sdk/heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/heat-stress-warning-sdk/go` | `go get github.com/voxgig-sdk/heat-stress-warning-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:HeatStressWarningEn():list()
 ### TypeScript
 
 ```ts
-import { HeatStressWarningSDK } from '@voxgig-sdk/heat-stress-warning'
+import { HeatStressWarningSDK } from '@voxgig-sdk/heat-stress-warning-sdk'
 
 const client = new HeatStressWarningSDK()
 

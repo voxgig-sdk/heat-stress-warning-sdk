@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { HeatStressWarningSDK } from '@voxgig-sdk/heat-stress-warning'
+import { HeatStressWarningSDK } from '@voxgig-sdk/heat-stress-warning-sdk'
 
 const client = new HeatStressWarningSDK()
 ```
@@ -525,7 +525,7 @@ heat-stress-warning/
 Import the SDK from the package root:
 
 ```ts
-import { HeatStressWarningSDK } from '@voxgig-sdk/heat-stress-warning'
+import { HeatStressWarningSDK } from '@voxgig-sdk/heat-stress-warning-sdk'
 ```
 
 ### Entity state
