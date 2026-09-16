@@ -5,7 +5,7 @@
         "effectiveTime": "s64",
         "expiryTime": "s65",
         "heatIndex": 102,
-        "humidity": "s67",
+        "humidity": 103,
         "issueTime": "s68",
         "recommendations": [],
         "temperature": 106,
@@ -17,7 +17,7 @@
         "effectiveTime": "sc8",
         "expiryTime": "sc9",
         "heatIndex": 202,
-        "humidity": "scb",
+        "humidity": 203,
         "issueTime": "scc",
         "recommendations": [],
         "temperature": 206,
@@ -29,7 +29,7 @@
         "effectiveTime": "s12c",
         "expiryTime": "s12d",
         "heatIndex": 302,
-        "humidity": "s12f",
+        "humidity": 303,
         "issueTime": "s130",
         "recommendations": [],
         "temperature": 306,
@@ -45,13 +45,168 @@
         "effectiveTime": "s190",
         "expiryTime": "s191",
         "heatIndex": 402,
-        "humidity": "s193",
+        "humidity": 403,
         "issueTime": "s194",
         "recommendations": [],
         "temperature": 406,
         "updateTime": "s197",
         "warningLevel": "s198",
         "warningMessage": "s199"
+      }
+    }
+  },
+  "requests": {
+    "GET /opendata/heat-stress-warning-tc.json": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getHeatStressWarningTraditionalChinese",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Heat stress at work warning data",
+                  "properties": {
+                    "effectiveTime": {
+                      "description": "Time when the warning becomes effective",
+                      "example": "2023-07-15T15:00:00+08:00",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "expiryTime": {
+                      "description": "Time when the warning expires",
+                      "example": "2023-07-15T18:00:00+08:00",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "heatIndex": {
+                      "description": "Calculated heat index value",
+                      "example": 42.3,
+                      "format": "float",
+                      "type": "number"
+                    },
+                    "humidity": {
+                      "description": "Relative humidity percentage",
+                      "example": 85,
+                      "type": "integer"
+                    },
+                    "issueTime": {
+                      "description": "Time when the warning was issued",
+                      "example": "2023-07-15T14:30:00+08:00",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "recommendations": {
+                      "description": "List of recommended actions for workers",
+                      "example": [
+                        "Drink water frequently",
+                        "Take regular rest breaks in shaded areas",
+                        "Wear light-colored and loose-fitting clothing"
+                      ],
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "temperature": {
+                      "description": "Current temperature in degrees Celsius",
+                      "example": 33.5,
+                      "format": "float",
+                      "type": "number"
+                    },
+                    "updateTime": {
+                      "description": "Last update time of the data",
+                      "example": "2023-07-15T14:25:00+08:00",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "warningLevel": {
+                      "description": "Current heat stress warning level",
+                      "example": "Yellow",
+                      "type": "string"
+                    },
+                    "warningMessage": {
+                      "description": "Warning message with details and recommendations",
+                      "example": "Heat stress at work warning is in force. Workers should take precautionary measures.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with heat stress warning data in Traditional Chinese"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Error response",
+                  "properties": {
+                    "code": {
+                      "description": "Error code",
+                      "example": 404,
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Error message",
+                      "example": "Resource not found",
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "description": "Timestamp of the error",
+                      "example": "2023-07-15T14:30:00+08:00",
+                      "format": "date-time",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "error",
+                    "code"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Resource not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Error response",
+                  "properties": {
+                    "code": {
+                      "description": "Error code",
+                      "example": 404,
+                      "type": "integer"
+                    },
+                    "error": {
+                      "description": "Error message",
+                      "example": "Resource not found",
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "description": "Timestamp of the error",
+                      "example": "2023-07-15T14:30:00+08:00",
+                      "format": "date-time",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "error",
+                    "code"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

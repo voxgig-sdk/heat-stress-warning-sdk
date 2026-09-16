@@ -24,7 +24,71 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "heat_stress_warning_en": {
           "active": true,
@@ -118,6 +182,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /opendata/heat-stress-warning-en.json",
+                    "json": "{\"operationId\":\"getHeatStressWarningEnglish\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Heat stress at work warning data\",\"properties\":{\"effectiveTime\":{\"description\":\"Time when the warning becomes effective\",\"example\":\"2023-07-15T15:00:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"expiryTime\":{\"description\":\"Time when the warning expires\",\"example\":\"2023-07-15T18:00:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"heatIndex\":{\"description\":\"Calculated heat index value\",\"example\":42.3,\"format\":\"float\",\"type\":\"number\"},\"humidity\":{\"description\":\"Relative humidity percentage\",\"example\":85,\"type\":\"integer\"},\"issueTime\":{\"description\":\"Time when the warning was issued\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"recommendations\":{\"description\":\"List of recommended actions for workers\",\"example\":[\"Drink water frequently\",\"Take regular rest breaks in shaded areas\",\"Wear light-colored and loose-fitting clothing\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"temperature\":{\"description\":\"Current temperature in degrees Celsius\",\"example\":33.5,\"format\":\"float\",\"type\":\"number\"},\"updateTime\":{\"description\":\"Last update time of the data\",\"example\":\"2023-07-15T14:25:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"warningLevel\":{\"description\":\"Current heat stress warning level\",\"example\":\"Yellow\",\"type\":\"string\"},\"warningMessage\":{\"description\":\"Warning message with details and recommendations\",\"example\":\"Heat stress at work warning is in force. Workers should take precautionary measures.\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with heat stress warning data in English\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response\",\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":404,\"type\":\"integer\"},\"error\":{\"description\":\"Error message\",\"example\":\"Resource not found\",\"type\":\"string\"},\"timestamp\":{\"description\":\"Timestamp of the error\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"error\",\"code\"],\"type\":\"object\"}}},\"description\":\"Resource not found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response\",\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":404,\"type\":\"integer\"},\"error\":{\"description\":\"Error message\",\"example\":\"Resource not found\",\"type\":\"string\"},\"timestamp\":{\"description\":\"Timestamp of the error\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"error\",\"code\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/opendata/heat-stress-warning-en.json",
@@ -234,6 +304,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /opendata/heat-stress-warning-sc.json",
+                    "json": "{\"operationId\":\"getHeatStressWarningSimplifiedChinese\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Heat stress at work warning data\",\"properties\":{\"effectiveTime\":{\"description\":\"Time when the warning becomes effective\",\"example\":\"2023-07-15T15:00:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"expiryTime\":{\"description\":\"Time when the warning expires\",\"example\":\"2023-07-15T18:00:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"heatIndex\":{\"description\":\"Calculated heat index value\",\"example\":42.3,\"format\":\"float\",\"type\":\"number\"},\"humidity\":{\"description\":\"Relative humidity percentage\",\"example\":85,\"type\":\"integer\"},\"issueTime\":{\"description\":\"Time when the warning was issued\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"recommendations\":{\"description\":\"List of recommended actions for workers\",\"example\":[\"Drink water frequently\",\"Take regular rest breaks in shaded areas\",\"Wear light-colored and loose-fitting clothing\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"temperature\":{\"description\":\"Current temperature in degrees Celsius\",\"example\":33.5,\"format\":\"float\",\"type\":\"number\"},\"updateTime\":{\"description\":\"Last update time of the data\",\"example\":\"2023-07-15T14:25:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"warningLevel\":{\"description\":\"Current heat stress warning level\",\"example\":\"Yellow\",\"type\":\"string\"},\"warningMessage\":{\"description\":\"Warning message with details and recommendations\",\"example\":\"Heat stress at work warning is in force. Workers should take precautionary measures.\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with heat stress warning data in Simplified Chinese\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response\",\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":404,\"type\":\"integer\"},\"error\":{\"description\":\"Error message\",\"example\":\"Resource not found\",\"type\":\"string\"},\"timestamp\":{\"description\":\"Timestamp of the error\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"error\",\"code\"],\"type\":\"object\"}}},\"description\":\"Resource not found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response\",\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":404,\"type\":\"integer\"},\"error\":{\"description\":\"Error message\",\"example\":\"Resource not found\",\"type\":\"string\"},\"timestamp\":{\"description\":\"Timestamp of the error\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"error\",\"code\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/opendata/heat-stress-warning-sc.json",
@@ -350,6 +426,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /opendata/heat-stress-warning-tc.json",
+                    "json": "{\"operationId\":\"getHeatStressWarningTraditionalChinese\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Heat stress at work warning data\",\"properties\":{\"effectiveTime\":{\"description\":\"Time when the warning becomes effective\",\"example\":\"2023-07-15T15:00:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"expiryTime\":{\"description\":\"Time when the warning expires\",\"example\":\"2023-07-15T18:00:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"heatIndex\":{\"description\":\"Calculated heat index value\",\"example\":42.3,\"format\":\"float\",\"type\":\"number\"},\"humidity\":{\"description\":\"Relative humidity percentage\",\"example\":85,\"type\":\"integer\"},\"issueTime\":{\"description\":\"Time when the warning was issued\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"recommendations\":{\"description\":\"List of recommended actions for workers\",\"example\":[\"Drink water frequently\",\"Take regular rest breaks in shaded areas\",\"Wear light-colored and loose-fitting clothing\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"temperature\":{\"description\":\"Current temperature in degrees Celsius\",\"example\":33.5,\"format\":\"float\",\"type\":\"number\"},\"updateTime\":{\"description\":\"Last update time of the data\",\"example\":\"2023-07-15T14:25:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"warningLevel\":{\"description\":\"Current heat stress warning level\",\"example\":\"Yellow\",\"type\":\"string\"},\"warningMessage\":{\"description\":\"Warning message with details and recommendations\",\"example\":\"Heat stress at work warning is in force. Workers should take precautionary measures.\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with heat stress warning data in Traditional Chinese\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response\",\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":404,\"type\":\"integer\"},\"error\":{\"description\":\"Error message\",\"example\":\"Resource not found\",\"type\":\"string\"},\"timestamp\":{\"description\":\"Timestamp of the error\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"error\",\"code\"],\"type\":\"object\"}}},\"description\":\"Resource not found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response\",\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":404,\"type\":\"integer\"},\"error\":{\"description\":\"Error message\",\"example\":\"Resource not found\",\"type\":\"string\"},\"timestamp\":{\"description\":\"Timestamp of the error\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"error\",\"code\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/opendata/heat-stress-warning-tc.json",
@@ -376,13 +458,223 @@
         }
       },
       "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Client-side rate limiting via a token bucket",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Automatic retry of transient failures with exponential backoff",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
         "test": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -472,6 +764,102 @@
           },
           "title": "In-memory mock transport for testing without a live server",
           "transport": "base",
+          "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Per-request timeout with transport abort",
+          "transport": "wrap",
           "version": "0.0.1"
         }
       },
@@ -577,6 +965,48 @@
         "website": "https://data.weather.gov.hk/weatherAPI/doc/HSWW_API_Documentation.pdf"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -1131,6 +1561,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -1172,7 +1603,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }

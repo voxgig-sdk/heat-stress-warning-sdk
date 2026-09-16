@@ -4,7 +4,10 @@ declare(strict_types=1);
 // HeatStressWarning SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class HeatStressWarningFeatures
@@ -14,8 +17,14 @@ class HeatStressWarningFeatures
         switch ($name) {
             case "base":
                 return new HeatStressWarningBaseFeature();
+            case "ratelimit":
+                return new HeatStressWarningRatelimitFeature();
+            case "retry":
+                return new HeatStressWarningRetryFeature();
             case "test":
                 return new HeatStressWarningTestFeature();
+            case "timeout":
+                return new HeatStressWarningTimeoutFeature();
             default:
                 return new HeatStressWarningBaseFeature();
         }
@@ -31,7 +40,10 @@ class HeatStressWarningFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

@@ -40,6 +40,8 @@ const node_path_1 = __importDefault(require("node:path"));
 const Fs = __importStar(require("node:fs"));
 const node_test_1 = require("node:test");
 const node_assert_1 = __importDefault(require("node:assert"));
+const live_runner_1 = require("../../live-runner");
+const live_entity_1 = require("../../live-entity");
 const __1 = require("../../..");
 const utility_1 = require("../../utility");
 // AFTER the imports on purpose: TypeScript hoists `import` above any
@@ -59,16 +61,12 @@ const utility_1 = require("../../utility");
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.HEAT_STRESS_WARNING_TEST_LIVE;
         for (const op of ['list']) {
-            if ((0, utility_1.maybeSkipControl)(t, 'entityOp', 'heat_stress_warning_en.' + op, live))
+            if (!live && (0, utility_1.maybeSkipControl)(t, 'entityOp', 'heat_stress_warning_en.' + op, live))
                 return;
         }
         const setup = basicSetup();
-        // The basic flow consumes synthetic IDs and field values from the
-        // fixture (entity TestData.json). Those don't exist on the live API.
-        // Skip live runs unless the user provided a real ENTID env override.
-        if (setup.syntheticOnly) {
-            t.skip('live entity test uses synthetic IDs from fixture — set HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID JSON to run live');
-            return;
+        if (setup.live) {
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": [{ "active": true, "format": "date-time", "name": "effectiveTime", "req": false, "short": "Time when the warning becomes effective", "type": "`$STRING`", "index$": 0 }, { "active": true, "format": "date-time", "name": "expiryTime", "req": false, "short": "Time when the warning expires", "type": "`$STRING`", "index$": 1 }, { "active": true, "format": "float", "name": "heatIndex", "req": false, "short": "Calculated heat index value", "type": "`$NUMBER`", "index$": 2 }, { "active": true, "name": "humidity", "req": false, "short": "Relative humidity percentage", "type": "`$INTEGER`", "index$": 3 }, { "active": true, "format": "date-time", "name": "issueTime", "req": false, "short": "Time when the warning was issued", "type": "`$STRING`", "index$": 4 }, { "active": true, "name": "recommendations", "req": false, "short": "List of recommended actions for workers", "type": "`$ARRAY`", "index$": 5 }, { "active": true, "format": "float", "name": "temperature", "req": false, "short": "Current temperature in degrees Celsius", "type": "`$NUMBER`", "index$": 6 }, { "active": true, "format": "date-time", "name": "updateTime", "req": false, "short": "Last update time of the data", "type": "`$STRING`", "index$": 7 }, { "active": true, "name": "warningLevel", "req": false, "short": "Current heat stress warning level", "type": "`$STRING`", "index$": 8 }, { "active": true, "name": "warningMessage", "req": false, "short": "Warning message with details and recommendations", "type": "`$STRING`", "index$": 9 }], "name": "heat_stress_warning_en", "op": { "list": { "input": "data", "name": "list", "points": [{ "active": true, "args": {}, "contract": { "id": "GET /opendata/heat-stress-warning-en.json", "json": "{\"operationId\":\"getHeatStressWarningEnglish\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Heat stress at work warning data\",\"properties\":{\"effectiveTime\":{\"description\":\"Time when the warning becomes effective\",\"example\":\"2023-07-15T15:00:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"expiryTime\":{\"description\":\"Time when the warning expires\",\"example\":\"2023-07-15T18:00:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"heatIndex\":{\"description\":\"Calculated heat index value\",\"example\":42.3,\"format\":\"float\",\"type\":\"number\"},\"humidity\":{\"description\":\"Relative humidity percentage\",\"example\":85,\"type\":\"integer\"},\"issueTime\":{\"description\":\"Time when the warning was issued\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"recommendations\":{\"description\":\"List of recommended actions for workers\",\"example\":[\"Drink water frequently\",\"Take regular rest breaks in shaded areas\",\"Wear light-colored and loose-fitting clothing\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"temperature\":{\"description\":\"Current temperature in degrees Celsius\",\"example\":33.5,\"format\":\"float\",\"type\":\"number\"},\"updateTime\":{\"description\":\"Last update time of the data\",\"example\":\"2023-07-15T14:25:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"},\"warningLevel\":{\"description\":\"Current heat stress warning level\",\"example\":\"Yellow\",\"type\":\"string\"},\"warningMessage\":{\"description\":\"Warning message with details and recommendations\",\"example\":\"Heat stress at work warning is in force. Workers should take precautionary measures.\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with heat stress warning data in English\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response\",\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":404,\"type\":\"integer\"},\"error\":{\"description\":\"Error message\",\"example\":\"Resource not found\",\"type\":\"string\"},\"timestamp\":{\"description\":\"Timestamp of the error\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"error\",\"code\"],\"type\":\"object\"}}},\"description\":\"Resource not found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Error response\",\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":404,\"type\":\"integer\"},\"error\":{\"description\":\"Error message\",\"example\":\"Resource not found\",\"type\":\"string\"},\"timestamp\":{\"description\":\"Timestamp of the error\",\"example\":\"2023-07-15T14:30:00+08:00\",\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"error\",\"code\"],\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}", "source": "openapi3", "version": 1 }, "kind": "http", "method": "GET", "orig": "/opendata/heat-stress-warning-en.json", "segments": [{ "lit": "opendata" }, { "lit": "heat-stress-warning-en.json" }], "select": {}, "transform": { "req": "`reqdata`", "res": "`body.recommendations`" }, "index$": 0 }], "key$": "list" } }, "relations": { "ancestors": [] }, "key$": "heat_stress_warning_en", "name__orig": "heat_stress_warning_en", "Name": "HeatStressWarningEn", "name_": "heat_stress_warning_en", "name-": "heat-stress-warning-en", "NAME": "HEAT_STRESS_WARNING_EN", "index$": 0 }, { "active": true, "entity": "heat_stress_warning_en", "key$": "BasicHeatStressWarningEnFlow", "kind": "basic", "name": "BasicHeatStressWarningEnFlow", "param": {}, "step": [{ "active": true, "data": {}, "input": {}, "match": {}, "op": "list", "spec": [], "valid": [{ "apply": "ItemExists", "def": { "ref": "heat_stress_warning_en_ref01" } }], "index$": 0 }] }, 'HeatStressWarningEn');
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -101,12 +99,6 @@ function basicSetup(extra) {
                 '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
             }]
     });
-    // Detect whether the user provided a real ENTID JSON via env var. The
-    // basic flow consumes synthetic IDs from the fixture file; without an
-    // override those synthetic IDs reach the live API and 4xx. Surface this
-    // to the test so it can skip rather than fail.
-    const idmapEnvVal = process.env['HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID'];
-    const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{');
     const env = (0, utility_1.envOverride)({
         'HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID': idmap,
         'HEAT_STRESS_WARNING_TEST_LIVE': 'FALSE',
@@ -114,7 +106,13 @@ function basicSetup(extra) {
     });
     idmap = env['HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID'];
     const live = 'TRUE' === env.HEAT_STRESS_WARNING_TEST_LIVE;
+    const transport = (0, live_runner_1.createLiveTransport)();
     if (live) {
+        const rawIds = process.env['HEAT_STRESS_WARNING_TEST_HEAT_STRESS_WARNING_EN_ENTID'];
+        idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {};
+        if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+            throw new Error('Live ENTID must be a JSON object');
+        }
         client = new __1.HeatStressWarningSDK(merge([
             // FIRST, so the generated fields below win: sdk-test-control.json's
             // test.client.options adds to the live client, it does not redirect it.
@@ -125,7 +123,8 @@ function basicSetup(extra) {
             // argument at all - so a bare 'extra' silently discarded the apikey
             // and server values above and handed the SDK undefined. Harmless
             // while there was nothing in that object; not harmless now.
-            extra || {}
+            extra || {},
+            { system: { fetch: transport.fetch } }
         ]));
     }
     const setup = {
@@ -137,7 +136,7 @@ function basicSetup(extra) {
         data: entityData,
         explain: 'TRUE' === env.HEAT_STRESS_WARNING_TEST_EXPLAIN,
         live,
-        syntheticOnly: live && !idmapOverridden,
+        transport,
         now: Date.now(),
     };
     return setup;

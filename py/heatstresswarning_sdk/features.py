@@ -1,12 +1,18 @@
 # HeatStressWarning SDK feature factory
 
 from heatstresswarning_sdk.feature.base_feature import HeatStressWarningBaseFeature
+from heatstresswarning_sdk.feature.ratelimit_feature import HeatStressWarningRatelimitFeature
+from heatstresswarning_sdk.feature.retry_feature import HeatStressWarningRetryFeature
 from heatstresswarning_sdk.feature.test_feature import HeatStressWarningTestFeature
+from heatstresswarning_sdk.feature.timeout_feature import HeatStressWarningTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: HeatStressWarningBaseFeature(),
+    "ratelimit": lambda: HeatStressWarningRatelimitFeature(),
+    "retry": lambda: HeatStressWarningRetryFeature(),
     "test": lambda: HeatStressWarningTestFeature(),
+    "timeout": lambda: HeatStressWarningTimeoutFeature(),
 }
 
 
