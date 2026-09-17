@@ -1,5 +1,5 @@
 # Entity Models
 
-@"heat_stress_warning_en.aon"
-@"heat_stress_warning_sc.aon"
-@"heat_stress_warning_tc.aon"
+@"./heat_stress_warning_en.aon"
+@"./heat_stress_warning_sc.aon"
+@"./heat_stress_warning_tc.aon"

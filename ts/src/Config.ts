@@ -127,15 +127,15 @@ class Config {
 
     entity: {
       
-      heat_stress_warning_en: {
-      },
-
-      heat_stress_warning_sc: {
-      },
-
-      heat_stress_warning_tc: {
-      },
-
+        heat_stress_warning_en: {
+        },
+  
+        heat_stress_warning_sc: {
+        },
+  
+        heat_stress_warning_tc: {
+        },
+  
     }
   }
 

@@ -105,12 +105,12 @@ local results, err = client:HeatStressWarningEn():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/heat-stress-warning-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases) |
-| Python | `voxgig-sdk-heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases) |
-| PHP | `voxgig-sdk/heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases) |
+| TypeScript | `@voxgig-sdk/heat-stress-warning-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/tags) |
+| Python | `voxgig-sdk-heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/tags) |
+| PHP | `voxgig-sdk/heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/heat-stress-warning-sdk/go` | `go get github.com/voxgig-sdk/heat-stress-warning-sdk/go@latest` |
-| Ruby | `voxgig-sdk-heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases) |
-| Lua | `voxgig-sdk-heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/releases) |
+| Ruby | `voxgig-sdk-heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/tags) |
+| Lua | `voxgig-sdk-heat-stress-warning` | publish pending — [install from git tag](https://github.com/voxgig-sdk/heat-stress-warning-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/heat-stress-warning-sdk/go-cli` | `go install github.com/voxgig-sdk/heat-stress-warning-sdk/go-cli/cmd/heat-stress-warning@latest` |
 | Go MCP server | `github.com/voxgig-sdk/heat-stress-warning-sdk/go-mcp` | `go get github.com/voxgig-sdk/heat-stress-warning-sdk/go-mcp@latest` |
 

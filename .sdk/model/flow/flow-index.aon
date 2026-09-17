@@ -1,5 +1,5 @@
 # Flows
 
-@"BasicHeatStressWarningEnFlow.aon"
-@"BasicHeatStressWarningScFlow.aon"
-@"BasicHeatStressWarningTcFlow.aon"
+@"./BasicHeatStressWarningEnFlow.aon"
+@"./BasicHeatStressWarningScFlow.aon"
+@"./BasicHeatStressWarningTcFlow.aon"
